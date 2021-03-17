@@ -10,6 +10,17 @@ Functions which calculates the specific value which is evaluated in the criteria
 
 '''
 
+def number_action_potentials(voltage,parameters):
+
+    neo_voltage = neo.AnalogSignal(np.array(voltage)*pq.mV,sampling_period=parameters["dt"]*pq.ms,units='mV')
+    spike_train = elp.spike_train_generation.peak_detection(neo_voltage,threshold=-20 *pq.mV)
+
+    num_AP = len(spike_train)
+
+    return num_AP
+
+    
+
 def mean_frequency(voltage,parameters):
 
     neo_voltage = neo.AnalogSignal(np.array(voltage)*pq.mV,sampling_period=parameters["dt"]*pq.ms,units='mV')

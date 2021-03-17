@@ -13,8 +13,28 @@ class dSPNanalysis(optimisationResult):
         self.frequency = list()
         self.frequency_control = list()
         self.passing = list()
+        self.num_AP_list = list()
+        self.num_AP_control = list()
         
         super(dSPNanalysis,self).__init__(dir_path=dir_path)
+        
+    def num_ap_analysis_control(self,criteria):
+        
+        criteria.update({'dt' : self.dt})
+        
+        self.num_AP_list_control = list()
+
+        self.num_AP_list_control.append(sf.number_action_potentials(self.voltages[-1],criteria))
+        
+    def num_ap_analysis(self,criteria):
+        
+        criteria.update({'dt' : self.dt})
+        
+        self.num_AP_list = list()
+        
+        for volt in self.voltages[1:-1]:
+            
+            self.num_AP_list.append(sf.number_action_potentials(volt,criteria))
         
     def zscore_analysis(self,criteria):
 
@@ -22,7 +42,7 @@ class dSPNanalysis(optimisationResult):
         
         self.zscore_values = list()
         
-        for volt in self.voltages[1:]:
+        for volt in self.voltages[1:-1]:
 
             result = sc.frequency_change(criteria,[self.voltages[-1],volt])
         
@@ -47,7 +67,7 @@ class dSPNanalysis(optimisationResult):
          
         self.frequency_all = list()
         
-        for volt in self.voltages[1:]:
+        for volt in self.voltages[1:-1]:
 
             self.frequency_all.append(sf.mean_frequency(volt,criteria))
             
