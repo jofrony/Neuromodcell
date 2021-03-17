@@ -37,7 +37,7 @@ def ISI(voltage,parameters):
 def cv(voltage,parameters):
 
     isi = ISI(voltage,parameters["dt"])
-    cv_isi = elph.statistics.cv(isi)
+    cv_isi = elp.statistics.cv(isi)
     
     return cv_isi
 
