@@ -1,0 +1,19 @@
+
+
+- Fix file size - and downsample voltage X
+
+- measure frequency in an interval, tsart, tstop X
+
+- membrane potential diff function X
+
+- rewrite selection critera to return zscore X
+
+- write a in-between function which checks for threshold level, return boolean X
+
+- save volatge and z-score, be able to select the number of traces. X
+
+- Think about plotting the data X
+
+- frequency change only positive
+
+- t_stop modulation defined automatically
