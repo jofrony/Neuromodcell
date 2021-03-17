@@ -26,7 +26,7 @@ def mean_frequency(voltage,parameters):
 
     return mean_fr
 
-def ISI(voltage,dt):
+def ISI(voltage,parameters):
 
     neo_voltage = neo.AnalogSignal(np.array(voltage)*pq.mV,sampling_period=parameters["dt"]*pq.ms,units='mV')
     spike_train = elp.spike_train_generation.peak_detection(neo_voltage)
@@ -34,16 +34,22 @@ def ISI(voltage,dt):
 
     return isi
 
-def cv(voltage,dt):
+def cv(voltage,parameters):
 
-    isi = ISI(voltage,dt)
+    isi = ISI(voltage,parameters["dt"])
     cv_isi = elph.statistics.cv(isi)
     
     return cv_isi
 
 
 def membrane_amplitude(voltage,parameters):
+    
+    start_slice = parameters['start_slice']
 
+    start_measure = parameters['start_measure']
+    
+    stop_measure = parameters['stop_measure']
+    
     average = np.mean(voltage[start_slice])
 
     amplitude = np.mean(voltage[start_measure:stop_measure]) - average
