@@ -28,7 +28,7 @@ def files(modeldir):
     return param_file, morph_file, mod_file, mech_file
 
 
-def define_mechanisms(mechanism_config=None):
+def define_mechanisms(mechanism_config=None, script_dir = None):
     """Define mechanisms"""
 
     assert (mechanism_config is not None)
