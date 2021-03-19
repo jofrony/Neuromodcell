@@ -7,6 +7,7 @@ from neuromodulation.optimisation_setup import optimisation_setup
 from neuromodulation.NrnSimulatorParallel import NrnSimulatorParallel
 import neuromodulation.selection_criteria as sc
 from math import exp
+import pathlib 
 
 '''
 
@@ -21,9 +22,10 @@ The Class will set up the number of models (runs both in serial and parallel)
 
 class Optimise_modulation():
 
-    def __init__(self, setup=None):
+    def __init__(self, setup_parent=None):
 
-        self.setup = setup
+        self.setup_parent = setup_parent
+        self.setup = None
         self.modulation_setup = None
         self.unit_modulation = {"param_set" : list(), "receptor" : list()}
         self.sim = None
@@ -38,6 +40,10 @@ class Optimise_modulation():
     def setup_load(self):
 
         self.modulation_setup = json.load(open(self.setup + 'modulation_setup.json'))
+
+        parameterID = 'ID' + self.modulation_setup['parameterID']
+
+        self.setup = pathlib.Path(self.setup_parent) / parameterID
         
     def set_seed(self,seed=10e5):
 
@@ -134,7 +140,21 @@ class Optimise_modulation():
             out_file = open(self.setup + "modulation_pass.json", "w")
 
             out_v_file = open(self.setup + "voltage_modulation_pass.json","w")
-            json.dump(world_model_voltage_pass, out_v_file, cls=NumpyEncoder) 
+            
+            json.dump(world_model_voltage_pass, out_v_file, cls=NumpyEncoder)
+
+            pass_index = 0
+            
+            for result in world_model_voltage_pass:
+
+                for pass_volt in result:
+                    pass_index = pass_index + 1
+
+            print('Models passed  ', pass_index)
+                    
+
+            ## print number of passing models
+            
             json.dump(world_model_pass, out_file, indent = 6) 
             
             out_file.close()
@@ -257,7 +277,7 @@ if __name__ == "__main__":
 
     objectives = sys.argv[1]
     seed = sys.argv[2]
-    Opt = Optimise_modulation(setup = objectives)
+    Opt = Optimise_modulation(setup_parent = objectives)
     Opt.setup_load()
     Opt.set_gids()
     Opt.set_seed(seed)
