@@ -1,4 +1,4 @@
-/* Created by Language version: 7.7.0 */
+/* Created by Language version: 6.2.0 */
 /* VECTORIZED */
 #define NRN_VECTORIZED 1
 #include <stdio.h>
@@ -89,15 +89,6 @@ extern void hoc_register_limits(int, HocParmLimits*);
 extern void hoc_register_units(int, HocParmUnits*);
 extern void nrn_promote(Prop*, int, int);
 extern Memb_func* memb_func;
- 
-#define NMODL_TEXT 1
-#if NMODL_TEXT
-static const char* nmodl_file_text;
-static const char* nmodl_filename;
-extern void hoc_reg_nmodl_text(int, const char*);
-extern void hoc_reg_nmodl_filename(int, const char*);
-#endif
-
  extern void _nrn_setdata_reg(int, void(*)(Prop*));
  static void _setdata(Prop* _prop) {
  _extcall_prop = _prop;
@@ -158,7 +149,7 @@ static void _ode_matsol(_NrnThread*, _Memb_list*, int);
  static void _ode_matsol_instance1(_threadargsproto_);
  /* connect range variables in _p that hoc is supposed to know about */
  static const char *_mechanism[] = {
- "7.7.0",
+ "6.2.0",
 "caq",
  "pbar_caq",
  0,
@@ -212,10 +203,6 @@ extern void _cvode_abstol( Symbol**, double*, int);
  _mechtype = nrn_get_mechtype(_mechanism[1]);
      _nrn_setdata_reg(_mechtype, _setdata);
      _nrn_thread_reg(_mechtype, 2, _update_ion_pointer);
- #if NMODL_TEXT
-  hoc_reg_nmodl_text(_mechtype, nmodl_file_text);
-  hoc_reg_nmodl_filename(_mechtype, nmodl_filename);
-#endif
   hoc_register_prop_size(_mechtype, 11, 5);
   hoc_register_dparam_semantics(_mechtype, 0, "ca_ion");
   hoc_register_dparam_semantics(_mechtype, 1, "ca_ion");
@@ -225,12 +212,12 @@ extern void _cvode_abstol( Symbol**, double*, int);
  	hoc_register_cvode(_mechtype, _ode_count, _ode_map, _ode_spec, _ode_matsol);
  	hoc_register_tolerance(_mechtype, _hoc_state_tol, &_atollist);
  	hoc_register_var(hoc_scdoub, hoc_vdoub, hoc_intfunc);
- 	ivoc_help("help ?1 caq /home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/x86_64/caq.mod\n");
+ 	ivoc_help("help ?1 caq /home/miseno/Documents/GitHub/Neuromodulation/examples/dSPN/x86_64/caq.mod\n");
  hoc_register_limits(_mechtype, _hoc_parm_limits);
  hoc_register_units(_mechtype, _hoc_parm_units);
  }
  static double FARADAY = 96485.3;
- static double R = 8.3145;
+ static double R = 8.31342;
 static int _reset;
 static char *modelname = "Q-type calcium current (Cav2.1)";
 
@@ -255,7 +242,7 @@ static int _ode_spec1(_threadargsproto_);
  static int _ode_matsol1 (double* _p, Datum* _ppvar, Datum* _thread, _NrnThread* _nt) {
  rates ( _threadargs_ ) ;
  Dm = Dm  / (1. - dt*( ( ( ( ( - 1.0 ) ) ) / mtau )*( q ) )) ;
-  return 0;
+ return 0;
 }
  /*END CVODE*/
  static int states (double* _p, Datum* _ppvar, Datum* _thread, _NrnThread* _nt) { {
@@ -527,115 +514,4 @@ _first = 0;
 
 #if defined(__cplusplus)
 } /* extern "C" */
-#endif
-
-#if NMODL_TEXT
-static const char* nmodl_filename = "/home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/mechanisms-dspn/caq.mod";
-static const char* nmodl_file_text = 
-  "TITLE Q-type calcium current (Cav2.1)\n"
-  "\n"
-  "UNITS {\n"
-  "    (mV) = (millivolt)\n"
-  "    (mA) = (milliamp)\n"
-  "    (S) = (siemens)\n"
-  "    (molar) = (1/liter)\n"
-  "    (mM) = (millimolar)\n"
-  "    FARADAY = (faraday) (coulomb)\n"
-  "    R = (k-mole) (joule/degC)\n"
-  "}\n"
-  "\n"
-  "NEURON {\n"
-  "    SUFFIX caq\n"
-  "    USEION ca READ cai, cao WRITE ica VALENCE 2\n"
-  "    RANGE pbar, ica\n"
-  "}\n"
-  "\n"
-  "PARAMETER {\n"
-  "    pbar = 0.0 (cm/s)\n"
-  "    :q = 1	: room temperature 22 C\n"
-  "    q = 3	: body temperature 35 C\n"
-  "} \n"
-  "\n"
-  "ASSIGNED { \n"
-  "    v (mV)\n"
-  "    ica (mA/cm2)\n"
-  "    eca (mV)\n"
-  "    celsius (degC)\n"
-  "    cai (mM)\n"
-  "    cao (mM)\n"
-  "    minf\n"
-  "    mtau (ms)\n"
-  "}\n"
-  "\n"
-  "STATE { m }\n"
-  "\n"
-  "BREAKPOINT {\n"
-  "    SOLVE states METHOD cnexp\n"
-  "    ica = pbar*m*m*ghk(v, cai, cao)\n"
-  "}\n"
-  "\n"
-  "INITIAL {\n"
-  "    rates()\n"
-  "    m = minf\n"
-  "}\n"
-  "\n"
-  "DERIVATIVE states { \n"
-  "    rates()\n"
-  "    m' = (minf-m)/mtau*q\n"
-  "}\n"
-  "\n"
-  "PROCEDURE rates() {\n"
-  "    UNITSOFF\n"
-  "    minf = 1/(1+exp((v-(-16.3))/(-7.9)))\n"
-  "    mtau = 1.13*2\n"
-  "    UNITSON\n"
-  "}\n"
-  "\n"
-  "FUNCTION ghk(v (mV), ci (mM), co (mM)) (.001 coul/cm3) {\n"
-  "    LOCAL z, eci, eco\n"
-  "    z = (1e-3)*2*FARADAY*v/(R*(celsius+273.15))\n"
-  "    eco = co*efun(z)\n"
-  "    eci = ci*efun(-z)\n"
-  "    ghk = (1e-3)*2*FARADAY*(eci-eco)\n"
-  "}\n"
-  "\n"
-  "FUNCTION efun(z) {\n"
-  "    if (fabs(z) < 1e-4) {\n"
-  "        efun = 1-z/2\n"
-  "    }else{\n"
-  "        efun = z/(exp(z)-1)\n"
-  "    }\n"
-  "}\n"
-  "\n"
-  "COMMENT\n"
-  "\n"
-  "Activation curve was reconstructed for cultured NAc neurons from P5-P32\n"
-  "Charles River rat pups [1].  Activation time constant was measured in\n"
-  "culture neurons from cerebellum of P2-P5 rat pups [2] at room temperature\n"
-  "22 C.\n"
-  "\n"
-  "Original NEURON model by Wolf (2005) [3] was modified by Alexander Kozlov\n"
-  "<akozlov@csc.kth.se>. Activation curve was fitted to m2 kinetics [4],\n"
-  "activation time constant was scaled up as well.\n"
-  "\n"
-  "[1] Churchill D, Macvicar BA (1998) Biophysical and pharmacological\n"
-  "characterization of voltage-dependent Ca2+ channels in neurons isolated\n"
-  "from rat nucleus accumbens. J Neurophysiol 79(2):635-47.\n"
-  "\n"
-  "[2] Randall A, Tsien RW (1995) Pharmacological dissection of multiple\n"
-  "types of Ca2+ channel currents in rat cerebellar granule neurons. J\n"
-  "Neurosci 15(4):2995-3012.\n"
-  "\n"
-  "[3] Wolf JA, Moyer JT, Lazarewicz MT, Contreras D, Benoit-Marand M,\n"
-  "O'Donnell P, Finkel LH (2005) NMDA/AMPA ratio impacts state transitions\n"
-  "and entrainment to oscillations in a computational model of the nucleus\n"
-  "accumbens medium spiny projection neuron. J Neurosci 25(40):9080-95.\n"
-  "\n"
-  "[4] Brown AM, Schwindt PC, Crill WE (1993) Voltage dependence and\n"
-  "activation kinetics of pharmacologically defined components of the\n"
-  "high-threshold calcium current in rat neocortical neurons. J Neurophysiol\n"
-  "70(4):1530-43.\n"
-  "\n"
-  "ENDCOMMENT\n"
-  ;
 #endif

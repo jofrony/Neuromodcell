@@ -1,4 +1,4 @@
-/* Created by Language version: 7.7.0 */
+/* Created by Language version: 6.2.0 */
 /* VECTORIZED */
 #define NRN_VECTORIZED 1
 #include <stdio.h>
@@ -96,15 +96,6 @@ extern void hoc_register_limits(int, HocParmLimits*);
 extern void hoc_register_units(int, HocParmUnits*);
 extern void nrn_promote(Prop*, int, int);
 extern Memb_func* memb_func;
- 
-#define NMODL_TEXT 1
-#if NMODL_TEXT
-static const char* nmodl_file_text;
-static const char* nmodl_filename;
-extern void hoc_reg_nmodl_text(int, const char*);
-extern void hoc_reg_nmodl_filename(int, const char*);
-#endif
-
  extern void _nrn_setdata_reg(int, void(*)(Prop*));
  static void _setdata(Prop* _prop) {
  _extcall_prop = _prop;
@@ -167,7 +158,7 @@ static void _ode_matsol(_NrnThread*, _Memb_list*, int);
  static void _ode_matsol_instance1(_threadargsproto_);
  /* connect range variables in _p that hoc is supposed to know about */
  static const char *_mechanism[] = {
- "7.7.0",
+ "6.2.0",
 "naf",
  "gbar_naf",
  "modA_naf",
@@ -234,10 +225,6 @@ extern void _cvode_abstol( Symbol**, double*, int);
  _mechtype = nrn_get_mechtype(_mechanism[1]);
      _nrn_setdata_reg(_mechtype, _setdata);
      _nrn_thread_reg(_mechtype, 2, _update_ion_pointer);
- #if NMODL_TEXT
-  hoc_reg_nmodl_text(_mechtype, nmodl_file_text);
-  hoc_reg_nmodl_filename(_mechtype, nmodl_filename);
-#endif
   hoc_register_prop_size(_mechtype, 20, 4);
   hoc_register_dparam_semantics(_mechtype, 0, "na_ion");
   hoc_register_dparam_semantics(_mechtype, 1, "na_ion");
@@ -246,7 +233,7 @@ extern void _cvode_abstol( Symbol**, double*, int);
  	hoc_register_cvode(_mechtype, _ode_count, _ode_map, _ode_spec, _ode_matsol);
  	hoc_register_tolerance(_mechtype, _hoc_state_tol, &_atollist);
  	hoc_register_var(hoc_scdoub, hoc_vdoub, hoc_intfunc);
- 	ivoc_help("help ?1 naf /home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/x86_64/naf.mod\n");
+ 	ivoc_help("help ?1 naf /home/miseno/Documents/GitHub/Neuromodulation/examples/dSPN/x86_64/naf.mod\n");
  hoc_register_limits(_mechtype, _hoc_parm_limits);
  hoc_register_units(_mechtype, _hoc_parm_units);
  }
@@ -276,7 +263,7 @@ static int _ode_spec1(_threadargsproto_);
  rates ( _threadargs_ ) ;
  Dm = Dm  / (1. - dt*( ( ( ( ( - 1.0 ) ) ) / mtau )*( q ) )) ;
  Dh = Dh  / (1. - dt*( ( ( ( ( - 1.0 ) ) ) / htau )*( q ) )) ;
-  return 0;
+ return 0;
 }
  /*END CVODE*/
  static int states (double* _p, Datum* _ppvar, Datum* _thread, _NrnThread* _nt) { {
@@ -540,142 +527,4 @@ _first = 0;
 
 #if defined(__cplusplus)
 } /* extern "C" */
-#endif
-
-#if NMODL_TEXT
-static const char* nmodl_filename = "/home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/mechanisms-dspn/naf.mod";
-static const char* nmodl_file_text = 
-  "TITLE Fast transient sodium current\n"
-  "\n"
-  "COMMENT\n"
-  "\n"
-  "Neuromodulation is added as functions:\n"
-  "    \n"
-  "    modulationA = 1 + modA*(maxModA-1)*levelA\n"
-  "\n"
-  "where:\n"
-  "    \n"
-  "    modA  [0]: is a switch for turning modulation on or off {1/0}\n"
-  "    maxModA [1]: is the maximum modulation for this specific channel (read from the param file)\n"
-  "                    e.g. 10% increase would correspond to a factor of 1.1 (100% +10%) {0-inf}\n"
-  "    levelA  [0]: is an additional parameter for scaling modulation. \n"
-  "                Can be used simulate non static modulation by gradually changing the value from 0 to 1 {0-1}\n"
-  "									\n"
-  "	  Further neuromodulators can be added by for example:\n"
-  "          modulationA = 1 + modA*(maxModA-1)\n"
-  "	  modulationB = 1 + modB*(maxModB-1)\n"
-  "	  ....\n"
-  "\n"
-  "	  etc. for other neuromodulators\n"
-  "	  \n"
-  "	   \n"
-  "								     \n"
-  "[] == default values\n"
-  "{} == ranges\n"
-  "\n"
-  "ENDCOMMENT\n"
-  "\n"
-  "NEURON {\n"
-  "    SUFFIX naf\n"
-  "    USEION na READ ena WRITE ina\n"
-  "    RANGE gbar, gna, ina\n"
-  "    RANGE modA, maxModA, levelA, modB, maxModB, levelB\n"
-  "}\n"
-  "\n"
-  "UNITS {\n"
-  "    (S) = (siemens)\n"
-  "    (mV) = (millivolt)\n"
-  "    (mA) = (milliamp)\n"
-  "}\n"
-  "\n"
-  "PARAMETER {\n"
-  "    gbar = 0.0 (S/cm2) \n"
-  "    :q = 1	: room temperature 22 C\n"
-  "    q = 1.8	: body temperature 35 C\n"
-  "    modA = 0\n"
-  "    maxModA = 1\n"
-  "    levelA = 0\n"
-  "    modB = 0\n"
-  "    maxModB = 1 \n"
-  "    levelB = 0\n"
-  "}\n"
-  "\n"
-  "ASSIGNED {\n"
-  "    v (mV)\n"
-  "    ena (mV)\n"
-  "    ina (mA/cm2)\n"
-  "    gna (S/cm2)\n"
-  "    minf\n"
-  "    mtau (ms)\n"
-  "    hinf\n"
-  "    htau (ms)\n"
-  "}\n"
-  "\n"
-  "STATE { m h }\n"
-  "\n"
-  "BREAKPOINT {\n"
-  "    SOLVE states METHOD cnexp\n"
-  "    gna = gbar*m*m*m*h*modulationA()*modulationB()\n"
-  "    ina = gna*(v-ena)\n"
-  "}\n"
-  "\n"
-  "DERIVATIVE states {\n"
-  "    rates()\n"
-  "    m' = (minf-m)/mtau*q\n"
-  "    h' = (hinf-h)/htau*q\n"
-  "}\n"
-  "\n"
-  "INITIAL {\n"
-  "    rates()\n"
-  "    m = minf\n"
-  "    h = hinf\n"
-  "}\n"
-  "\n"
-  "PROCEDURE rates() {\n"
-  "    UNITSOFF\n"
-  "    :minf = 1/(1+exp((v-(-25.5))/(-9.2)))\n"
-  "    :mtau = 0.33+1/(exp((v-(-62))/14)+exp((v-(-60))/(-17)))\n"
-  "    :hinf = 1/(1+exp((v-(-63.2))/6))\n"
-  "    :htau = 0.6+1/(exp((v-(-44))/8)+exp((v-(-99))/(-44)))\n"
-  "    minf = 1/(1+exp((v-(-25))/(-10)))\n"
-  "    mtau = 0.33+1/(exp((v-(-62))/14)+exp((v-(-60))/(-17)))\n"
-  "    hinf = 1/(1+exp((v-(-62))/6))\n"
-  "    htau = 0.6+1/(exp((v-(-44))/8)+exp((v-(-99))/(-44)))\n"
-  "    UNITSON\n"
-  "}\n"
-  "\n"
-  "FUNCTION modulationA() {\n"
-  "    : returns modulation factor\n"
-  "    \n"
-  "    modulationA = 1 + modA*(maxModA-1)*levelA \n"
-  "}\n"
-  "\n"
-  "FUNCTION modulationB() {\n"
-  "    : returns modulation factor\n"
-  "    \n"
-  "    modulationB = 1 + modB*(maxModB-1)*levelB \n"
-  "}\n"
-  "\n"
-  "COMMENT\n"
-  "\n"
-  "Original data by Ogata and Tatebayashi (1990) [1]. Neostriatal neurons\n"
-  "of medium size (putative medium spiny neurons) freshly isolated from\n"
-  "the adult guinea pig brain (either sex, 200 g). Data compensated for\n"
-  "the liquid junction potential (-13 mV). Experiments carried out at room\n"
-  "temperature (22 C). Conductance fitted by m3h kinetics.\n"
-  "\n"
-  "Smooth fit of mtau and htau data [1] by Alexander Kozlov <akozlov@kth.se>\n"
-  "assuming natural logarithm of tau values [1, Figs. 5 and 9] and\n"
-  "temperature correction factor of 1.8 [2] as suggested by Robert Lindroos\n"
-  "<robert.lindroos@ki.se>.\n"
-  "\n"
-  "[1] Ogata N, Tatebayashi H (1990) Sodium current kinetics in freshly\n"
-  "isolated neostriatal neurones of the adult guinea pig. Pflugers Arch\n"
-  "416(5):594-603.\n"
-  "\n"
-  "[2] Schwarz JR (1986) The effect of temperature on Na currents in rat\n"
-  "myelinated nerve fibres. Pflugers Arch. 406(4):397-404.\n"
-  "\n"
-  "ENDCOMMENT\n"
-  ;
 #endif

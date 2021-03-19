@@ -1,4 +1,4 @@
-/* Created by Language version: 7.7.0 */
+/* Created by Language version: 6.2.0 */
 /* NOT VECTORIZED */
 #define NRN_VECTORIZED 0
 #include <stdio.h>
@@ -98,15 +98,6 @@ extern void hoc_register_limits(int, HocParmLimits*);
 extern void hoc_register_units(int, HocParmUnits*);
 extern void nrn_promote(Prop*, int, int);
 extern Memb_func* memb_func;
- 
-#define NMODL_TEXT 1
-#if NMODL_TEXT
-static const char* nmodl_file_text;
-static const char* nmodl_filename;
-extern void hoc_reg_nmodl_text(int, const char*);
-extern void hoc_reg_nmodl_filename(int, const char*);
-#endif
-
  extern Prop* nrn_point_prop_;
  static int _pointtype;
  static void* _hoc_create_pnt(_ho) Object* _ho; { void* create_point_process();
@@ -200,7 +191,7 @@ static void _ode_matsol(_NrnThread*, _Memb_list*, int);
  static void _ode_matsol_instance1(_threadargsproto_);
  /* connect range variables in _p that hoc is supposed to know about */
  static const char *_mechanism[] = {
- "7.7.0",
+ "6.2.0",
 "tmGabaA",
  "tau1",
  "tau2",
@@ -289,10 +280,6 @@ extern void _cvode_abstol( Symbol**, double*, int);
 	 _hoc_create_pnt, _hoc_destroy_pnt, _member_func);
  _mechtype = nrn_get_mechtype(_mechanism[1]);
      _nrn_setdata_reg(_mechtype, _setdata);
- #if NMODL_TEXT
-  hoc_reg_nmodl_text(_mechtype, nmodl_file_text);
-  hoc_reg_nmodl_filename(_mechtype, nmodl_filename);
-#endif
   hoc_register_prop_size(_mechtype, 27, 3);
   hoc_register_dparam_semantics(_mechtype, 0, "area");
   hoc_register_dparam_semantics(_mechtype, 1, "pntproc");
@@ -303,7 +290,7 @@ extern void _cvode_abstol( Symbol**, double*, int);
  pnt_receive_init[_mechtype] = _net_init;
  pnt_receive_size[_mechtype] = 5;
  	hoc_register_var(hoc_scdoub, hoc_vdoub, hoc_intfunc);
- 	ivoc_help("help ?1 tmGabaA /home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/x86_64/tmgabaa.mod\n");
+ 	ivoc_help("help ?1 tmGabaA /home/miseno/Documents/GitHub/Neuromodulation/examples/dSPN/x86_64/tmgabaa.mod\n");
  hoc_register_limits(_mechtype, _hoc_parm_limits);
  hoc_register_units(_mechtype, _hoc_parm_units);
  }
@@ -331,7 +318,7 @@ static int _ode_spec1(_threadargsproto_);
  static int _ode_matsol1 () {
  DA = DA  / (1. - dt*( ( - 1.0 ) / tau1 )) ;
  DB = DB  / (1. - dt*( ( - 1.0 ) / tau2 )) ;
-  return 0;
+ return 0;
 }
  /*END CVODE*/
  static int state () {_reset=0;
@@ -615,185 +602,3 @@ static void _initlists() {
  _slist1[1] = &(B) - _p;  _dlist1[1] = &(DB) - _p;
 _first = 0;
 }
-
-#if NMODL_TEXT
-static const char* nmodl_filename = "/home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/mechanisms-dspn/tmgabaa.mod";
-static const char* nmodl_file_text = 
-  "TITLE GABA_A synapse with short-term plasticity\n"
-  "\n"
-  "COMMENT\n"
-  "\n"
-  "Neuromodulation is added as functions:\n"
-  "    \n"
-  "    modulationA = 1 + modA*(maxModA-1)*levelA\n"
-  "\n"
-  "where:\n"
-  "    \n"
-  "    modA  [0]: is a switch for turning modulation on or off {1/0}\n"
-  "    maxModA [1]: is the maximum modulation for this specific channel (read from the param file)\n"
-  "                    e.g. 10% increase would correspond to a factor of 1.1 (100% +10%) {0-inf}\n"
-  "    levelA  [0]: is an additional parameter for scaling modulation. \n"
-  "                Can be used simulate non static modulation by gradually changing the value from 0 to 1 {0-1}\n"
-  "									\n"
-  "	  Further neuromodulators can be added by for example:\n"
-  "          modulationA = 1 + modA*(maxModA-1)\n"
-  "	  modulationB = 1 + modB*(maxModB-1)\n"
-  "	  ....\n"
-  "\n"
-  "	  etc. for other neuromodulators\n"
-  "	  \n"
-  "	   \n"
-  "								     \n"
-  "[] == default values\n"
-  "{} == ranges\n"
-  "\n"
-  "ENDCOMMENT\n"
-  "\n"
-  "NEURON {\n"
-  "    POINT_PROCESS tmGabaA\n"
-  "    RANGE tau1, tau2, e, i, q\n"
-  "    RANGE tau, tauR, tauF, U, u0\n"
-  "    RANGE modA, maxModA, levelA, modB, maxModB, levelB\n"
-  "    RANGE failRateA, failRateB, failRate\n"
-  "    NONSPECIFIC_CURRENT i\n"
-  "}\n"
-  "\n"
-  "UNITS {\n"
-  "    (nA) = (nanoamp)\n"
-  "    (mV) = (millivolt)\n"
-  "    (uS) = (microsiemens)\n"
-  "}\n"
-  "\n"
-  "PARAMETER {\n"
-  "    : q = 2, now included in tau1,tau2 parameters.     \n"
-  "    tau1= 0.25 (ms) : ORIG: 0.5ms\n"
-  "    tau2 = 3.75 (ms)  : ORIG: 7.5ms, tau2 > tau1\n"
-  "    e = -65 (mV)\n"
-  "    tau = 3 (ms)\n"
-  "    tauR = 500 (ms)  : tauR > tau\n"
-  "    tauF = 0 (ms)    : tauF >= 0\n"
-  "    U = 0.1 (1) <0, 1>\n"
-  "    u0 = 0 (1) <0, 1>\n"
-  "    modA = 0\n"
-  "    maxModA = 1\n"
-  "    levelA = 0\n"
-  "    modB = 0\n"
-  "    maxModB = 1 \n"
-  "    levelB = 0\n"
-  "    failRateA = 0\n"
-  "    failRateB = 0\n"
-  "    failRate = 0\n"
-  "}\n"
-  "\n"
-  "ASSIGNED {\n"
-  "    v (mV)\n"
-  "    i (nA)\n"
-  "    g (uS)\n"
-  "    factor\n"
-  "    x\n"
-  "}\n"
-  "\n"
-  "STATE {\n"
-  "    A (uS)\n"
-  "    B (uS)\n"
-  "}\n"
-  "\n"
-  "INITIAL {\n"
-  "    LOCAL tp\n"
-  "    A = 0\n"
-  "    B = 0\n"
-  "    tp = (tau1*tau2)/(tau2-tau1) * log(tau2/tau1)\n"
-  "    factor = -exp(-tp/tau1) + exp(-tp/tau2)\n"
-  "    factor = 1/factor\n"
-  "}\n"
-  "\n"
-  "BREAKPOINT {\n"
-  "    SOLVE state METHOD cnexp\n"
-  "    g = (B - A)*modulationA()*modulationB()\n"
-  "    i = g*(v - e)\n"
-  "}\n"
-  "\n"
-  "DERIVATIVE state {\n"
-  "    A' = -A/tau1\n"
-  "    B' = -B/tau2\n"
-  "}\n"
-  "\n"
-  "NET_RECEIVE(weight (uS), y, z, u, tsyn (ms)) {\n"
-  "    LOCAL result\n"
-  "    INITIAL {\n"
-  "        y = 0\n"
-  "        z = 0\n"
-  "        u = u0\n"
-  "        tsyn = t\n"
-  "    }\n"
-  "    if ( weight <= 0 ) {\n"
-  "VERBATIM\n"
-  "        return;\n"
-  "ENDVERBATIM\n"
-  "    }\n"
-  "    if( urand() > (failRate*failRateB*modB*levelB)) { \n"
-  "      z = z*exp(-(t-tsyn)/tauR)\n"
-  "      z = z + (y*(exp(-(t-tsyn)/tau) - exp(-(t-tsyn)/tauR)) / (tau/tauR - 1) )\n"
-  "      y = y*exp(-(t-tsyn)/tau)\n"
-  "      x = 1-y-z\n"
-  "      if (tauF > 0) {\n"
-  "          u = u*exp(-(t-tsyn)/tauF)\n"
-  "          u = u + U*(1-u)\n"
-  "      } else {\n"
-  "          u = U\n"
-  "      }\n"
-  "    A = A + weight*factor*x*u / U\n"
-  "    B = B + weight*factor*x*u / U\n"
-  "    y = y + x*u\n"
-  "    tsyn = t\n"
-  "    }\n"
-  "}\n"
-  "\n"
-  "FUNCTION urand() {\n"
-  "    urand = scop_random(1)\n"
-  "}\n"
-  "\n"
-  "\n"
-  "FUNCTION modulationA() {\n"
-  "    : returns modulation factor\n"
-  "    \n"
-  "    modulationA = 1 + modA*(maxModA-1)*levelA \n"
-  "}\n"
-  "\n"
-  "FUNCTION modulationB() {\n"
-  "    : returns modulation factor\n"
-  "    \n"
-  "    modulationB = 1 + modB*(maxModB-1)*levelB \n"
-  "}\n"
-  "COMMENT\n"
-  "\n"
-  "(2019-11-25) Synaptic failure rate (failRate) added. Random factor, no\n"
-  "reproducibility guaranteed in parallel sim.\n"
-  "\n"
-  "(2019-09-12) Set GABA reversal potential to -65mV\n"
-  "\n"
-  "(2019-08-21) Normalise activation by U, to make sure first activation has\n"
-  "amplitude set by g\n"
-  "\n"
-  "(2019-06-05) Q-factor was calculated in INITAL block, which meant if\n"
-  "the synapse was reinitalised then the time constants changed with each\n"
-  "initalise. Updated: Johannes Hjorth, hjorth@kth.se \n"
-  "\n"
-  "Implementation of GABA_A synapse model with short-term facilitation\n"
-  "and depression based on modified tmgsyn.mod [1] by Tsodyks et al [2].\n"
-  "Choice of time constants follows [3].  NEURON implementation by Alexander\n"
-  "Kozlov <akozlov@kth.se>.\n"
-  "\n"
-  "[1] tmgsyn.mod, ModelDB (https://senselab.med.yale.edu/ModelDB/),\n"
-  "accession number 3815.\n"
-  "\n"
-  "[2] Tsodyks M, Uziel A, Markram H (2000) Synchrony generation in recurrent\n"
-  "networks with frequency-dependent synapses. J Neurosci. 20(1):RC50.\n"
-  "\n"
-  "[3] Wolf JA, Moyer JT, Lazarewicz MT, Contreras D, Benoit-Marand M,\n"
-  "O'Donnell P, Finkel LH (2005) NMDA/AMPA ratio impacts state transitions\n"
-  "and entrainment to oscillations in a computational model of the nucleus\n"
-  "accumbens medium spiny projection neuron. J Neurosci 25(40):9080-95.\n"
-  "ENDCOMMENT\n"
-  ;
-#endif

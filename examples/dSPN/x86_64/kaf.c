@@ -1,4 +1,4 @@
-/* Created by Language version: 7.7.0 */
+/* Created by Language version: 6.2.0 */
 /* VECTORIZED */
 #define NRN_VECTORIZED 1
 #include <stdio.h>
@@ -98,15 +98,6 @@ extern void hoc_register_limits(int, HocParmLimits*);
 extern void hoc_register_units(int, HocParmUnits*);
 extern void nrn_promote(Prop*, int, int);
 extern Memb_func* memb_func;
- 
-#define NMODL_TEXT 1
-#if NMODL_TEXT
-static const char* nmodl_file_text;
-static const char* nmodl_filename;
-extern void hoc_reg_nmodl_text(int, const char*);
-extern void hoc_reg_nmodl_filename(int, const char*);
-#endif
-
  extern void _nrn_setdata_reg(int, void(*)(Prop*));
  static void _setdata(Prop* _prop) {
  _extcall_prop = _prop;
@@ -166,7 +157,7 @@ static void _ode_matsol(_NrnThread*, _Memb_list*, int);
  static void _ode_matsol_instance1(_threadargsproto_);
  /* connect range variables in _p that hoc is supposed to know about */
  static const char *_mechanism[] = {
- "7.7.0",
+ "6.2.0",
 "kaf",
  "gbar_kaf",
  "q_kaf",
@@ -237,10 +228,6 @@ extern void _cvode_abstol( Symbol**, double*, int);
  _mechtype = nrn_get_mechtype(_mechanism[1]);
      _nrn_setdata_reg(_mechtype, _setdata);
      _nrn_thread_reg(_mechtype, 2, _update_ion_pointer);
- #if NMODL_TEXT
-  hoc_reg_nmodl_text(_mechtype, nmodl_file_text);
-  hoc_reg_nmodl_filename(_mechtype, nmodl_filename);
-#endif
   hoc_register_prop_size(_mechtype, 22, 4);
   hoc_register_dparam_semantics(_mechtype, 0, "k_ion");
   hoc_register_dparam_semantics(_mechtype, 1, "k_ion");
@@ -249,7 +236,7 @@ extern void _cvode_abstol( Symbol**, double*, int);
  	hoc_register_cvode(_mechtype, _ode_count, _ode_map, _ode_spec, _ode_matsol);
  	hoc_register_tolerance(_mechtype, _hoc_state_tol, &_atollist);
  	hoc_register_var(hoc_scdoub, hoc_vdoub, hoc_intfunc);
- 	ivoc_help("help ?1 kaf /home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/x86_64/kaf.mod\n");
+ 	ivoc_help("help ?1 kaf /home/miseno/Documents/GitHub/Neuromodulation/examples/dSPN/x86_64/kaf.mod\n");
  hoc_register_limits(_mechtype, _hoc_parm_limits);
  hoc_register_units(_mechtype, _hoc_parm_units);
  }
@@ -279,7 +266,7 @@ static int _ode_spec1(_threadargsproto_);
  rates ( _threadargs_ ) ;
  Dm = Dm  / (1. - dt*( ( ( ( ( - 1.0 ) ) ) / mtau )*( q ) )) ;
  Dh = Dh  / (1. - dt*( ( ( ( ( - 1.0 ) ) ) / htau )*( q ) )) ;
-  return 0;
+ return 0;
 }
  /*END CVODE*/
  static int states (double* _p, Datum* _ppvar, Datum* _thread, _NrnThread* _nt) { {
@@ -544,179 +531,4 @@ _first = 0;
 
 #if defined(__cplusplus)
 } /* extern "C" */
-#endif
-
-#if NMODL_TEXT
-static const char* nmodl_filename = "/home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/mechanisms-dspn/kaf.mod";
-static const char* nmodl_file_text = 
-  "TITLE Fast A-type potassium current (Kv4.2)\n"
-  "\n"
-  "COMMENT\n"
-  "\n"
-  "Neuromodulation is added as functions:\n"
-  "    \n"
-  "    modulationA = 1 + modA*(maxModA-1)*levelA\n"
-  "\n"
-  "where:\n"
-  "    \n"
-  "    modA  [0]: is a switch for turning modulation on or off {1/0}\n"
-  "    maxModA [1]: is the maximum modulation for this specific channel (read from the param file)\n"
-  "                    e.g. 10% increase would correspond to a factor of 1.1 (100% +10%) {0-inf}\n"
-  "    levelA  [0]: is an additional parameter for scaling modulation. \n"
-  "                Can be used simulate non static modulation by gradually changing the value from 0 to 1 {0-1}\n"
-  "									\n"
-  "	  Further neuromodulators can be added by for example:\n"
-  "          modulationA = 1 + modA*(maxModA-1)\n"
-  "	  modulationB = 1 + modB*(maxModB-1)\n"
-  "	  ....\n"
-  "\n"
-  "	  etc. for other neuromodulators\n"
-  "	  \n"
-  "	   \n"
-  "								     \n"
-  "[] == default values\n"
-  "{} == ranges\n"
-  "    \n"
-  "ENDCOMMENT\n"
-  "\n"
-  "\n"
-  "NEURON {\n"
-  "    SUFFIX kaf\n"
-  "    USEION k READ ek WRITE ik\n"
-  "    RANGE gbar, gk, ik, q\n"
-  "    RANGE modA, maxModA, levelA, modB, maxModB, levelB\n"
-  "    RANGE modShift\n"
-  "}\n"
-  "\n"
-  "UNITS {\n"
-  "    (S) = (siemens)\n"
-  "    (mV) = (millivolt)\n"
-  "    (mA) = (milliamp)\n"
-  "}\n"
-  "\n"
-  "PARAMETER {\n"
-  "    gbar = 0.0 (S/cm2) \n"
-  "    q = 1	: room temperature (unspecified)\n"
-  "    :q = 2	: body temperature 35 C (Du 2017)\n"
-  "    :q = 3	: body temperature 35 C\n"
-  "    modA = 0\n"
-  "    maxModA = 1\n"
-  "    levelA = 0\n"
-  "    modShift = 0\n"
-  "    modB = 0\n"
-  "    maxModB = 1\n"
-  "    levelB = 0\n"
-  "\n"
-  "\n"
-  "\n"
-  "}\n"
-  "\n"
-  "ASSIGNED {\n"
-  "    v (mV)\n"
-  "    ek (mV)\n"
-  "    ik (mA/cm2)\n"
-  "    gk (S/cm2)\n"
-  "    minf\n"
-  "    mtau (ms)\n"
-  "    hinf\n"
-  "    htau (ms)\n"
-  "}\n"
-  "\n"
-  "STATE { m h }\n"
-  "\n"
-  "BREAKPOINT {\n"
-  "    SOLVE states METHOD cnexp\n"
-  "    gk = gbar*m*m*h*modulationA()\n"
-  "    modShift = modulationB()				     \n"
-  "    ik = gk*(v-ek)\n"
-  "}\n"
-  "\n"
-  "DERIVATIVE states {\n"
-  "    rates()\n"
-  "    m' = (minf-m)/mtau*q\n"
-  "    h' = (hinf-h)/htau*q\n"
-  "}\n"
-  "\n"
-  "INITIAL {\n"
-  "    rates()\n"
-  "    m = minf\n"
-  "    h = hinf\n"
-  "}\n"
-  "\n"
-  "PROCEDURE rates() {\n"
-  "    UNITSOFF\n"
-  "    minf = 1/(1+exp((v-(-10+modShift))/(-17.7)))\n"
-  "    mtau = 0.9+1.1/(1+exp((v-(-30))/10))\n"
-  "    hinf = 1/(1+exp((v-(-75.6))/11.8))\n"
-  "    htau = 14\n"
-  "    UNITSON\n"
-  "\n"
-  "    :Du 2017\n"
-  "    :LOCAL alpha, beta, sum\n"
-  "    :UNITSOFF\n"
-  "    :alpha = 1.5/(1+exp((v-4)/(-17)))\n"
-  "    :beta = 0.6/(1+exp((v-10)/9))\n"
-  "    :sum = alpha+beta\n"
-  "    :minf = alpha/sum\n"
-  "    :mtau = 1/sum\n"
-  "    :\n"
-  "    :alpha = 0.105/(1+exp((v-(-121))/22))\n"
-  "    :beta = 0.065/(1+exp((v-(-55))/(-11)))\n"
-  "    :sum = alpha+beta\n"
-  "    :hinf = alpha/sum\n"
-  "    :htau = 1/sum\n"
-  "    :UNITSON\n"
-  "}\n"
-  "\n"
-  "\n"
-  "FUNCTION modulationA() {\n"
-  "    : returns modulation factor\n"
-  "    \n"
-  "    modulationA = 1 + modA*(maxModA-1)*levelA \n"
-  "}\n"
-  "\n"
-  "FUNCTION modulationB() {\n"
-  "    : returns modulation factor\n"
-  "    \n"
-  "    modulationB = 1 + modB*(maxModB-1)*levelB \n"
-  "}\n"
-  "\n"
-  "COMMENT\n"
-  "\n"
-  "Original data by Tkatch et al (2000) [1]. Neostriatal neurons were acutely\n"
-  "dissociated from young adult rats, age P28-P42.  Electrophysiological\n"
-  "recordings were done at unspecified temperature (room temperature 20-22 C\n"
-  "assumed). Potentials were not corrected for the liquid junction potential\n"
-  "(estimated 1-2 mV).\n"
-  "\n"
-  "Activation m^1 matches experimental data [1, Fig.2C]. Activation time\n"
-  "constants fit tabulated data [1, Fig.2B].  Slope of inactivation function\n"
-  "fitted to the data [1, Fig.3B] with half inactivation potential -75.6\n"
-  "mV. Temperature factor q between 1.5 [3] and 3 [2] was used for body\n"
-  "temperature.  Conductance kinetics of m2h type is used [2], no corrections\n"
-  "for m^2 applied. Later modification by Du [4] is close to this model.\n"
-  "\n"
-  "[1] Tkatch T, Baranauskas G, Surmeier DJ (2000) Kv4.2 mRNA abundance and\n"
-  "A-type K(+) current amplitude are linearly related in basal ganglia and\n"
-  "basal forebrain neurons. J Neurosci 20(2):579-88.\n"
-  "\n"
-  "[2] Wolf JA, Moyer JT, Lazarewicz MT, Contreras D, Benoit-Marand M,\n"
-  "O'Donnell P, Finkel LH (2005) NMDA/AMPA ratio impacts state transitions\n"
-  "and entrainment to oscillations in a computational model of the nucleus\n"
-  "accumbens medium spiny projection neuron. J Neurosci 25(40):9080-95.\n"
-  "\n"
-  "[3]  Evans RC, Morera-Herreras T, Cui Y, Du K, Sheehan T, Kotaleski JH,\n"
-  "Venance L, Blackwell KT (2012) The effects of NMDA subunit composition on\n"
-  "calcium influx and spike timing-dependent plasticity in striatal medium\n"
-  "spiny neurons. PLoS Comput Biol 8(4):e1002493.\n"
-  "\n"
-  "[4] Du K, Wu YW, Lindroos R, Liu Y, R\n"
-  "\n"
-  "zsa B, Katona G, Ding JB,\n"
-  "Kotaleski JH (2017) Cell-type-specific inhibition of the dendritic\n"
-  "plateau potential in striatal spiny projection neurons. Proc Natl Acad\n"
-  "Sci USA 114:E7612-E7621.\n"
-  "\n"
-  "ENDCOMMENT\n"
-  ;
 #endif

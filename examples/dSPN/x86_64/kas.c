@@ -1,4 +1,4 @@
-/* Created by Language version: 7.7.0 */
+/* Created by Language version: 6.2.0 */
 /* VECTORIZED */
 #define NRN_VECTORIZED 1
 #include <stdio.h>
@@ -92,15 +92,6 @@ extern void hoc_register_limits(int, HocParmLimits*);
 extern void hoc_register_units(int, HocParmUnits*);
 extern void nrn_promote(Prop*, int, int);
 extern Memb_func* memb_func;
- 
-#define NMODL_TEXT 1
-#if NMODL_TEXT
-static const char* nmodl_file_text;
-static const char* nmodl_filename;
-extern void hoc_reg_nmodl_text(int, const char*);
-extern void hoc_reg_nmodl_filename(int, const char*);
-#endif
-
  extern void _nrn_setdata_reg(int, void(*)(Prop*));
  static void _setdata(Prop* _prop) {
  _extcall_prop = _prop;
@@ -163,7 +154,7 @@ static void _ode_matsol(_NrnThread*, _Memb_list*, int);
  static void _ode_matsol_instance1(_threadargsproto_);
  /* connect range variables in _p that hoc is supposed to know about */
  static const char *_mechanism[] = {
- "7.7.0",
+ "6.2.0",
 "kas",
  "gbar_kas",
  "modA_kas",
@@ -224,10 +215,6 @@ extern void _cvode_abstol( Symbol**, double*, int);
  _mechtype = nrn_get_mechtype(_mechanism[1]);
      _nrn_setdata_reg(_mechtype, _setdata);
      _nrn_thread_reg(_mechtype, 2, _update_ion_pointer);
- #if NMODL_TEXT
-  hoc_reg_nmodl_text(_mechtype, nmodl_file_text);
-  hoc_reg_nmodl_filename(_mechtype, nmodl_filename);
-#endif
   hoc_register_prop_size(_mechtype, 17, 4);
   hoc_register_dparam_semantics(_mechtype, 0, "k_ion");
   hoc_register_dparam_semantics(_mechtype, 1, "k_ion");
@@ -236,7 +223,7 @@ extern void _cvode_abstol( Symbol**, double*, int);
  	hoc_register_cvode(_mechtype, _ode_count, _ode_map, _ode_spec, _ode_matsol);
  	hoc_register_tolerance(_mechtype, _hoc_state_tol, &_atollist);
  	hoc_register_var(hoc_scdoub, hoc_vdoub, hoc_intfunc);
- 	ivoc_help("help ?1 kas /home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/x86_64/kas.mod\n");
+ 	ivoc_help("help ?1 kas /home/miseno/Documents/GitHub/Neuromodulation/examples/dSPN/x86_64/kas.mod\n");
  hoc_register_limits(_mechtype, _hoc_parm_limits);
  hoc_register_units(_mechtype, _hoc_parm_units);
  }
@@ -266,7 +253,7 @@ static int _ode_spec1(_threadargsproto_);
  rates ( _threadargs_ ) ;
  Dm = Dm  / (1. - dt*( ( ( ( ( - 1.0 ) ) ) / mtau )*( q ) )) ;
  Dh = Dh  / (1. - dt*( ( ( ( ( - 1.0 ) ) ) / htau )*( q ) )) ;
-  return 0;
+ return 0;
 }
  /*END CVODE*/
  static int states (double* _p, Datum* _ppvar, Datum* _thread, _NrnThread* _nt) { {
@@ -513,163 +500,4 @@ _first = 0;
 
 #if defined(__cplusplus)
 } /* extern "C" */
-#endif
-
-#if NMODL_TEXT
-static const char* nmodl_filename = "/home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/mechanisms-dspn/kas.mod";
-static const char* nmodl_file_text = 
-  "TITLE Slowly inactivating A-type potassium current (Kv1.2)\n"
-  "\n"
-  "COMMENT\n"
-  "\n"
-  "Neuromodulation is added as functions:\n"
-  "    \n"
-  "    modulationA = 1 + modA*(maxModA-1)*levelA\n"
-  "\n"
-  "where:\n"
-  "    \n"
-  "    modA  [0]: is a switch for turning modulation on or off {1/0}\n"
-  "    maxModA [1]: is the maximum modulation for this specific channel (read from the param file)\n"
-  "                    e.g. 10% increase would correspond to a factor of 1.1 (100% +10%) {0-inf}\n"
-  "    levelA  [0]: is an additional parameter for scaling modulation. \n"
-  "                Can be used simulate non static modulation by gradually changing the value from 0 to 1 {0-1}\n"
-  "									\n"
-  "	  Further neuromodulators can be added by for example:\n"
-  "          modulationA = 1 + modA*(maxModA-1)\n"
-  "	  modulationB = 1 + modB*(maxModB-1)\n"
-  "	  ....\n"
-  "\n"
-  "	  etc. for other neuromodulators\n"
-  "	  \n"
-  "	   \n"
-  "								     \n"
-  "[] == default values\n"
-  "{} == ranges\n"
-  "    \n"
-  "ENDCOMMENT\n"
-  "\n"
-  "\n"
-  "NEURON {\n"
-  "    SUFFIX kas\n"
-  "    USEION k READ ek WRITE ik\n"
-  "    RANGE gbar, gk, ik\n"
-  "    RANGE modA, maxModA, levelA\n"
-  "\n"
-  "}\n"
-  "\n"
-  "UNITS {\n"
-  "    (S) = (siemens)\n"
-  "    (mV) = (millivolt)\n"
-  "    (mA) = (milliamp)\n"
-  "}\n"
-  "\n"
-  "PARAMETER {\n"
-  "    gbar = 0.0 	(S/cm2) \n"
-  "    a = 0.8\n"
-  "    :q = 1	: room temperature 22-24 C\n"
-  "    q = 3	: body temperature 33 C\n"
-  "    modA = 0\n"
-  "    maxModA = 1\n"
-  "    levelA = 0\n"
-  "\n"
-  "}\n"
-  "\n"
-  "ASSIGNED {\n"
-  "    v (mV)\n"
-  "    ek (mV)\n"
-  "    ik (mA/cm2)\n"
-  "    gk (S/cm2)\n"
-  "    minf\n"
-  "    mtau (ms)\n"
-  "    hinf\n"
-  "    htau (ms)\n"
-  "}\n"
-  "\n"
-  "STATE { m h }\n"
-  "\n"
-  "BREAKPOINT {\n"
-  "    SOLVE states METHOD cnexp\n"
-  "    gk = gbar*m*m*(h*a+1-a)*modulationA()\n"
-  "    ik = gk*(v-ek)\n"
-  "}\n"
-  "\n"
-  "DERIVATIVE states {\n"
-  "    rates()\n"
-  "    m' = (minf-m)/mtau*q\n"
-  "    h' = (hinf-h)/htau*q\n"
-  "}\n"
-  "\n"
-  "INITIAL {\n"
-  "    rates()\n"
-  "    m = minf\n"
-  "    h = hinf\n"
-  "}\n"
-  "\n"
-  "PROCEDURE rates() {\n"
-  "    UNITSOFF\n"
-  "    minf = 1/(1+exp((v-(-27))/(-16)))\n"
-  "    mtau = 3.4+89.2*exp(-((v-(-34.3))/30.1)^2)\n"
-  "    hinf = 1/(1+exp((v-(-33.5))/21.5))\n"
-  "    htau = 548.7*6/(exp((v-(-96))/(-29.01))+exp((v-(-96))/100))\n"
-  "    : Du 2017\n"
-  "    :LOCAL alpha, beta, sum\n"
-  "    :UNITSOFF\n"
-  "    :alpha = 0.25/(1+exp((v-50)/(-20)))\n"
-  "    :beta = 0.05/(1+exp((v-(-90))/35))\n"
-  "    :sum = alpha+beta\n"
-  "    :minf = alpha/sum\n"
-  "    :mtau = 1/sum\n"
-  "    :\n"
-  "    :alpha = 0.0025/(1+exp((v-(-95))/16))\n"
-  "    :beta = 0.002/(1+exp((v-50)/(-70)))\n"
-  "    :sum = alpha+beta\n"
-  "    :hinf = a+(alpha/sum)*(1-a)\n"
-  "    :htau = 1/sum\n"
-  "    UNITSON\n"
-  "}\n"
-  "\n"
-  "FUNCTION modulationA() {\n"
-  "    : returns modulation factor\n"
-  "    \n"
-  "    modulationA = 1 + modA*(maxModA-1)*levelA \n"
-  "}\n"
-  "\n"
-  "\n"
-  "COMMENT\n"
-  "\n"
-  "Experimental data by Shen et al (2004) [1]. Medium spiny neurons were\n"
-  "acutely dissociated from from young adult (P21-P28) Sprague-Dawley rat\n"
-  "brain. All recordings were conducted at 22-24 C. No correction for the\n"
-  "liquid junction potential was reported.\n"
-  "\n"
-  "Conductance kinetics of m2h type is used [1,2] with partial inactivation,\n"
-  "m2 (a h + (1-a)). Fraction a is set to 0.8, as in [1, Fig.6B]; other\n"
-  "values for a are possible [2] (see also kas.mod in companion code).\n"
-  "Equation for htau [1] is corrected to match the authors' data [1, Fig.6B].\n"
-  "Time constants were corrected to body temperature with factor q=3 [1-3].\n"
-  "Later modification by Du [4] is close to this model with adjusted\n"
-  "inactivation.\n"
-  "\n"
-  "[1] Shen W, Hernandez-Lopez S, Tkatch T, Held JE, Surmeier DJ (2004)\n"
-  "Kv1.2-containing K+ channels regulate subthreshold excitability of\n"
-  "striatal medium spiny neurons. J Neurophysiol 91(3):1337-49.\n"
-  "\n"
-  "[2] Wolf JA, Moyer JT, Lazarewicz MT, Contreras D, Benoit-Marand M,\n"
-  "O'Donnell P, Finkel LH (2005) NMDA/AMPA ratio impacts state transitions\n"
-  "and entrainment to oscillations in a computational model of the nucleus\n"
-  "accumbens medium spiny projection neuron. J Neurosci 25(40):9080-95.\n"
-  "\n"
-  "[3] Evans RC, Maniar YM, Blackwell KT (2013) Dynamic modulation of\n"
-  "spike timing-dependent calcium influx during corticostriatal upstates. J\n"
-  "Neurophysiol 110(7):1631-45.\n"
-  "\n"
-  "[4] Du K, Wu YW, Lindroos R, Liu Y, R\n"
-  "\n"
-  "zsa B, Katona G, Ding JB,\n"
-  "Kotaleski JH (2017) Cell-type-specific inhibition of the dendritic\n"
-  "plateau potential in striatal spiny projection neurons. Proc Natl Acad\n"
-  "Sci USA 114:E7612-E7621.\n"
-  "\n"
-  "ENDCOMMENT\n"
-  ;
 #endif

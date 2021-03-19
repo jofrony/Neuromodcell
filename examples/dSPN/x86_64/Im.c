@@ -1,4 +1,4 @@
-/* Created by Language version: 7.7.0 */
+/* Created by Language version: 6.2.0 */
 /* VECTORIZED */
 #define NRN_VECTORIZED 1
 #include <stdio.h>
@@ -90,15 +90,6 @@ extern void hoc_register_limits(int, HocParmLimits*);
 extern void hoc_register_units(int, HocParmUnits*);
 extern void nrn_promote(Prop*, int, int);
 extern Memb_func* memb_func;
- 
-#define NMODL_TEXT 1
-#if NMODL_TEXT
-static const char* nmodl_file_text;
-static const char* nmodl_filename;
-extern void hoc_reg_nmodl_text(int, const char*);
-extern void hoc_reg_nmodl_filename(int, const char*);
-#endif
-
  extern void _nrn_setdata_reg(int, void(*)(Prop*));
  static void _setdata(Prop* _prop) {
  _extcall_prop = _prop;
@@ -154,7 +145,7 @@ static void _ode_matsol(_NrnThread*, _Memb_list*, int);
  static void _ode_matsol_instance1(_threadargsproto_);
  /* connect range variables in _p that hoc is supposed to know about */
  static const char *_mechanism[] = {
- "7.7.0",
+ "6.2.0",
 "Im",
  "gbar_Im",
  "modB_Im",
@@ -214,10 +205,6 @@ extern void _cvode_abstol( Symbol**, double*, int);
  _mechtype = nrn_get_mechtype(_mechanism[1]);
      _nrn_setdata_reg(_mechtype, _setdata);
      _nrn_thread_reg(_mechtype, 2, _update_ion_pointer);
- #if NMODL_TEXT
-  hoc_reg_nmodl_text(_mechtype, nmodl_file_text);
-  hoc_reg_nmodl_filename(_mechtype, nmodl_filename);
-#endif
   hoc_register_prop_size(_mechtype, 15, 4);
   hoc_register_dparam_semantics(_mechtype, 0, "k_ion");
   hoc_register_dparam_semantics(_mechtype, 1, "k_ion");
@@ -226,7 +213,7 @@ extern void _cvode_abstol( Symbol**, double*, int);
  	hoc_register_cvode(_mechtype, _ode_count, _ode_map, _ode_spec, _ode_matsol);
  	hoc_register_tolerance(_mechtype, _hoc_state_tol, &_atollist);
  	hoc_register_var(hoc_scdoub, hoc_vdoub, hoc_intfunc);
- 	ivoc_help("help ?1 Im /home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/x86_64/Im.mod\n");
+ 	ivoc_help("help ?1 Im /home/miseno/Documents/GitHub/Neuromodulation/examples/dSPN/x86_64/Im.mod\n");
  hoc_register_limits(_mechtype, _hoc_parm_limits);
  hoc_register_units(_mechtype, _hoc_parm_units);
  }
@@ -254,7 +241,7 @@ static int _ode_spec1(_threadargsproto_);
  static int _ode_matsol1 (double* _p, Datum* _ppvar, Datum* _thread, _NrnThread* _nt) {
  rates ( _threadargs_ ) ;
  Dm = Dm  / (1. - dt*( ( ( ( - 1.0 ) ) ) / mTau )) ;
-  return 0;
+ return 0;
 }
  /*END CVODE*/
  static int states (double* _p, Datum* _ppvar, Datum* _thread, _NrnThread* _nt) { {
@@ -499,114 +486,4 @@ _first = 0;
 
 #if defined(__cplusplus)
 } /* extern "C" */
-#endif
-
-#if NMODL_TEXT
-static const char* nmodl_filename = "/home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/mechanisms-dspn/Im.mod";
-static const char* nmodl_file_text = 
-  "COMMENT\n"
-  "Mechanism taken from Doron et al., 2017\n"
-  "https://senselab.med.yale.edu/ModelDB/ShowModel.cshtml?model=231427&file=/reproduction/Im.mod#tabs-2\n"
-  "\n"
-  "Reference :     Adams et al. 1982 - M-currents and other potassium currents in bullfrog sympathetic neurones\n"
-  "\n"
-  "corrected rates using q10 = 2.3, target temperature 34, orginal 21\n"
-  "\n"
-  "---------------------------------------------------------------\n"
-  "\n"
-  "Neuromodulation is added as functions:\n"
-  "    \n"
-  "    modulationA = 1 + modA*(maxModA-1)*levelA\n"
-  "\n"
-  "where:\n"
-  "    \n"
-  "    modA  [0]: is a switch for turning modulation on or off {1/0}\n"
-  "    maxModA [1]: is the maximum modulation for this specific channel (read from the param file)\n"
-  "                    e.g. 10% increase would correspond to a factor of 1.1 (100% +10%) {0-inf}\n"
-  "    levelA  [0]: is an additional parameter for scaling modulation. \n"
-  "                Can be used simulate non static modulation by gradually changing the value from 0 to 1 {0-1}\n"
-  "									\n"
-  "	  Further neuromodulators can be added by for example:\n"
-  "          modulationA = 1 + modA*(maxModA-1)\n"
-  "	  modulationB = 1 + modB*(maxModB-1)\n"
-  "	  ....\n"
-  "\n"
-  "	  etc. for other neuromodulators\n"
-  "	  \n"
-  "	   \n"
-  "								     \n"
-  "[] == default values\n"
-  "{} == ranges\n"
-  "    \n"
-  "ENDCOMMENT\n"
-  "\n"
-  "NEURON	{\n"
-  "	SUFFIX Im\n"
-  "	USEION k READ ek WRITE ik\n"
-  "	RANGE gbar, gIm, ik\n"
-  "        RANGE modB, maxModB, levelB\n"
-  "}\n"
-  "\n"
-  "UNITS	{\n"
-  "	(S) = (siemens)\n"
-  "	(mV) = (millivolt)\n"
-  "	(mA) = (milliamp)\n"
-  "}\n"
-  "\n"
-  "PARAMETER	{\n"
-  "	gbar = 0.00001 (S/cm2) \n"
-  "	modB = 0\n"
-  "        maxModB = 1 \n"
-  "        levelB = 0\n"
-  "}\n"
-  "\n"
-  "ASSIGNED	{\n"
-  "	v	(mV)\n"
-  "	ek	(mV)\n"
-  "	ik	(mA/cm2)\n"
-  "	gIm	(S/cm2)\n"
-  "	mInf\n"
-  "	mTau\n"
-  "	mAlpha\n"
-  "	mBeta\n"
-  "}\n"
-  "\n"
-  "STATE	{ \n"
-  "	m\n"
-  "}\n"
-  "\n"
-  "BREAKPOINT	{\n"
-  "	SOLVE states METHOD cnexp\n"
-  "	gIm = gbar*m*modulationB()\n"
-  "	ik = gIm*(v-ek)\n"
-  "}\n"
-  "\n"
-  "DERIVATIVE states	{\n"
-  "	rates()\n"
-  "	m' = (mInf-m)/mTau\n"
-  "}\n"
-  "\n"
-  "INITIAL{\n"
-  "	rates()\n"
-  "	m = mInf\n"
-  "}\n"
-  "\n"
-  "PROCEDURE rates(){\n"
-  "  LOCAL qt\n"
-  "  qt = 2.3^((34-21)/10)\n"
-  "\n"
-  "	UNITSOFF\n"
-  "		mAlpha = 3.3e-3*exp(2.5*0.04*(v - -35))\n"
-  "		mBeta = 3.3e-3*exp(-2.5*0.04*(v - -35))\n"
-  "		mInf = mAlpha/(mAlpha + mBeta)\n"
-  "		mTau = (1/(mAlpha + mBeta))/qt\n"
-  "	UNITSON\n"
-  "}\n"
-  "\n"
-  "FUNCTION modulationB() {\n"
-  "    : returns modulation factor\n"
-  "    \n"
-  "    modulationB = 1 + modB*(maxModB-1)*levelB \n"
-  "}\n"
-  ;
 #endif

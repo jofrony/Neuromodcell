@@ -1,4 +1,4 @@
-/* Created by Language version: 7.7.0 */
+/* Created by Language version: 6.2.0 */
 /* VECTORIZED */
 #define NRN_VECTORIZED 1
 #include <stdio.h>
@@ -101,15 +101,6 @@ extern void hoc_register_limits(int, HocParmLimits*);
 extern void hoc_register_units(int, HocParmUnits*);
 extern void nrn_promote(Prop*, int, int);
 extern Memb_func* memb_func;
- 
-#define NMODL_TEXT 1
-#if NMODL_TEXT
-static const char* nmodl_file_text;
-static const char* nmodl_filename;
-extern void hoc_reg_nmodl_text(int, const char*);
-extern void hoc_reg_nmodl_filename(int, const char*);
-#endif
-
  extern void _nrn_setdata_reg(int, void(*)(Prop*));
  static void _setdata(Prop* _prop) {
  _extcall_prop = _prop;
@@ -180,7 +171,7 @@ static void _ode_matsol(_NrnThread*, _Memb_list*, int);
  static void _ode_matsol_instance1(_threadargsproto_);
  /* connect range variables in _p that hoc is supposed to know about */
  static const char *_mechanism[] = {
- "7.7.0",
+ "6.2.0",
 "cal12",
  "pbar_cal12",
  "modA_cal12",
@@ -247,10 +238,6 @@ extern void _cvode_abstol( Symbol**, double*, int);
  _mechtype = nrn_get_mechtype(_mechanism[1]);
      _nrn_setdata_reg(_mechtype, _setdata);
      _nrn_thread_reg(_mechtype, 2, _update_ion_pointer);
- #if NMODL_TEXT
-  hoc_reg_nmodl_text(_mechtype, nmodl_file_text);
-  hoc_reg_nmodl_filename(_mechtype, nmodl_filename);
-#endif
   hoc_register_prop_size(_mechtype, 21, 5);
   hoc_register_dparam_semantics(_mechtype, 0, "cal_ion");
   hoc_register_dparam_semantics(_mechtype, 1, "cal_ion");
@@ -260,12 +247,12 @@ extern void _cvode_abstol( Symbol**, double*, int);
  	hoc_register_cvode(_mechtype, _ode_count, _ode_map, _ode_spec, _ode_matsol);
  	hoc_register_tolerance(_mechtype, _hoc_state_tol, &_atollist);
  	hoc_register_var(hoc_scdoub, hoc_vdoub, hoc_intfunc);
- 	ivoc_help("help ?1 cal12 /home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/x86_64/cal12.mod\n");
+ 	ivoc_help("help ?1 cal12 /home/miseno/Documents/GitHub/Neuromodulation/examples/dSPN/x86_64/cal12.mod\n");
  hoc_register_limits(_mechtype, _hoc_parm_limits);
  hoc_register_units(_mechtype, _hoc_parm_units);
  }
  static double FARADAY = 96485.3;
- static double R = 8.3145;
+ static double R = 8.31342;
 static int _reset;
 static char *modelname = "HVA L-type calcium current (Cav1.2)";
 
@@ -292,7 +279,7 @@ static int _ode_spec1(_threadargsproto_);
  rates ( _threadargs_ ) ;
  Dm = Dm  / (1. - dt*( ( ( ( ( - 1.0 ) ) ) / mtau )*( q ) )) ;
  Dh = Dh  / (1. - dt*( ( ( ( ( - 1.0 ) ) ) / htau )*( q ) )) ;
-  return 0;
+ return 0;
 }
  /*END CVODE*/
  static int states (double* _p, Datum* _ppvar, Datum* _thread, _NrnThread* _nt) { {
@@ -604,185 +591,4 @@ _first = 0;
 
 #if defined(__cplusplus)
 } /* extern "C" */
-#endif
-
-#if NMODL_TEXT
-static const char* nmodl_filename = "/home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/mechanisms-dspn/cal12.mod";
-static const char* nmodl_file_text = 
-  "TITLE HVA L-type calcium current (Cav1.2)\n"
-  "\n"
-  "COMMENT\n"
-  "\n"
-  "Neuromodulation is added as functions:\n"
-  "    \n"
-  "    modulationA = 1 + modA*(maxModA-1)*levelA\n"
-  "\n"
-  "where:\n"
-  "    \n"
-  "    modA  [0]: is a switch for turning modulation on or off {1/0}\n"
-  "    maxModA [1]: is the maximum modulation for this specific channel (read from the param file)\n"
-  "                    e.g. 10% increase would correspond to a factor of 1.1 (100% +10%) {0-inf}\n"
-  "    levelA  [0]: is an additional parameter for scaling modulation. \n"
-  "                Can be used simulate non static modulation by gradually changing the value from 0 to 1 {0-1}\n"
-  "									\n"
-  "	  Further neuromodulators can be added by for example:\n"
-  "          modulationA = 1 + modA*(maxModA-1)\n"
-  "	  modulationB = 1 + modB*(maxModB-1)\n"
-  "	  ....\n"
-  "\n"
-  "	  etc. for other neuromodulators\n"
-  "	  \n"
-  "	   \n"
-  "								     \n"
-  "[] == default values\n"
-  "{} == ranges\n"
-  "    \n"
-  "ENDCOMMENT\n"
-  "\n"
-  "\n"
-  "UNITS {\n"
-  "    (mV) = (millivolt)\n"
-  "    (mA) = (milliamp)\n"
-  "    (S) = (siemens)\n"
-  "    (molar) = (1/liter)\n"
-  "    (mM) = (millimolar)\n"
-  "    FARADAY = (faraday) (coulomb)\n"
-  "    R = (k-mole) (joule/degC)\n"
-  "}\n"
-  "\n"
-  "NEURON {\n"
-  "    SUFFIX cal12\n"
-  "    USEION cal READ cali, calo WRITE ical VALENCE 2\n"
-  "    RANGE pbar, ical\n"
-  "    RANGE modA, maxModA, levelA, modB, maxModB, levelB\n"
-  "}\n"
-  "\n"
-  "PARAMETER {\n"
-  "    pbar = 0.0 (cm/s)\n"
-  "    a = 0.17\n"
-  "    :q = 1	          : room temperature 22-25 C\n"
-  "    q = 2	          : body temperature 35 C\n"
-  "    modA = 0\n"
-  "    maxModA = 1\n"
-  "    levelA = 0\n"
-  "    modB = 0\n"
-  "    maxModB = 1 \n"
-  "    levelB = 0\n"
-  "		   \n"
-  "} \n"
-  "\n"
-  "ASSIGNED { \n"
-  "    v (mV)\n"
-  "    ical (mA/cm2)\n"
-  "    ecal (mV)\n"
-  "    celsius (degC)\n"
-  "    cali (mM)\n"
-  "    calo (mM)\n"
-  "    minf\n"
-  "    mtau (ms)\n"
-  "    hinf\n"
-  "    htau (ms)\n"
-  "}\n"
-  "\n"
-  "STATE { m h }\n"
-  "\n"
-  "BREAKPOINT {\n"
-  "    SOLVE states METHOD cnexp\n"
-  "    ical = pbar*m*(h*a+1-a)*ghk(v, cali, calo)*modulationA()*modulationB()\n"
-  "}\n"
-  "\n"
-  "INITIAL {\n"
-  "    rates()\n"
-  "    m = minf\n"
-  "    h = hinf\n"
-  "}\n"
-  "\n"
-  "DERIVATIVE states { \n"
-  "    rates()\n"
-  "    m' = (minf-m)/mtau*q\n"
-  "    h' = (hinf-h)/htau*q\n"
-  "}\n"
-  "\n"
-  "PROCEDURE rates() {\n"
-  "    UNITSOFF\n"
-  "    minf = 1/(1+exp((v-(-8.9))/(-6.7)))\n"
-  "    mtau = 0.06+1/(exp((v-10)/20)+exp((v-(-17))/-48))\n"
-  "    hinf = 1/(1+exp((v-(-13.4))/11.9))\n"
-  "    htau = 44.3\n"
-  "    UNITSON\n"
-  "}\n"
-  "\n"
-  "FUNCTION ghk(v (mV), ci (mM), co (mM)) (.001 coul/cm3) {\n"
-  "    LOCAL z, eci, eco\n"
-  "    z = (1e-3)*2*FARADAY*v/(R*(celsius+273.15))\n"
-  "    eco = co*efun(z)\n"
-  "    eci = ci*efun(-z)\n"
-  "    ghk = (1e-3)*2*FARADAY*(eci-eco)\n"
-  "}\n"
-  "\n"
-  "FUNCTION efun(z) {\n"
-  "    if (fabs(z) < 1e-4) {\n"
-  "        efun = 1-z/2\n"
-  "    }else{\n"
-  "        efun = z/(exp(z)-1)\n"
-  "    }\n"
-  "}\n"
-  "\n"
-  "\n"
-  "FUNCTION modulationA() {\n"
-  "    : returns modulation factor\n"
-  "    \n"
-  "    modulationA = 1 + modA*(maxModA-1)*levelA \n"
-  "}\n"
-  "\n"
-  "FUNCTION modulationB() {\n"
-  "    : returns modulation factor\n"
-  "    \n"
-  "    modulationB = 1 + modB*(maxModB-1)*levelB \n"
-  "}\n"
-  "\n"
-  "\n"
-  "COMMENT\n"
-  "\n"
-  "Activation curve was reconstructed for cultured NAc neurons from P5-P32\n"
-  "Charles River rat pups [1].   Activation time constant is from the\n"
-  "rodent neuron culture (both rat and mouse cells), room temperature 22-25\n"
-  "C [2, Fig.15A]. Inactivation curve of CaL v1.3 current was taken from HEK\n"
-  "cells [3, Fig.2 and p.819] at room temperature.\n"
-  "\n"
-  "Original NEURON model by Wolf (2005) [4] was modified by Alexander Kozlov\n"
-  "<akozlov@csc.kth.se>. Kinetics of m1h type was used [5,6]. Activation\n"
-  "time constant was refitted to avoid singularity.\n"
-  "\n"
-  "[1] Churchill D, Macvicar BA (1998) Biophysical and pharmacological\n"
-  "characterization of voltage-dependent Ca2+ channels in neurons isolated\n"
-  "from rat nucleus accumbens. J Neurophysiol 79(2):635-47.\n"
-  "\n"
-  "[2] Kasai H, Neher E (1992) Dihydropyridine-sensitive and\n"
-  "omega-conotoxin-sensitive calcium channels in a mammalian\n"
-  "neuroblastoma-glioma cell line. J Physiol 448:161-88.\n"
-  "\n"
-  "[3] Bell DC, Butcher AJ, Berrow NS, Page KM, Brust PF, Nesterova A,\n"
-  "Stauderman KA, Seabrook GR, Nurnberg B, Dolphin AC (2001) Biophysical\n"
-  "properties, pharmacology, and modulation of human, neuronal L-type\n"
-  "(alpha(1D), Ca(V)1.3) voltage-dependent calcium currents. J Neurophysiol\n"
-  "85:816-827.\n"
-  "\n"
-  "[4] Wolf JA, Moyer JT, Lazarewicz MT, Contreras D, Benoit-Marand M,\n"
-  "O'Donnell P, Finkel LH (2005) NMDA/AMPA ratio impacts state transitions\n"
-  "and entrainment to oscillations in a computational model of the nucleus\n"
-  "accumbens medium spiny projection neuron. J Neurosci 25(40):9080-95.\n"
-  "\n"
-  "[5] Evans RC, Morera-Herreras T, Cui Y, Du K, Sheehan T, Kotaleski JH,\n"
-  "Venance L, Blackwell KT (2012) The effects of NMDA subunit composition on\n"
-  "calcium influx and spike timing-dependent plasticity in striatal medium\n"
-  "spiny neurons. PLoS Comput Biol 8(4):e1002493.\n"
-  "\n"
-  "[6] Tuckwell HC (2012) Quantitative aspects of L-type Ca2+ currents. Prog\n"
-  "Neurobiol 96(1):1-31.\n"
-  "\n"
-  "add justification for modulation\n"
-  "\n"
-  "ENDCOMMENT\n"
-  ;
 #endif

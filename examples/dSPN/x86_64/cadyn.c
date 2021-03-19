@@ -1,4 +1,4 @@
-/* Created by Language version: 7.7.0 */
+/* Created by Language version: 6.2.0 */
 /* VECTORIZED */
 #define NRN_VECTORIZED 1
 #include <stdio.h>
@@ -84,15 +84,6 @@ extern void hoc_register_limits(int, HocParmLimits*);
 extern void hoc_register_units(int, HocParmUnits*);
 extern void nrn_promote(Prop*, int, int);
 extern Memb_func* memb_func;
- 
-#define NMODL_TEXT 1
-#if NMODL_TEXT
-static const char* nmodl_file_text;
-static const char* nmodl_filename;
-extern void hoc_reg_nmodl_text(int, const char*);
-extern void hoc_reg_nmodl_filename(int, const char*);
-#endif
-
  extern void _nrn_setdata_reg(int, void(*)(Prop*));
  static void _setdata(Prop* _prop) {
  _extcall_prop = _prop;
@@ -153,7 +144,7 @@ static void _ode_matsol(_NrnThread*, _Memb_list*, int);
  static void _ode_matsol_instance1(_threadargsproto_);
  /* connect range variables in _p that hoc is supposed to know about */
  static const char *_mechanism[] = {
- "7.7.0",
+ "6.2.0",
 "cadyn",
  "drive_cadyn",
  "depth_cadyn",
@@ -213,10 +204,6 @@ extern void _cvode_abstol( Symbol**, double*, int);
  _mechtype = nrn_get_mechtype(_mechanism[1]);
      _nrn_setdata_reg(_mechtype, _setdata);
      _nrn_thread_reg(_mechtype, 2, _update_ion_pointer);
- #if NMODL_TEXT
-  hoc_reg_nmodl_text(_mechtype, nmodl_file_text);
-  hoc_reg_nmodl_filename(_mechtype, nmodl_filename);
-#endif
   hoc_register_prop_size(_mechtype, 12, 4);
   hoc_register_dparam_semantics(_mechtype, 0, "ca_ion");
   hoc_register_dparam_semantics(_mechtype, 1, "ca_ion");
@@ -226,7 +213,7 @@ extern void _cvode_abstol( Symbol**, double*, int);
  	hoc_register_cvode(_mechtype, _ode_count, _ode_map, _ode_spec, _ode_matsol);
  	hoc_register_tolerance(_mechtype, _hoc_state_tol, &_atollist);
  	hoc_register_var(hoc_scdoub, hoc_vdoub, hoc_intfunc);
- 	ivoc_help("help ?1 cadyn /home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/x86_64/cadyn.mod\n");
+ 	ivoc_help("help ?1 cadyn /home/miseno/Documents/GitHub/Neuromodulation/examples/dSPN/x86_64/cadyn.mod\n");
  hoc_register_limits(_mechtype, _hoc_parm_limits);
  hoc_register_units(_mechtype, _hoc_parm_units);
  }
@@ -262,7 +249,7 @@ static int _ode_spec1(_threadargsproto_);
    drive_channel = 0. ;
    }
  Dcai = Dcai  / (1. - dt*( ( ( ( - 1.0 ) ) ) / taur )) ;
-  return 0;
+ return 0;
 }
  /*END CVODE*/
  static int state (double* _p, Datum* _ppvar, Datum* _thread, _NrnThread* _nt) { {
@@ -464,77 +451,4 @@ _first = 0;
 
 #if defined(__cplusplus)
 } /* extern "C" */
-#endif
-
-#if NMODL_TEXT
-static const char* nmodl_filename = "/home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/mechanisms-dspn/cadyn.mod";
-static const char* nmodl_file_text = 
-  "TITLE Calcium dynamics for N, P/Q, R calcium pool\n"
-  "\n"
-  "NEURON {\n"
-  "    SUFFIX cadyn\n"
-  "    USEION ca READ ica, cai WRITE cai VALENCE 2\n"
-  "    RANGE pump, cainf, taur, drive, depth\n"
-  "}\n"
-  "\n"
-  "UNITS {\n"
-  "    (molar) = (1/liter) \n"
-  "    (mM) = (millimolar)\n"
-  "    (um) = (micron)\n"
-  "    (mA) = (milliamp)\n"
-  "    (msM) = (ms mM)\n"
-  "    FARADAY = (faraday) (coulomb)\n"
-  "}\n"
-  "\n"
-  "PARAMETER {\n"
-  "    drive = 10000 (1)\n"
-  "    depth = 0.2 (um)\n"
-  "    cainf = 70e-6 (mM)\n"
-  "    taur = 43 (ms)\n"
-  "    kt = 1e-4 (mM/ms)\n"
-  "    kd = 1e-4 (mM)\n"
-  "    pump = 0.02\n"
-  "}\n"
-  "\n"
-  "STATE { cai (mM) }\n"
-  "\n"
-  "INITIAL { cai = cainf }\n"
-  "\n"
-  "ASSIGNED {\n"
-  "    ica (mA/cm2)\n"
-  "    drive_channel (mM/ms)\n"
-  "    drive_pump (mM/ms)\n"
-  "}\n"
-  "    \n"
-  "BREAKPOINT {\n"
-  "    SOLVE state METHOD cnexp\n"
-  "}\n"
-  "\n"
-  "DERIVATIVE state { \n"
-  "    \n"
-  "    : force concentration to stay above cainf by only pumping if larger\n"
-  "    drive_channel = -drive*ica/(2*FARADAY*depth)\n"
-  "    drive_pump    = -kt*(cai-cainf)/(cai+kd)\n"
-  "    \n"
-  "    if (drive_channel <= 0.) { drive_channel = 0. }\n"
-  "    \n"
-  "    cai' = drive_channel + pump*drive_pump + (cainf-cai)/taur\n"
-  "}\n"
-  "\n"
-  "COMMENT\n"
-  "\n"
-  "Original NEURON model by Wolf (2005) and Destexhe (1992).  Adaptation by\n"
-  "Alexander Kozlov <akozlov@kth.se>. Updated by Robert Lindroos <robert.lindroos@ki.se>.\n"
-  "\n"
-  "Updates by RL:\n"
-  "-cainf changed from 10 to 70 nM (sabatini et al., 2002 The Life Cycle of Ca 2+ Ions in Dendritic Spines)\n"
-  "-pump updated to only be active if cai > cainf\n"
-  "\n"
-  "[1] Wolf JA, Moyer JT, Lazarewicz MT, Contreras D, Benoit-Marand M,\n"
-  "O'Donnell P, Finkel LH (2005) NMDA/AMPA ratio impacts state transitions\n"
-  "and entrainment to oscillations in a computational model of the nucleus\n"
-  "accumbens medium spiny projection neuron. J Neurosci 25(40):9080-95.\n"
-  "\n"
-  "ENDCOMMENT\n"
-  ;
 #endif

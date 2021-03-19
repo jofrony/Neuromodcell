@@ -1,4 +1,4 @@
-/* Created by Language version: 7.7.0 */
+/* Created by Language version: 6.2.0 */
 /* VECTORIZED */
 #define NRN_VECTORIZED 1
 #include <stdio.h>
@@ -81,15 +81,6 @@ extern void hoc_register_limits(int, HocParmLimits*);
 extern void hoc_register_units(int, HocParmUnits*);
 extern void nrn_promote(Prop*, int, int);
 extern Memb_func* memb_func;
- 
-#define NMODL_TEXT 1
-#if NMODL_TEXT
-static const char* nmodl_file_text;
-static const char* nmodl_filename;
-extern void hoc_reg_nmodl_text(int, const char*);
-extern void hoc_reg_nmodl_filename(int, const char*);
-#endif
-
  extern Prop* nrn_point_prop_;
  static int _pointtype;
  static void* _hoc_create_pnt(_ho) Object* _ho; { void* create_point_process();
@@ -168,7 +159,7 @@ static void _ode_matsol(_NrnThread*, _Memb_list*, int);
  static void _ode_matsol_instance1(_threadargsproto_);
  /* connect range variables in _p that hoc is supposed to know about */
  static const char *_mechanism[] = {
- "7.7.0",
+ "6.2.0",
 "concACh",
  "tau1",
  "tau2",
@@ -227,10 +218,6 @@ extern void _cvode_abstol( Symbol**, double*, int);
 	 _hoc_create_pnt, _hoc_destroy_pnt, _member_func);
  _mechtype = nrn_get_mechtype(_mechanism[1]);
      _nrn_setdata_reg(_mechtype, _setdata);
- #if NMODL_TEXT
-  hoc_reg_nmodl_text(_mechtype, nmodl_file_text);
-  hoc_reg_nmodl_filename(_mechtype, nmodl_filename);
-#endif
   hoc_register_prop_size(_mechtype, 11, 3);
   hoc_register_dparam_semantics(_mechtype, 0, "area");
   hoc_register_dparam_semantics(_mechtype, 1, "pntproc");
@@ -240,7 +227,7 @@ extern void _cvode_abstol( Symbol**, double*, int);
  pnt_receive[_mechtype] = _net_receive;
  pnt_receive_size[_mechtype] = 1;
  	hoc_register_var(hoc_scdoub, hoc_vdoub, hoc_intfunc);
- 	ivoc_help("help ?1 concACh /home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/x86_64/concACh.mod\n");
+ 	ivoc_help("help ?1 concACh /home/miseno/Documents/GitHub/Neuromodulation/examples/dSPN/x86_64/concACh.mod\n");
  hoc_register_limits(_mechtype, _hoc_parm_limits);
  hoc_register_units(_mechtype, _hoc_parm_units);
  }
@@ -267,7 +254,7 @@ static int _ode_spec1(_threadargsproto_);
  static int _ode_matsol1 (double* _p, Datum* _ppvar, Datum* _thread, _NrnThread* _nt) {
  DA = DA  / (1. - dt*( ( - 1.0 ) / tau1 )) ;
  DB = DB  / (1. - dt*( ( - 1.0 ) / tau2 )) ;
-  return 0;
+ return 0;
 }
  /*END CVODE*/
  static int state (double* _p, Datum* _ppvar, Datum* _thread, _NrnThread* _nt) { {
@@ -485,74 +472,4 @@ _first = 0;
 
 #if defined(__cplusplus)
 } /* extern "C" */
-#endif
-
-#if NMODL_TEXT
-static const char* nmodl_filename = "/home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/mechanisms-dspn/concACh.mod";
-static const char* nmodl_file_text = 
-  "COMMENT\n"
-  "Two state kinetic scheme  which reproduces the concentration change of acetylcholine in response to spiking in cholinergic interneuron. The time constants, tau1 and tau2 were fitted to reproduce the same concentration as in Blackwell et al. 2019 with estimated input.\n"
-  "\n"
-  "ENDCOMMENT\n"
-  "\n"
-  "NEURON {\n"
-  "	POINT_PROCESS concACh\n"
-  "	RANGE tau1, tau2, e\n"
-  "	RANGE concentration\n"
-  "}\n"
-  "\n"
-  "UNITS {\n"
-  "	(nA) = (nanoamp)\n"
-  "	(mV) = (millivolt)\n"
-  "	\n"
-  "}\n"
-  "\n"
-  "PARAMETER {\n"
-  "	tau1 = 400 (ms) <1e-9,1e9>\n"
-  "	tau2 = 300 (ms) <1e-9,1e9>\n"
-  "	concentration = 4.5e-5 (nM)\n"
-  "	amplitude = 0.25e-4			      \n"
-  "}\n"
-  "\n"
-  "ASSIGNED {\n"
-  "     factor\n"
-  "}\n"
-  "\n"
-  "STATE {\n"
-  "	A \n"
-  "	B \n"
-  "}\n"
-  "\n"
-  "INITIAL {\n"
-  "	LOCAL tp\n"
-  "	if (tau1/tau2 > 0.9999) {\n"
-  "		tau1 = 0.9999*tau2\n"
-  "	}\n"
-  "	if (tau1/tau2 < 1e-9) {\n"
-  "		tau1 = tau2*1e-9\n"
-  "	}\n"
-  "	A = 0\n"
-  "	B = 0\n"
-  "	tp = (tau1*tau2)/(tau2 - tau1) * log(tau2/tau1)\n"
-  "	factor = -exp(-tp/tau1) + exp(-tp/tau2)\n"
-  "	factor = 1/factor\n"
-  "}\n"
-  "\n"
-  "BREAKPOINT {\n"
-  "	SOLVE state METHOD cnexp\n"
-  "	concentration = B - A\n"
-  "	concentration = amplitude*concentration		   \n"
-  "	\n"
-  "}\n"
-  "\n"
-  "DERIVATIVE state {\n"
-  "	A' = -A/tau1\n"
-  "	B' = -B/tau2\n"
-  "}\n"
-  "\n"
-  "NET_RECEIVE(weight (uS)) {\n"
-  "	A = A + weight*factor\n"
-  "	B = B + weight*factor\n"
-  "}\n"
-  ;
 #endif

@@ -1,4 +1,4 @@
-/* Created by Language version: 7.7.0 */
+/* Created by Language version: 6.2.0 */
 /* VECTORIZED */
 #define NRN_VECTORIZED 1
 #include <stdio.h>
@@ -84,15 +84,6 @@ extern void hoc_register_limits(int, HocParmLimits*);
 extern void hoc_register_units(int, HocParmUnits*);
 extern void nrn_promote(Prop*, int, int);
 extern Memb_func* memb_func;
- 
-#define NMODL_TEXT 1
-#if NMODL_TEXT
-static const char* nmodl_file_text;
-static const char* nmodl_filename;
-extern void hoc_reg_nmodl_text(int, const char*);
-extern void hoc_reg_nmodl_filename(int, const char*);
-#endif
-
  extern void _nrn_setdata_reg(int, void(*)(Prop*));
  static void _setdata(Prop* _prop) {
  _extcall_prop = _prop;
@@ -148,7 +139,7 @@ static void _ode_matsol(_NrnThread*, _Memb_list*, int);
  static void _ode_matsol_instance1(_threadargsproto_);
  /* connect range variables in _p that hoc is supposed to know about */
  static const char *_mechanism[] = {
- "7.7.0",
+ "6.2.0",
 "kdr",
  "gbar_kdr",
  0,
@@ -202,10 +193,6 @@ extern void _cvode_abstol( Symbol**, double*, int);
  _mechtype = nrn_get_mechtype(_mechanism[1]);
      _nrn_setdata_reg(_mechtype, _setdata);
      _nrn_thread_reg(_mechtype, 2, _update_ion_pointer);
- #if NMODL_TEXT
-  hoc_reg_nmodl_text(_mechtype, nmodl_file_text);
-  hoc_reg_nmodl_filename(_mechtype, nmodl_filename);
-#endif
   hoc_register_prop_size(_mechtype, 10, 4);
   hoc_register_dparam_semantics(_mechtype, 0, "k_ion");
   hoc_register_dparam_semantics(_mechtype, 1, "k_ion");
@@ -214,7 +201,7 @@ extern void _cvode_abstol( Symbol**, double*, int);
  	hoc_register_cvode(_mechtype, _ode_count, _ode_map, _ode_spec, _ode_matsol);
  	hoc_register_tolerance(_mechtype, _hoc_state_tol, &_atollist);
  	hoc_register_var(hoc_scdoub, hoc_vdoub, hoc_intfunc);
- 	ivoc_help("help ?1 kdr /home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/x86_64/kdr.mod\n");
+ 	ivoc_help("help ?1 kdr /home/miseno/Documents/GitHub/Neuromodulation/examples/dSPN/x86_64/kdr.mod\n");
  hoc_register_limits(_mechtype, _hoc_parm_limits);
  hoc_register_units(_mechtype, _hoc_parm_units);
  }
@@ -242,7 +229,7 @@ static int _ode_spec1(_threadargsproto_);
  static int _ode_matsol1 (double* _p, Datum* _ppvar, Datum* _thread, _NrnThread* _nt) {
  rates ( _threadargs_ ) ;
  Dm = Dm  / (1. - dt*( ( ( ( ( - 1.0 ) ) ) / mtau )*( q ) )) ;
-  return 0;
+ return 0;
 }
  /*END CVODE*/
  static int states (double* _p, Datum* _ppvar, Datum* _thread, _NrnThread* _nt) { {
@@ -466,89 +453,4 @@ _first = 0;
 
 #if defined(__cplusplus)
 } /* extern "C" */
-#endif
-
-#if NMODL_TEXT
-static const char* nmodl_filename = "/home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/mechanisms-dspn/kdr.mod";
-static const char* nmodl_file_text = 
-  "TITLE Fast delayed rectifier potassium current (Kv3.1/3.2)\n"
-  "\n"
-  "NEURON {\n"
-  "    SUFFIX kdr\n"
-  "    USEION k READ ek WRITE ik\n"
-  "    RANGE gbar, gk, ik\n"
-  "}\n"
-  "\n"
-  "UNITS {\n"
-  "    (S) = (siemens)\n"
-  "    (mV) = (millivolt)\n"
-  "    (mA) = (milliamp)\n"
-  "}\n"
-  "\n"
-  "PARAMETER {\n"
-  "    gbar = 0.0 (S/cm2) \n"
-  "    q = 1\n"
-  "}\n"
-  "\n"
-  "ASSIGNED {\n"
-  "    v (mV)\n"
-  "    ek (mV)\n"
-  "    ik (mA/cm2)\n"
-  "    gk (S/cm2)\n"
-  "    minf\n"
-  "    mtau (ms)\n"
-  "}\n"
-  "\n"
-  "STATE { m }\n"
-  "\n"
-  "BREAKPOINT {\n"
-  "    SOLVE states METHOD cnexp\n"
-  "    gk = gbar*m\n"
-  "    ik = gk*(v-ek)\n"
-  "}\n"
-  "\n"
-  "DERIVATIVE states {\n"
-  "    rates()\n"
-  "    m' = (minf-m)/mtau*q\n"
-  "}\n"
-  "\n"
-  "INITIAL {\n"
-  "    rates()\n"
-  "    m = minf\n"
-  "}\n"
-  "\n"
-  "PROCEDURE rates() {\n"
-  "    UNITSOFF\n"
-  "    minf = 1/(1+exp((v-(-13))/(-6)))\n"
-  "    mtau = 11.1\n"
-  "    UNITSON\n"
-  "}\n"
-  "\n"
-  "COMMENT\n"
-  "\n"
-  "Original data and model by Baranauskas et al (1999) [1] for globus\n"
-  "pallidus neurons from young adult rat.  The temperature was not\n"
-  "specified. Potentials were not corrected for the liquid junction\n"
-  "potential, which was estimated to be 1-2 mV.\n"
-  "\n"
-  "Kinetics of m^1 type is used as in [2,3]. Room temperature 20-23 C\n"
-  "is assumed.\n"
-  "\n"
-  "NEURON implementation by Alexander Kozlov <akozlov@kth.se>.\n"
-  "\n"
-  "[1] Baranauskas G, Tkatch T, Surmeier DJ (1999) Delayed rectifier currents\n"
-  "in rat globus pallidus neurons are attributable to Kv2.1 and Kv3.1/3.2\n"
-  "K(+) channels. J Neurosci 19(15):6394-404.\n"
-  "\n"
-  "[2] Migliore M, Hoffman DA, Magee JC, Johnston D (1999) Role of an\n"
-  "A-type K+ conductance in the back-propagation of action potentials in the\n"
-  "dendrites of hippocampal pyramidal neurons. J Comput Neurosci 7(1):5-15.\n"
-  "\n"
-  "[3] Evans RC, Morera-Herreras T, Cui Y, Du K, Sheehan T, Kotaleski JH,\n"
-  "Venance L, Blackwell KT (2012) The effects of NMDA subunit composition on\n"
-  "calcium influx and spike timing-dependent plasticity in striatal medium\n"
-  "spiny neurons. PLoS Comput Biol 8(4):e1002493.\n"
-  "\n"
-  "ENDCOMMENT\n"
-  ;
 #endif

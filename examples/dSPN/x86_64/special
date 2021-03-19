@@ -10,4 +10,4 @@ if test "" = "yes" ; then
 else
 	NRNIV="${NRNBIN}nrniv"
 fi
-"${NRNIV}" -dll "/home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/x86_64/.libs/libnrnmech.so" "$@"
+"${NRNIV}" -dll "/home/miseno/Documents/GitHub/Neuromodulation/examples/dSPN/x86_64/.libs/libnrnmech.so" "$@"

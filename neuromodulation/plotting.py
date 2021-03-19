@@ -3,7 +3,7 @@ from matplotlib.lines import Line2D
 import numpy as np
 import pathlib
 
-def plot_comparison(control,control_sim,modulated,modulated_sim, num_models,ylabel,title,x_ticks=tuple(),dir_path=None,save=False,filename=None):
+def plot_comparison(control,control_sim,modulated,modulated_sim, num_models,ylabel,title,x_ticks=tuple(),parameterID=None,dir_path=None,save=False,filename=None):
 
     fig, ax = plt.subplots(1, figsize=(7,9))
     for i in range(num_models):

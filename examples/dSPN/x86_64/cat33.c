@@ -1,4 +1,4 @@
-/* Created by Language version: 7.7.0 */
+/* Created by Language version: 6.2.0 */
 /* VECTORIZED */
 #define NRN_VECTORIZED 1
 #include <stdio.h>
@@ -92,15 +92,6 @@ extern void hoc_register_limits(int, HocParmLimits*);
 extern void hoc_register_units(int, HocParmUnits*);
 extern void nrn_promote(Prop*, int, int);
 extern Memb_func* memb_func;
- 
-#define NMODL_TEXT 1
-#if NMODL_TEXT
-static const char* nmodl_file_text;
-static const char* nmodl_filename;
-extern void hoc_reg_nmodl_text(int, const char*);
-extern void hoc_reg_nmodl_filename(int, const char*);
-#endif
-
  extern void _nrn_setdata_reg(int, void(*)(Prop*));
  static void _setdata(Prop* _prop) {
  _extcall_prop = _prop;
@@ -159,7 +150,7 @@ static void _ode_matsol(_NrnThread*, _Memb_list*, int);
  static void _ode_matsol_instance1(_threadargsproto_);
  /* connect range variables in _p that hoc is supposed to know about */
  static const char *_mechanism[] = {
- "7.7.0",
+ "6.2.0",
 "cat33",
  "pbar_cat33",
  0,
@@ -214,10 +205,6 @@ extern void _cvode_abstol( Symbol**, double*, int);
  _mechtype = nrn_get_mechtype(_mechanism[1]);
      _nrn_setdata_reg(_mechtype, _setdata);
      _nrn_thread_reg(_mechtype, 2, _update_ion_pointer);
- #if NMODL_TEXT
-  hoc_reg_nmodl_text(_mechtype, nmodl_file_text);
-  hoc_reg_nmodl_filename(_mechtype, nmodl_filename);
-#endif
   hoc_register_prop_size(_mechtype, 15, 5);
   hoc_register_dparam_semantics(_mechtype, 0, "cal_ion");
   hoc_register_dparam_semantics(_mechtype, 1, "cal_ion");
@@ -227,12 +214,12 @@ extern void _cvode_abstol( Symbol**, double*, int);
  	hoc_register_cvode(_mechtype, _ode_count, _ode_map, _ode_spec, _ode_matsol);
  	hoc_register_tolerance(_mechtype, _hoc_state_tol, &_atollist);
  	hoc_register_var(hoc_scdoub, hoc_vdoub, hoc_intfunc);
- 	ivoc_help("help ?1 cat33 /home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/x86_64/cat33.mod\n");
+ 	ivoc_help("help ?1 cat33 /home/miseno/Documents/GitHub/Neuromodulation/examples/dSPN/x86_64/cat33.mod\n");
  hoc_register_limits(_mechtype, _hoc_parm_limits);
  hoc_register_units(_mechtype, _hoc_parm_units);
  }
  static double FARADAY = 96485.3;
- static double R = 8.3145;
+ static double R = 8.31342;
 static int _reset;
 static char *modelname = "T-type calcium current (Cav3.3)";
 
@@ -259,7 +246,7 @@ static int _ode_spec1(_threadargsproto_);
  rates ( _threadargs_ ) ;
  Dm = Dm  / (1. - dt*( ( ( ( ( - 1.0 ) ) ) / mtau )*( q ) )) ;
  Dh = Dh  / (1. - dt*( ( ( ( ( - 1.0 ) ) ) / htau )*( q ) )) ;
-  return 0;
+ return 0;
 }
  /*END CVODE*/
  static int states (double* _p, Datum* _ppvar, Datum* _thread, _NrnThread* _nt) { {
@@ -518,113 +505,4 @@ _first = 0;
 
 #if defined(__cplusplus)
 } /* extern "C" */
-#endif
-
-#if NMODL_TEXT
-static const char* nmodl_filename = "/home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/mechanisms-dspn/cat33.mod";
-static const char* nmodl_file_text = 
-  "TITLE T-type calcium current (Cav3.3)\n"
-  "\n"
-  "UNITS {\n"
-  "    (mV) = (millivolt)\n"
-  "    (mA) = (milliamp)\n"
-  "    (S) = (siemens)\n"
-  "    (molar) = (1/liter)\n"
-  "    (mM) = (millimolar)\n"
-  "    FARADAY = (faraday) (coulomb)\n"
-  "    R = (k-mole) (joule/degC)\n"
-  "}\n"
-  "\n"
-  "NEURON {\n"
-  "    SUFFIX cat33\n"
-  "    USEION cal READ cali, calo WRITE ical VALENCE 2\n"
-  "    RANGE pbar, ical\n"
-  "}\n"
-  "\n"
-  "PARAMETER {\n"
-  "    pbar = 0.0 (cm/s)\n"
-  "    :q = 1	: room temperature 21 C\n"
-  "    q = 3	: body temperature 35 C\n"
-  "} \n"
-  "\n"
-  "ASSIGNED { \n"
-  "    v (mV)\n"
-  "    ical (mA/cm2)\n"
-  "    ecal (mV)\n"
-  "    celsius (degC)\n"
-  "    cali (mM)\n"
-  "    calo (mM)\n"
-  "    minf\n"
-  "    mtau (ms)\n"
-  "    hinf\n"
-  "    htau (ms)\n"
-  "}\n"
-  "\n"
-  "STATE { m h }\n"
-  "\n"
-  "BREAKPOINT {\n"
-  "    SOLVE states METHOD cnexp\n"
-  "    ical = pbar*m*m*m*h*ghk(v, cali, calo)\n"
-  "}\n"
-  "\n"
-  "INITIAL {\n"
-  "    rates()\n"
-  "    m = minf\n"
-  "    h = hinf\n"
-  "}\n"
-  "\n"
-  "DERIVATIVE states { \n"
-  "    rates()\n"
-  "    m' = (minf-m)/mtau*q\n"
-  "    h' = (hinf-h)/htau*q\n"
-  "}\n"
-  "\n"
-  "PROCEDURE rates() {\n"
-  "    UNITSOFF\n"
-  "    minf = 1/(1+exp((v-(-81))/(-5.8)))\n"
-  "    mtau = (2.3+20/(1+exp((v-(-60))/9)))*3\n"
-  "    hinf = 1/(1+exp((v-(-78.3))/6.5))\n"
-  "    htau = 125+140/(1+exp((v-(-60))/3))\n"
-  "    UNITSON\n"
-  "}\n"
-  "\n"
-  "FUNCTION ghk(v (mV), ci (mM), co (mM)) (.001 coul/cm3) {\n"
-  "    LOCAL z, eci, eco\n"
-  "    z = (1e-3)*2*FARADAY*v/(R*(celsius+273.15))\n"
-  "    if(z == 0) {\n"
-  "        z = z+1e-6\n"
-  "    }\n"
-  "    eco = co*(z)/(exp(z)-1)\n"
-  "    eci = ci*(-z)/(exp(-z)-1)\n"
-  "    ghk = (1e-3)*2*FARADAY*(eci-eco)\n"
-  "}\n"
-  "\n"
-  "COMMENT\n"
-  "\n"
-  "Rat Cav3.2 channels were isolated and transfection of human embryonic\n"
-  "kidney cells was performed [1].  Electrophysiological recordings were\n"
-  "done in 21 C.\n"
-  "\n"
-  "NEURON model by Alexander Kozlov <akozlov@kth.se>. Kinetics of m3h\n"
-  "type was used [2-4]. Activation time constant was scaled up accordingly.\n"
-  "\n"
-  "[1] Iftinca M, McKay BE, Snutch TP, McRory JE, Turner RW, Zamponi\n"
-  "GW (2006) Temperature dependence of T-type calcium channel\n"
-  "gating. Neuroscience 142(4):1031-42.\n"
-  "\n"
-  "[2] Crunelli V, Toth TI, Cope DW, Blethyn K, Hughes SW (2005) The\n"
-  "'window' T-type calcium current in brain dynamics of different behavioural\n"
-  "states. J Physiol 562(Pt 1):121-9.\n"
-  "\n"
-  "[3] Wolf JA, Moyer JT, Lazarewicz MT, Contreras D, Benoit-Marand M,\n"
-  "O'Donnell P, Finkel LH (2005) NMDA/AMPA ratio impacts state transitions\n"
-  "and entrainment to oscillations in a computational model of the nucleus\n"
-  "accumbens medium spiny projection neuron. J Neurosci 25(40):9080-95.\n"
-  "\n"
-  "[4] Evans RC, Maniar YM, Blackwell KT (2013) Dynamic modulation of\n"
-  "spike timing-dependent calcium influx during corticostriatal upstates. J\n"
-  "Neurophysiol 110(7):1631-45.\n"
-  "\n"
-  "ENDCOMMENT\n"
-  ;
 #endif

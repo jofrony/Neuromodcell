@@ -1,4 +1,4 @@
-/* Created by Language version: 7.7.0 */
+/* Created by Language version: 6.2.0 */
 /* VECTORIZED */
 #define NRN_VECTORIZED 1
 #include <stdio.h>
@@ -85,15 +85,6 @@ extern void hoc_register_limits(int, HocParmLimits*);
 extern void hoc_register_units(int, HocParmUnits*);
 extern void nrn_promote(Prop*, int, int);
 extern Memb_func* memb_func;
- 
-#define NMODL_TEXT 1
-#if NMODL_TEXT
-static const char* nmodl_file_text;
-static const char* nmodl_filename;
-extern void hoc_reg_nmodl_text(int, const char*);
-extern void hoc_reg_nmodl_filename(int, const char*);
-#endif
-
  extern void _nrn_setdata_reg(int, void(*)(Prop*));
  static void _setdata(Prop* _prop) {
  _extcall_prop = _prop;
@@ -148,7 +139,7 @@ static void _ode_matsol(_NrnThread*, _Memb_list*, int);
  static void _ode_matsol_instance1(_threadargsproto_);
  /* connect range variables in _p that hoc is supposed to know about */
  static const char *_mechanism[] = {
- "7.7.0",
+ "6.2.0",
 "sk",
  "gbar_sk",
  0,
@@ -207,10 +198,6 @@ extern void _cvode_abstol( Symbol**, double*, int);
  _mechtype = nrn_get_mechtype(_mechanism[1]);
      _nrn_setdata_reg(_mechtype, _setdata);
      _nrn_thread_reg(_mechtype, 2, _update_ion_pointer);
- #if NMODL_TEXT
-  hoc_reg_nmodl_text(_mechtype, nmodl_file_text);
-  hoc_reg_nmodl_filename(_mechtype, nmodl_filename);
-#endif
   hoc_register_prop_size(_mechtype, 10, 5);
   hoc_register_dparam_semantics(_mechtype, 0, "ca_ion");
   hoc_register_dparam_semantics(_mechtype, 1, "k_ion");
@@ -220,7 +207,7 @@ extern void _cvode_abstol( Symbol**, double*, int);
  	hoc_register_cvode(_mechtype, _ode_count, _ode_map, _ode_spec, _ode_matsol);
  	hoc_register_tolerance(_mechtype, _hoc_state_tol, &_atollist);
  	hoc_register_var(hoc_scdoub, hoc_vdoub, hoc_intfunc);
- 	ivoc_help("help ?1 sk /home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/x86_64/sk.mod\n");
+ 	ivoc_help("help ?1 sk /home/miseno/Documents/GitHub/Neuromodulation/examples/dSPN/x86_64/sk.mod\n");
  hoc_register_limits(_mechtype, _hoc_parm_limits);
  hoc_register_units(_mechtype, _hoc_parm_units);
  }
@@ -248,7 +235,7 @@ static int _ode_spec1(_threadargsproto_);
  static int _ode_matsol1 (double* _p, Datum* _ppvar, Datum* _thread, _NrnThread* _nt) {
  rate ( _threadargscomma_ v , cai ) ;
  Do = Do  / (1. - dt*( ( ( ( ( - 1.0 ) ) ) / otau )*( q ) )) ;
-  return 0;
+ return 0;
 }
  /*END CVODE*/
  static int state (double* _p, Datum* _ppvar, Datum* _thread, _NrnThread* _nt) { {
@@ -479,93 +466,4 @@ _first = 0;
 
 #if defined(__cplusplus)
 } /* extern "C" */
-#endif
-
-#if NMODL_TEXT
-static const char* nmodl_filename = "/home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/mechanisms-dspn/sk.mod";
-static const char* nmodl_file_text = 
-  "TITLE SK-type calcium activated K channel (KCa2.2)\n"
-  "\n"
-  "UNITS {\n"
-  "    (molar) = (1/liter)\n"
-  "    (mV) = (millivolt)\n"
-  "    (mA) = (milliamp)\n"
-  "    (mM) = (millimolar)\n"
-  "}\n"
-  "\n"
-  "NEURON {\n"
-  "    SUFFIX sk\n"
-  "    USEION ca READ cai\n"
-  "    USEION k READ ek WRITE ik\n"
-  "    RANGE gbar, ik\n"
-  "}\n"
-  "\n"
-  "PARAMETER {\n"
-  "    gbar = 0.0 	(mho/cm2)\n"
-  "    :q = 1	: room temperature\n"
-  "    q = 1	: body temperature\n"
-  "}\n"
-  "\n"
-  "ASSIGNED {\n"
-  "    v (mV)\n"
-  "    ik (mA/cm2)\n"
-  "    cai (mM) \n"
-  "    ek (mV)\n"
-  "    oinf\n"
-  "    otau (ms)\n"
-  "}\n"
-  "\n"
-  "STATE { o }\n"
-  "\n"
-  "BREAKPOINT {\n"
-  "    SOLVE state METHOD cnexp\n"
-  "    ik = gbar*o*(v-ek)\n"
-  "}\n"
-  "\n"
-  "DERIVATIVE state {\n"
-  "    rate(v, cai)\n"
-  "    o' = (oinf-o)/otau*q\n"
-  "}\n"
-  "\n"
-  "INITIAL {\n"
-  "    rate(v, cai)\n"
-  "    o = oinf\n"
-  "}\n"
-  "\n"
-  "PROCEDURE rate(v (mV), ca (mM)) {\n"
-  "    LOCAL a\n"
-  "    a = (ca/0.57e-3)^5.2\n"
-  "    oinf = a/(1+a)\n"
-  "    otau = 4.9\n"
-  "}\n"
-  "\n"
-  "COMMENT\n"
-  "\n"
-  "Experimental data was obtained for the apamin-sensitive clone rSK2 from\n"
-  "rat brain cDNA expressed in Xenopus oocytes [1,2].  All experiments were\n"
-  "performed at room tempretaure.\n"
-  "\n"
-  "Original model [3] used calcium dependence from [2, Fig.2] and calcium\n"
-  "activation time constant from [1,  Fig.13]. NEURON implementation by\n"
-  "Alexander Kozlov <akozlov@kth.se> follows the revised model [4].\n"
-  "\n"
-  "[1] Hirschberg B, Maylie J, Adelman JP, Marrion NV (1998) Gating of\n"
-  "recombinant small-conductance Ca-activated K+ channels by calcium. J\n"
-  "Gen Physiol 111(4):565-81.\n"
-  "\n"
-  "[2] Maylie J, Bond CT, Herson PS, Lee WS, Adelman JP (2004) Small\n"
-  "conductance Ca2+-activated K+ channels and calmodulin. J Physiol 554(Pt\n"
-  "2):255-61.\n"
-  "\n"
-  "[3] Evans RC, Morera-Herreras T, Cui Y, Du K, Sheehan T, Kotaleski JH,\n"
-  "Venance L, Blackwell KT (2012) The effects of NMDA subunit composition on\n"
-  "calcium influx and spike timing-dependent plasticity in striatal medium\n"
-  "spiny neurons. PLoS Comput Biol 8(4):e1002493.\n"
-  "\n"
-  "[4] Evans RC, Maniar YM, Blackwell KT (2013) Dynamic modulation of\n"
-  "spike timing-dependent calcium influx during corticostriatal upstates. J\n"
-  "Neurophysiol 110(7):1631-45.\n"
-  "\n"
-  "ENDCOMMENT\n"
-  ;
 #endif

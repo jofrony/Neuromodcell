@@ -1,4 +1,4 @@
-/* Created by Language version: 7.7.0 */
+/* Created by Language version: 6.2.0 */
 /* VECTORIZED */
 #define NRN_VECTORIZED 1
 #include <stdio.h>
@@ -126,15 +126,6 @@ extern void hoc_register_limits(int, HocParmLimits*);
 extern void hoc_register_units(int, HocParmUnits*);
 extern void nrn_promote(Prop*, int, int);
 extern Memb_func* memb_func;
- 
-#define NMODL_TEXT 1
-#if NMODL_TEXT
-static const char* nmodl_file_text;
-static const char* nmodl_filename;
-extern void hoc_reg_nmodl_text(int, const char*);
-extern void hoc_reg_nmodl_filename(int, const char*);
-#endif
-
  extern Prop* nrn_point_prop_;
  static int _pointtype;
  static void* _hoc_create_pnt(_ho) Object* _ho; { void* create_point_process();
@@ -246,7 +237,7 @@ static void _ode_matsol(_NrnThread*, _Memb_list*, int);
  static void _ode_matsol_instance1(_threadargsproto_);
  /* connect range variables in _p that hoc is supposed to know about */
  static const char *_mechanism[] = {
- "7.7.0",
+ "6.2.0",
 "tmGlut",
  "tau1_ampa",
  "tau2_ampa",
@@ -368,10 +359,6 @@ extern void _cvode_abstol( Symbol**, double*, int);
  _mechtype = nrn_get_mechtype(_mechanism[1]);
      _nrn_setdata_reg(_mechtype, _setdata);
      _nrn_thread_reg(_mechtype, 2, _update_ion_pointer);
- #if NMODL_TEXT
-  hoc_reg_nmodl_text(_mechtype, nmodl_file_text);
-  hoc_reg_nmodl_filename(_mechtype, nmodl_filename);
-#endif
   hoc_register_prop_size(_mechtype, 49, 5);
   hoc_register_dparam_semantics(_mechtype, 0, "area");
   hoc_register_dparam_semantics(_mechtype, 1, "pntproc");
@@ -384,7 +371,7 @@ extern void _cvode_abstol( Symbol**, double*, int);
  pnt_receive_init[_mechtype] = _net_init;
  pnt_receive_size[_mechtype] = 5;
  	hoc_register_var(hoc_scdoub, hoc_vdoub, hoc_intfunc);
- 	ivoc_help("help ?1 tmGlut /home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/x86_64/tmglut.mod\n");
+ 	ivoc_help("help ?1 tmGlut /home/miseno/Documents/GitHub/Neuromodulation/examples/dSPN/x86_64/tmglut.mod\n");
  hoc_register_limits(_mechtype, _hoc_parm_limits);
  hoc_register_units(_mechtype, _hoc_parm_units);
  }
@@ -415,7 +402,7 @@ static int _ode_spec1(_threadargsproto_);
  DB_ampa = DB_ampa  / (1. - dt*( ( - 1.0 ) / tau2_ampa )) ;
  DA_nmda = DA_nmda  / (1. - dt*( ( - 1.0 ) / tau1_nmda )) ;
  DB_nmda = DB_nmda  / (1. - dt*( ( - 1.0 ) / tau2_nmda )) ;
-  return 0;
+ return 0;
 }
  /*END CVODE*/
  static int state (double* _p, Datum* _ppvar, Datum* _thread, _NrnThread* _nt) { {
@@ -821,284 +808,4 @@ _first = 0;
 
 #if defined(__cplusplus)
 } /* extern "C" */
-#endif
-
-#if NMODL_TEXT
-static const char* nmodl_filename = "/home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/mechanisms-dspn/tmglut.mod";
-static const char* nmodl_file_text = 
-  "TITLE Glutamatergic synapse with short-term plasticity (stp)\n"
-  "\n"
-  "COMMENT\n"
-  "stp can be turned of by setting use_stp == 0\n"
-  "\n"
-  "--------------------------------------------\n"
-  "\n"
-  "Neuromodulation is added as functions:\n"
-  "    \n"
-  "    modulationA = 1 + modA*(maxModA-1)*levelA\n"
-  "\n"
-  "where:\n"
-  "    \n"
-  "    modA  [0]: is a switch for turning modulation on or off {1/0}\n"
-  "    maxModA [1]: is the maximum modulation for this specific channel (read from the param file)\n"
-  "                    e.g. 10% increase would correspond to a factor of 1.1 (100% +10%) {0-inf}\n"
-  "    levelA  [0]: is an additional parameter for scaling modulation. \n"
-  "                Can be used simulate non static modulation by gradually changing the value from 0 to 1 {0-1}\n"
-  "									\n"
-  "	  Further neuromodulators can be added by for example:\n"
-  "          modulationA = 1 + modA*(maxModA-1)\n"
-  "	  modulationB = 1 + modB*(maxModB-1)\n"
-  "	  ....\n"
-  "\n"
-  "	  etc. for other neuromodulators\n"
-  "	  \n"
-  "	   \n"
-  "								     \n"
-  "[] == default values\n"
-  "{} == ranges\n"
-  "\n"
-  "ENDCOMMENT\n"
-  "\n"
-  "NEURON {\n"
-  "    THREADSAFE\n"
-  "    POINT_PROCESS tmGlut\n"
-  "    RANGE tau1_ampa, tau2_ampa, tau1_nmda, tau2_nmda\n"
-  "    RANGE g_ampa, g_nmda, i_ampa, i_nmda, nmda_ratio\n"
-  "    RANGE e, g, i, q, mg\n"
-  "    RANGE tau, tauR, tauF, U, u0\n"
-  "    RANGE ca_ratio_ampa, ca_ratio_nmda, mggate, use_stp\n"
-  "    RANGE failRateA, failRateB, failRate\n"
-  "    RANGE modA, maxModA_AMPA, levelA, maxModB_AMPA, levelB\n"
-  "    RANGE maxModA_NMDA, modB, maxModB_NMDA \n"
-  "    NONSPECIFIC_CURRENT i\n"
-  "    USEION cal WRITE ical VALENCE 2\n"
-  "}\n"
-  "\n"
-  "UNITS {\n"
-  "    (nA) = (nanoamp)\n"
-  "    (mV) = (millivolt)\n"
-  "    (uS) = (microsiemens)\n"
-  "    (mM) = (milli/liter)\n"
-  "}\n"
-  "\n"
-  "PARAMETER {\n"
-  "    : q = 2 --- We have manually corrected these\n"
-  "    tau1_ampa= 1.1 (ms)     : ORIG 2.2, ampa same as in Wolf? not same as in Du et al 2017 (and glutamate.mod)\n"
-  "    tau2_ampa = 5.75 (ms)  : ORIG 11.5 ms,  tau2 > tau1\n"
-  "    tau1_nmda= 2.76  (ms)    : ORIG 5.52 ms Chapman et al 2003; table 1, adult rat (rise time, rt = 12.13. rt ~= 2.197*tau (wiki;rise time) -> tau = 12.13 / 2.197 ~= 5.52\n"
-  "    tau2_nmda = 115.5 (ms)   : ORIG 231 ms, Chapman et al 2003; table 1, adult rat\n"
-  "    nmda_ratio = 0.5 (1)\n"
-  "    e = 0 (mV)\n"
-  "    tau = 3 (ms)\n"
-  "    tauR = 100 (ms)  : tauR > tau\n"
-  "    tauF = 800 (ms)  : tauF >= 0\n"
-  "    U = 0.3 (1) <0, 1>\n"
-  "    u0 = 0 (1) <0, 1>\n"
-  "    ca_ratio_ampa = 0.005\n"
-  "    ca_ratio_nmda = 0.1\n"
-  "    mg = 1 (mM)\n"
-  "    \n"
-  "    modA = 0\n"
-  "    maxModA_AMPA = 1\n"
-  "    modB = 0\n"
-  "    maxModB_AMPA = 1 \n"
-  "    levelB = 0\n"
-  "\n"
-  "    \n"
-  "    maxModA_NMDA = 1\n"
-  "    levelA = 0\n"
-  "    \n"
-  "    maxModB_NMDA = 1 \n"
-  "\n"
-  "    failRateA = 0\n"
-  "    failRateB = 0\n"
-  "    failRate = 0\n"
-  "    use_stp = 1     : to turn of use_stp -> use 0\n"
-  "}\n"
-  "\n"
-  "ASSIGNED {\n"
-  "    v (mV)\n"
-  "    i (nA)\n"
-  "    i_ampa (nA)\n"
-  "    i_nmda (nA)\n"
-  "    ical (nA)\n"
-  "    ical_ampa (nA)\n"
-  "    ical_nmda (nA)\n"
-  "    g (uS)\n"
-  "    g_ampa (uS)\n"
-  "    g_nmda (uS)\n"
-  "    factor_ampa\n"
-  "    factor_nmda\n"
-  "    x\n"
-  "    \n"
-  "}\n"
-  "\n"
-  "STATE {\n"
-  "    A_ampa (uS)\n"
-  "    B_ampa (uS)\n"
-  "    A_nmda (uS)\n"
-  "    B_nmda (uS)\n"
-  "}\n"
-  "\n"
-  "INITIAL {\n"
-  "    LOCAL tp_ampa, tp_nmda\n"
-  "    A_ampa = 0\n"
-  "    B_ampa = 0\n"
-  "				\n"
-  "    tp_ampa = (tau1_ampa*tau2_ampa)/(tau2_ampa-tau1_ampa) * log(tau2_ampa/tau1_ampa)\n"
-  "    factor_ampa = -exp(-tp_ampa/tau1_ampa) + exp(-tp_ampa/tau2_ampa)\n"
-  "    factor_ampa = 1/factor_ampa\n"
-  "								    \n"
-  "    A_nmda = 0\n"
-  "    B_nmda = 0\n"
-  "    tp_nmda = (tau1_nmda*tau2_nmda)/(tau2_nmda-tau1_nmda) * log(tau2_nmda/tau1_nmda)\n"
-  "    factor_nmda = -exp(-tp_nmda/tau1_nmda) + exp(-tp_nmda/tau2_nmda)\n"
-  "    factor_nmda = 1/factor_nmda\n"
-  "}\n"
-  "\n"
-  "BREAKPOINT {\n"
-  "    LOCAL itot_nmda, itot_ampa, mggate\n"
-  "    SOLVE state METHOD cnexp\n"
-  "    \n"
-  "    : NMDA\n"
-  "    mggate    = 1 / (1 + exp(-0.062 (/mV) * v) * (mg / 3.57 (mM)))\n"
-  "    g_nmda    = (B_nmda - A_nmda) * modulationA_NMDA()*modulationB_NMDA()\n"
-  "    itot_nmda = g_nmda * (v - e) * mggate\n"
-  "    ical_nmda = ca_ratio_nmda*itot_nmda\n"
-  "    i_nmda    = itot_nmda - ical_nmda\n"
-  "    \n"
-  "    : AMPA\n"
-  "    g_ampa    = (B_ampa - A_ampa) * modulationA_AMPA() * modulationB_AMPA()\n"
-  "    itot_ampa = g_ampa*(v - e) \n"
-  "    ical_ampa = ca_ratio_ampa*itot_ampa\n"
-  "    i_ampa    = itot_ampa - ical_ampa\n"
-  "    \n"
-  "    : total values\n"
-  "    ical      = ical_nmda + ical_ampa\n"
-  "    g         = g_ampa + g_nmda\n"
-  "    i         = i_ampa + i_nmda\n"
-  "\n"
-  "    : printf(\"%g\\t%g\\t%g\\t%g\\t%g\\n\",tau1_ampa,B_ampa,A_ampa,B_nmda,A_nmda) \n"
-  "    : printf(\"%g\\t%g\\t%g\\t%g\\t%g\\n\",v,g_nmda,g,i,ical)\n"
-  "}\n"
-  "\n"
-  "DERIVATIVE state {\n"
-  "    A_ampa' = -A_ampa/tau1_ampa\n"
-  "    B_ampa' = -B_ampa/tau2_ampa\n"
-  "    A_nmda' = -A_nmda/tau1_nmda\n"
-  "    B_nmda' = -B_nmda/tau2_nmda\n"
-  "}\n"
-  "\n"
-  "NET_RECEIVE(weight (uS), y, z, u, tsyn (ms)) {\n"
-  "    LOCAL weight_ampa, weight_nmda\n"
-  "    INITIAL {\n"
-  "        y = 0\n"
-  "        z = 0\n"
-  "        u = u0\n"
-  "        tsyn = t\n"
-  "        : printf(\"t\\t t-tsyn\\t y\\t z\\t u\\n\")\n"
-  "\n"
-  "    }\n"
-  "\n"
-  "    if ( weight <= 0 ) {\n"
-  "VERBATIM\n"
-  "        return;\n"
-  "ENDVERBATIM\n"
-  "    }    \n"
-  "    if( urand() > failRate*(failRateA*modA*levelA + failRateB*modB*levelB)) { \n"
-  " \n"
-  "      z = z*exp(-(t-tsyn)/tauR)\n"
-  "      z = z + (y*(exp(-(t-tsyn)/tau) - exp(-(t-tsyn)/tauR)) / (tau/tauR - 1) )\n"
-  "      y = y*exp(-(t-tsyn)/tau)\n"
-  "      x = 1-y-z\n"
-  "      if (tauF > 0) {\n"
-  "          u = u*exp(-(t-tsyn)/tauF)\n"
-  "          u = u + U*(1-u)\n"
-  "      } else {\n"
-  "          u = U\n"
-  "      }\n"
-  "    \n"
-  "      if (use_stp > 0) {\n"
-  "  	 : We divide by U to normalise, so that g gives amplitude\n"
-  "           : of first activation\n"
-  "          weight_ampa = weight *x*u / U\n"
-  "      } else {\n"
-  "          weight_ampa = weight\n"
-  "      }\n"
-  "    \n"
-  "      weight_nmda = weight_ampa*nmda_ratio\n"
-  "    \n"
-  "      A_ampa = A_ampa + weight_ampa*factor_ampa \n"
-  "      B_ampa = B_ampa + weight_ampa*factor_ampa \n"
-  "      A_nmda = A_nmda + weight_nmda*factor_nmda \n"
-  "      B_nmda = B_nmda + weight_nmda*factor_nmda \n"
-  "    \n"
-  "      y = y + x*u\n"
-  "      : printf(\"** %g\\t%g\\t%g\\t%g\\t%g\\n\", t, t-tsyn, y, z, u)\n"
-  "      tsyn = t\n"
-  "    }\n"
-  "}\n"
-  "\n"
-  "FUNCTION urand() {\n"
-  "    urand = scop_random(1)\n"
-  "}\n"
-  "\n"
-  "\n"
-  "FUNCTION modulationA_NMDA() {\n"
-  "    : returns modulation factor\n"
-  "    \n"
-  "    modulationA_NMDA = 1 + modA*(maxModA_NMDA-1)*levelA \n"
-  "}\n"
-  "\n"
-  "FUNCTION modulationB_NMDA() {\n"
-  "    : returns modulation factor\n"
-  "    \n"
-  "    modulationB_NMDA = 1 + modB*(maxModB_NMDA-1)*levelB \n"
-  "}\n"
-  "\n"
-  "FUNCTION modulationA_AMPA() {\n"
-  "    : returns modulation factor\n"
-  "    \n"
-  "    modulationA_AMPA = 1 + modA*(maxModA_AMPA-1)*levelA \n"
-  "}\n"
-  "\n"
-  "FUNCTION modulationB_AMPA() {\n"
-  "    : returns modulation factor\n"
-  "    \n"
-  "    modulationB_AMPA = 1 + modB*(maxModB_AMPA-1)*levelB \n"
-  "}\n"
-  "\n"
-  "COMMENT\n"
-  "(2019-11-29) Synaptic failure rate (fail) added. Random factor, no\n"
-  "reproducibility guaranteed in parallel sim.\n"
-  "\n"
-  "(2019-08-21) We normalise the activation by U, to make sure that g specifies\n"
-  "             the conductance of the first actvation\n"
-  "\n"
-  "(2019-06-05) Q-factor was calculated in INITAL block, which meant if\n"
-  "the synapse was reinitalised then the time constants changed with each\n"
-  "initalise. Updated: Johannes Hjorth, hjorth@kth.se \n"
-  "\n"
-  "- updates by Robert Lindroos (robert.lindroos at ki.se):\n"
-  "Missing line calculating Ca ratio of NMDA current fixed. The whole block were updated since\n"
-  "plotting ratios for both nmda and ampa gave 0.\n"
-  "- switch for turning of short term dynamics added. If used this synapse will summate.\n"
-  "\n"
-  "Implementation of glutamatergic synapse model with short-term facilitation\n"
-  "and depression based on modified tmgsyn.mod [1] by Tsodyks et al [2].\n"
-  "Choice of time constants and calcium current model follows [3].\n"
-  "NEURON implementation by Alexander Kozlov <akozlov@kth.se>.\n"
-  "\n"
-  "[1] tmgsyn.mod, ModelDB (https://senselab.med.yale.edu/ModelDB/),\n"
-  "accession number 3815.\n"
-  "\n"
-  "[2] Tsodyks M, Uziel A, Markram H (2000) Synchrony generation in recurrent\n"
-  "networks with frequency-dependent synapses. J Neurosci. 20(1):RC50.\n"
-  "\n"
-  "[3] Wolf JA, Moyer JT, Lazarewicz MT, Contreras D, Benoit-Marand M,\n"
-  "O'Donnell P, Finkel LH (2005) NMDA/AMPA ratio impacts state transitions\n"
-  "and entrainment to oscillations in a computational model of the nucleus\n"
-  "accumbens medium spiny projection neuron. J Neurosci 25(40):9080-95.\n"
-  "ENDCOMMENT\n"
-  ;
 #endif

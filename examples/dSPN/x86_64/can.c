@@ -1,4 +1,4 @@
-/* Created by Language version: 7.7.0 */
+/* Created by Language version: 6.2.0 */
 /* VECTORIZED */
 #define NRN_VECTORIZED 1
 #include <stdio.h>
@@ -101,15 +101,6 @@ extern void hoc_register_limits(int, HocParmLimits*);
 extern void hoc_register_units(int, HocParmUnits*);
 extern void nrn_promote(Prop*, int, int);
 extern Memb_func* memb_func;
- 
-#define NMODL_TEXT 1
-#if NMODL_TEXT
-static const char* nmodl_file_text;
-static const char* nmodl_filename;
-extern void hoc_reg_nmodl_text(int, const char*);
-extern void hoc_reg_nmodl_filename(int, const char*);
-#endif
-
  extern void _nrn_setdata_reg(int, void(*)(Prop*));
  static void _setdata(Prop* _prop) {
  _extcall_prop = _prop;
@@ -180,7 +171,7 @@ static void _ode_matsol(_NrnThread*, _Memb_list*, int);
  static void _ode_matsol_instance1(_threadargsproto_);
  /* connect range variables in _p that hoc is supposed to know about */
  static const char *_mechanism[] = {
- "7.7.0",
+ "6.2.0",
 "can",
  "pbar_can",
  "modA_can",
@@ -247,10 +238,6 @@ extern void _cvode_abstol( Symbol**, double*, int);
  _mechtype = nrn_get_mechtype(_mechanism[1]);
      _nrn_setdata_reg(_mechtype, _setdata);
      _nrn_thread_reg(_mechtype, 2, _update_ion_pointer);
- #if NMODL_TEXT
-  hoc_reg_nmodl_text(_mechtype, nmodl_file_text);
-  hoc_reg_nmodl_filename(_mechtype, nmodl_filename);
-#endif
   hoc_register_prop_size(_mechtype, 21, 5);
   hoc_register_dparam_semantics(_mechtype, 0, "ca_ion");
   hoc_register_dparam_semantics(_mechtype, 1, "ca_ion");
@@ -260,12 +247,12 @@ extern void _cvode_abstol( Symbol**, double*, int);
  	hoc_register_cvode(_mechtype, _ode_count, _ode_map, _ode_spec, _ode_matsol);
  	hoc_register_tolerance(_mechtype, _hoc_state_tol, &_atollist);
  	hoc_register_var(hoc_scdoub, hoc_vdoub, hoc_intfunc);
- 	ivoc_help("help ?1 can /home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/x86_64/can.mod\n");
+ 	ivoc_help("help ?1 can /home/miseno/Documents/GitHub/Neuromodulation/examples/dSPN/x86_64/can.mod\n");
  hoc_register_limits(_mechtype, _hoc_parm_limits);
  hoc_register_units(_mechtype, _hoc_parm_units);
  }
  static double FARADAY = 96485.3;
- static double R = 8.3145;
+ static double R = 8.31342;
 static int _reset;
 static char *modelname = "N-type calcium current (Cav2.2)";
 
@@ -292,7 +279,7 @@ static int _ode_spec1(_threadargsproto_);
  rates ( _threadargs_ ) ;
  Dm = Dm  / (1. - dt*( ( ( ( ( - 1.0 ) ) ) / mtau )*( q ) )) ;
  Dh = Dh  / (1. - dt*( ( ( ( ( - 1.0 ) ) ) / htau )*( q ) )) ;
-  return 0;
+ return 0;
 }
  /*END CVODE*/
  static int states (double* _p, Datum* _ppvar, Datum* _thread, _NrnThread* _nt) { {
@@ -604,180 +591,4 @@ _first = 0;
 
 #if defined(__cplusplus)
 } /* extern "C" */
-#endif
-
-#if NMODL_TEXT
-static const char* nmodl_filename = "/home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/mechanisms-dspn/can.mod";
-static const char* nmodl_file_text = 
-  "TITLE N-type calcium current (Cav2.2)\n"
-  "\n"
-  "COMMENT\n"
-  "\n"
-  "Neuromodulation is added as functions:\n"
-  "    \n"
-  "    modulationA = 1 + modA*(maxModA-1)*levelA\n"
-  "\n"
-  "where:\n"
-  "    \n"
-  "    modA  [0]: is a switch for turning modulation on or off {1/0}\n"
-  "    maxModA [1]: is the maximum modulation for this specific channel (read from the param file)\n"
-  "                    e.g. 10% increase would correspond to a factor of 1.1 (100% +10%) {0-inf}\n"
-  "    levelA  [0]: is an additional parameter for scaling modulation. \n"
-  "                Can be used simulate non static modulation by gradually changing the value from 0 to 1 {0-1}\n"
-  "									\n"
-  "	  Further neuromodulators can be added by for example:\n"
-  "          modulationA = 1 + modA*(maxModA-1)\n"
-  "	  modulationB = 1 + modB*(maxModB-1)\n"
-  "	  ....\n"
-  "\n"
-  "	  etc. for other neuromodulators\n"
-  "	  \n"
-  "	   \n"
-  "								     \n"
-  "[] == default values\n"
-  "{} == ranges\n"
-  "    \n"
-  "ENDCOMMENT\n"
-  "\n"
-  "\n"
-  "UNITS {\n"
-  "    (mV) = (millivolt)\n"
-  "    (mA) = (milliamp)\n"
-  "    (S) = (siemens)\n"
-  "    (molar) = (1/liter)\n"
-  "    (mM) = (millimolar)\n"
-  "    FARADAY = (faraday) (coulomb)\n"
-  "    R = (k-mole) (joule/degC)\n"
-  "}\n"
-  "\n"
-  "NEURON {\n"
-  "    SUFFIX can\n"
-  "    USEION ca READ cai, cao WRITE ica VALENCE 2\n"
-  "    RANGE pbar, ica\n"
-  "    RANGE modA, maxModA, levelA, modB, maxModB, levelB\n"
-  "}\n"
-  "\n"
-  "PARAMETER {\n"
-  "    pbar = 0.0 	(cm/s)\n"
-  "    a = 0.21\n"
-  "    :q = 1	: room temperature 22-25 C\n"
-  "    q = 3	: body temperature 35 C\n"
-  "    modA = 0\n"
-  "    maxModA = 1\n"
-  "    levelA = 0\n"
-  "    modB = 0\n"
-  "    maxModB = 1\n"
-  "    levelB = 0\n"
-  "} \n"
-  "\n"
-  "ASSIGNED { \n"
-  "    v (mV)\n"
-  "    ica (mA/cm2)\n"
-  "    eca (mV)\n"
-  "    celsius (degC)\n"
-  "    cai (mM)\n"
-  "    cao (mM)\n"
-  "    minf\n"
-  "    mtau (ms)\n"
-  "    hinf\n"
-  "    htau (ms)\n"
-  "}\n"
-  "\n"
-  "STATE { m h }\n"
-  "\n"
-  "BREAKPOINT {\n"
-  "    SOLVE states METHOD cnexp\n"
-  "    ica = pbar*m*m*(h*a+1-a)*ghk(v, cai, cao)*modulationA()*modulationB()\n"
-  "}\n"
-  "\n"
-  "INITIAL {\n"
-  "    rates()\n"
-  "    m = minf\n"
-  "    h = hinf\n"
-  "}\n"
-  "\n"
-  "DERIVATIVE states { \n"
-  "    rates()\n"
-  "    m' = (minf-m)/mtau*q\n"
-  "    h' = (hinf-h)/htau*q\n"
-  "}\n"
-  "\n"
-  "PROCEDURE rates() {\n"
-  "    UNITSOFF\n"
-  "    minf = 1/(1+exp((v-(-3))/(-8)))\n"
-  "    mtau = 0.06+1/(exp((v-25)/18)+exp((v-(-31))/(-44)))\n"
-  "    hinf = 1/(1+exp((v-(-74.8))/6.5))\n"
-  "    htau = 70\n"
-  "    UNITSON\n"
-  "}\n"
-  "\n"
-  "FUNCTION ghk(v (mV), ci (mM), co (mM)) (.001 coul/cm3) {\n"
-  "    LOCAL z, eci, eco\n"
-  "    z = (1e-3)*2*FARADAY*v/(R*(celsius+273.15))\n"
-  "    eco = co*efun(z)\n"
-  "    eci = ci*efun(-z)\n"
-  "    ghk = (1e-3)*2*FARADAY*(eci-eco)\n"
-  "}\n"
-  "\n"
-  "FUNCTION efun(z) {\n"
-  "    if (fabs(z) < 1e-4) {\n"
-  "        efun = 1-z/2\n"
-  "    }else{\n"
-  "        efun = z/(exp(z)-1)\n"
-  "    }\n"
-  "}\n"
-  "\n"
-  "FUNCTION modulationA() {\n"
-  "    : returns modulation factor\n"
-  "    \n"
-  "    modulationA = 1 + modA*(maxModA-1)*levelA \n"
-  "}\n"
-  "\n"
-  "FUNCTION modulationB() {\n"
-  "    : returns modulation factor\n"
-  "    \n"
-  "    modulationB = 1 + modB*(maxModB-1)*levelB \n"
-  "}\n"
-  "\n"
-  "\n"
-  "COMMENT\n"
-  "\n"
-  "Model is based on mixed data. Activation curve is from neostriatal\n"
-  "medium spiny neurons of adult P28+ rats [1, Fig.12F], unspecified\n"
-  "recording temperature. Potentials were not corrected for the liquid\n"
-  "junction potential, which was estimated to be 7 mV.  Activation time\n"
-  "constant is from the rodent neuron culture (both rat and mouse cells),\n"
-  "room temperature 22-25 C [2, Fig.15B].  Inactivation data is from human\n"
-  "(HEK) cells [3, Tab.1, Tab.2], supposedly at room temperature.\n"
-  "\n"
-  "Kinetics of m2h type is used [2, Fig.5]. Activation of m^2 is fitted\n"
-  "to the experimental data [1,4], activation time constant corresponds\n"
-  "to m^2 already [2].  Original model [5,4] was modified by Alexander\n"
-  "Kozlov <akozlov@kth.se>. Activation time constant was refitted to avoid\n"
-  "singularity in the expression. Temperature correction factor 3 is used\n"
-  "for body temperature [4,5].\n"
-  "\n"
-  "[1] Bargas J, Howe A, Eberwine J, Cao Y, Surmeier DJ (1994) Cellular\n"
-  "and molecular characterization of Ca2+ currents in acutely isolated,\n"
-  "adult rat neostriatal neurons. J Neurosci 14(11 Pt 1):6667-86.\n"
-  "\n"
-  "[2] Kasai H, Neher E (1992) Dihydropyridine-sensitive and\n"
-  "omega-conotoxin-sensitive calcium channels in a mammalian\n"
-  "neuroblastoma-glioma cell line. J Physiol 448:161-88.\n"
-  "\n"
-  "[3] McNaughton NC, Randall AD (1997) Electrophysiological properties of\n"
-  "the human N-type Ca2+ channel: I. Channel gating in Ca2+, Ba2+ and Sr2+\n"
-  "containing solutions. Neuropharmacology 36(7):895-915.\n"
-  "\n"
-  "[4] Evans RC, Maniar YM, Blackwell KT (2013) Dynamic modulation of\n"
-  "spike timing-dependent calcium influx during corticostriatal upstates. J\n"
-  "Neurophysiol 110(7):1631-45.\n"
-  "\n"
-  "[5] Wolf JA, Moyer JT, Lazarewicz MT, Contreras D, Benoit-Marand M,\n"
-  "O'Donnell P, Finkel LH (2005) NMDA/AMPA ratio impacts state transitions\n"
-  "and entrainment to oscillations in a computational model of the nucleus\n"
-  "accumbens medium spiny projection neuron. J Neurosci 25(40):9080-95.\n"
-  "\n"
-  "ENDCOMMENT\n"
-  ;
 #endif

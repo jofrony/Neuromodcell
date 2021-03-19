@@ -77,7 +77,7 @@ class dSPNanalysis(optimisationResult):
         
         self.frequency_control.append(sf.mean_frequency(self.voltages[-1],criteria))
 
-    def plot_comparison_lts(self,control,control_sim,modulated,modulated_sim, num_models,ylabel,title,x_ticks=tuple(),save=False,filename=None):
+    def plot_comparison(self,control,control_sim,modulated,modulated_sim, num_models,ylabel,title,x_ticks=tuple(),parameterID=None,save=False,filename=None):
 
         plot_comparison(control=control,control_sim=control_sim,modulated=modulated,modulated_sim=modulated_sim, num_models=num_models,ylabel=ylabel,title=title,x_ticks=x_ticks,dir_path=self.dir_path,save=save,filename=filename)
         

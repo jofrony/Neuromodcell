@@ -1,4 +1,4 @@
-/* Created by Language version: 7.7.0 */
+/* Created by Language version: 6.2.0 */
 /* VECTORIZED */
 #define NRN_VECTORIZED 1
 #include <stdio.h>
@@ -93,15 +93,6 @@ extern void hoc_register_limits(int, HocParmLimits*);
 extern void hoc_register_units(int, HocParmUnits*);
 extern void nrn_promote(Prop*, int, int);
 extern Memb_func* memb_func;
- 
-#define NMODL_TEXT 1
-#if NMODL_TEXT
-static const char* nmodl_file_text;
-static const char* nmodl_filename;
-extern void hoc_reg_nmodl_text(int, const char*);
-extern void hoc_reg_nmodl_filename(int, const char*);
-#endif
-
  extern void _nrn_setdata_reg(int, void(*)(Prop*));
  static void _setdata(Prop* _prop) {
  _extcall_prop = _prop;
@@ -164,7 +155,7 @@ static void _ode_matsol(_NrnThread*, _Memb_list*, int);
  static void _ode_matsol_instance1(_threadargsproto_);
  /* connect range variables in _p that hoc is supposed to know about */
  static const char *_mechanism[] = {
- "7.7.0",
+ "6.2.0",
 "kir",
  "gbar_kir",
  "shift_kir",
@@ -232,10 +223,6 @@ extern void _cvode_abstol( Symbol**, double*, int);
  _mechtype = nrn_get_mechtype(_mechanism[1]);
      _nrn_setdata_reg(_mechtype, _setdata);
      _nrn_thread_reg(_mechtype, 2, _update_ion_pointer);
- #if NMODL_TEXT
-  hoc_reg_nmodl_text(_mechtype, nmodl_file_text);
-  hoc_reg_nmodl_filename(_mechtype, nmodl_filename);
-#endif
   hoc_register_prop_size(_mechtype, 17, 4);
   hoc_register_dparam_semantics(_mechtype, 0, "k_ion");
   hoc_register_dparam_semantics(_mechtype, 1, "k_ion");
@@ -244,7 +231,7 @@ extern void _cvode_abstol( Symbol**, double*, int);
  	hoc_register_cvode(_mechtype, _ode_count, _ode_map, _ode_spec, _ode_matsol);
  	hoc_register_tolerance(_mechtype, _hoc_state_tol, &_atollist);
  	hoc_register_var(hoc_scdoub, hoc_vdoub, hoc_intfunc);
- 	ivoc_help("help ?1 kir /home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/x86_64/kir.mod\n");
+ 	ivoc_help("help ?1 kir /home/miseno/Documents/GitHub/Neuromodulation/examples/dSPN/x86_64/kir.mod\n");
  hoc_register_limits(_mechtype, _hoc_parm_limits);
  hoc_register_units(_mechtype, _hoc_parm_units);
  }
@@ -272,7 +259,7 @@ static int _ode_spec1(_threadargsproto_);
  static int _ode_matsol1 (double* _p, Datum* _ppvar, Datum* _thread, _NrnThread* _nt) {
  rates ( _threadargs_ ) ;
  Dm = Dm  / (1. - dt*( ( ( ( ( - 1.0 ) ) ) / mtau )*( q ) )) ;
-  return 0;
+ return 0;
 }
  /*END CVODE*/
  static int states (double* _p, Datum* _ppvar, Datum* _thread, _NrnThread* _nt) { {
@@ -530,156 +517,4 @@ _first = 0;
 
 #if defined(__cplusplus)
 } /* extern "C" */
-#endif
-
-#if NMODL_TEXT
-static const char* nmodl_filename = "/home/jofrony/Documents/Repositories/Neuromodulation/examples/dSPN/mechanisms-dspn/kir.mod";
-static const char* nmodl_file_text = 
-  "TITLE Non-inactivating inwardly rectifying potassium current (Kir2.3)\n"
-  "\n"
-  "COMMENT\n"
-  "\n"
-  "Neuromodulation is added as functions:\n"
-  "    \n"
-  "    modulationA = 1 + modA*(maxModA-1)*levelA\n"
-  "\n"
-  "where:\n"
-  "    \n"
-  "    modA  [0]: is a switch for turning modulation on or off {1/0}\n"
-  "    maxModA [1]: is the maximum modulation for this specific channel (read from the param file)\n"
-  "                    e.g. 10% increase would correspond to a factor of 1.1 (100% +10%) {0-inf}\n"
-  "    levelA  [0]: is an additional parameter for scaling modulation. \n"
-  "                Can be used simulate non static modulation by gradually changing the value from 0 to 1 {0-1}\n"
-  "									\n"
-  "	  Further neuromodulators can be added by for example:\n"
-  "          modulationA = 1 + modA*(maxModA-1)\n"
-  "	  modulationB = 1 + modB*(maxModB-1)\n"
-  "	  ....\n"
-  "\n"
-  "	  etc. for other neuromodulators\n"
-  "	  \n"
-  "	   \n"
-  "								     \n"
-  "[] == default values\n"
-  "{} == ranges\n"
-  "    \n"
-  "ENDCOMMENT\n"
-  "\n"
-  "\n"
-  "NEURON {\n"
-  "    SUFFIX kir\n"
-  "    USEION k READ ek WRITE ik\n"
-  "    RANGE gbar, gk, ik, shift\n"
-  "    RANGE modA, maxModA, levelA, modB, maxModB, levelB\n"
-  "}\n"
-  "\n"
-  "UNITS {\n"
-  "    (S) = (siemens)\n"
-  "    (mV) = (millivolt)\n"
-  "    (mA) = (milliamp)\n"
-  "}\n"
-  "\n"
-  "PARAMETER {\n"
-  "    gbar = 0.0 	(S/cm2) \n"
-  "    shift = 0.0 (mV)\n"
-  "    q = 1 	: body temperature 35 C\n"
-  "    modA = 0\n"
-  "    maxModA = 1\n"
-  "    levelA = 0\n"
-  "    modB = 0\n"
-  "    maxModB = 1\n"
-  "    levelB = 0\n"
-  "}\n"
-  "\n"
-  "ASSIGNED {\n"
-  "    v (mV)\n"
-  "    ek (mV)\n"
-  "    ik (mA/cm2)\n"
-  "    gk (S/cm2)\n"
-  "    minf\n"
-  "    mtau (ms)\n"
-  "}\n"
-  "\n"
-  "STATE { m }\n"
-  "\n"
-  "BREAKPOINT {\n"
-  "    SOLVE states METHOD cnexp\n"
-  "    gk = gbar*m*modulationA()*modulationB()\n"
-  "    ik = gk*(v-ek)\n"
-  "}\n"
-  "\n"
-  "DERIVATIVE states {\n"
-  "    rates()\n"
-  "    m' = (minf-m)/mtau*q\n"
-  "}\n"
-  "\n"
-  "INITIAL {\n"
-  "    rates()\n"
-  "    m = minf\n"
-  "}\n"
-  "\n"
-  "PROCEDURE rates() {\n"
-  "    UNITSOFF\n"
-  "    minf = 1/(1+exp((v-(-82)-shift)/13))\n"
-  "    mtau = 1/(exp((v-(-103))/(-14.5))+0.125/(1+exp((v-(-35))/(-19))))\n"
-  "    UNITSON\n"
-  "}\n"
-  "\n"
-  "FUNCTION modulationA() {\n"
-  "    : returns modulation factor\n"
-  "    \n"
-  "    modulationA = 1 + modA*(maxModA-1)*levelA \n"
-  "}\n"
-  "\n"
-  "FUNCTION modulationB() {\n"
-  "    : returns modulation factor\n"
-  "    \n"
-  "    modulationB = 1 + modB*(maxModB-1)*levelB \n"
-  "}\n"
-  "\n"
-  "COMMENT\n"
-  "\n"
-  "Original model by Wolf et al (2005) [1] for the rat MSN cells from the\n"
-  "nucleus accumbens.  The activation curve was fitted to a mouse Kir2.1\n"
-  "channel expressed in HEK cells [2] and shifted to match extracellular\n"
-  "concentration of K in rat. Measured half-activation values are -109.3\n"
-  "mV (striatonigral MSN) and -113.2 mV (striatopallidal MSN) [6, Supp\n"
-  "Tab.1]. Time constants were derived from Aplysia data [3] and adjusted\n"
-  "to match the rat experiments [1]. Time constant was further tuned [4]\n"
-  "to fit the rat data below -80 mV [5].  Kinetics is corrected to the body\n"
-  "temperature 35 C [4].\n"
-  "\n"
-  "Non-inactivating Kir current was observed in cells expressing Kir2.2\n"
-  "and/or Kir2.3 [5]. Activation variable with m^1 kinetics is used [1,4].\n"
-  "Smooth fit of the time constants by Alexander Kozlov <akozlov@kth.se>.\n"
-  "\n"
-  "[1] Wolf JA, Moyer JT, Lazarewicz MT, Contreras D, Benoit-Marand M,\n"
-  "O'Donnell P, Finkel LH (2005) NMDA/AMPA ratio impacts state transitions\n"
-  "and entrainment to oscillations in a computational model of the nucleus\n"
-  "accumbens medium spiny projection neuron. J Neurosci 25(40):9080-95.\n"
-  "\n"
-  "[2] Kubo Y, Murata Y (2001) Control of rectification and permeation by\n"
-  "two distinct sites after the second transmembrane region in Kir2.1 K+\n"
-  "channel. J Physiol 531, 645-660.\n"
-  "\n"
-  "[3] Hayashi H, Fishman HM (1988) Inward rectifier K+ channel kinetics\n"
-  "from analysis of the complex conductance of aplysia neuronal membrane.\n"
-  "Biophys J 53, 747-757.\n"
-  "\n"
-  "[4] Steephen JE, Manchanda R (2009) Differences in biophysical properties\n"
-  "of nucleus accumbens medium spiny neurons emerging from inactivation of\n"
-  "inward rectifying potassium currents. J Comput Neurosci 27(3):453-70\n"
-  "\n"
-  "[5] Mermelstein PG, Song WJ, Tkatch T, Yan Z, Surmeier DJ (1998)\n"
-  "Inwardly rectifying potassium (IRK) currents are correlated with IRK\n"
-  "subunit expression in rat nucleus accumbens medium spiny neurons. J\n"
-  "Neurosci 18(17):6650-61.\n"
-  "\n"
-  "[6] Shen W, Tian X, Day M, Ulrich S, Tkatch T, Nathanson NM, Surmeier DJ\n"
-  "(2007) Cholinergic modulation of Kir2 channels selectively elevates\n"
-  "dendritic excitability in striatopallidal neurons. Nat Neurosci\n"
-  "10(11):1458-66.\n"
-  "\n"
-  "ENDCOMMENT\n"
-  ;
 #endif
