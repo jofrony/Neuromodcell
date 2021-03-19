@@ -13,7 +13,7 @@ Class which sets up the modulation parameters for the neuron models
 
 class defineModulation:
 
-    def __init__(self, parameterID=None, population_size=None,cellDir=None):
+    def __init__(self,parameterID,population_size=None,cellDir=None):
 
         self.set_mod = list()
         self.neuromodulation_name = dict()
@@ -143,14 +143,16 @@ class defineModulation:
 
     def new_modulation_dir(self, directory=''):
 
-        global neuromodulationDir
         for key, value in self.neuromodulation_name.items():
+            parameterID_name = 'ID_' + str(self.parameterID)
 
-            neuromodulationDir = Path(directory) / key
+            neuromodulationDir = Path(directory,key,parameterID_name)
+            
             if not neuromodulationDir.exists():
                 neuromodulationDir.mkdir(parents=True, exist_ok=True)
 
-        self.neuromodulationDir = neuromodulationDir
+            self.neuromodulationDir = neuromodulationDir
+
 
     def save_modulation(self, name = 'modulation.json'):
 

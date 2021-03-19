@@ -7,7 +7,6 @@ from neuromodulation.optimisation_setup import optimisation_setup
 from neuromodulation.NrnSimulatorParallel import NrnSimulatorParallel
 import neuromodulation.selection_criteria as sc
 from math import exp
-import pathlib 
 
 '''
 
@@ -22,10 +21,9 @@ The Class will set up the number of models (runs both in serial and parallel)
 
 class Optimise_modulation():
 
-    def __init__(self, setup_parent=None):
+    def __init__(self, setup=None):
 
-        self.setup_parent = setup_parent
-        self.setup = None
+        self.setup = setup
         self.modulation_setup = None
         self.unit_modulation = {"param_set" : list(), "receptor" : list()}
         self.sim = None
@@ -41,10 +39,6 @@ class Optimise_modulation():
 
         self.modulation_setup = json.load(open(self.setup + 'modulation_setup.json'))
 
-        parameterID = 'ID' + self.modulation_setup['parameterID']
-
-        self.setup = pathlib.Path(self.setup_parent) / parameterID
-        
     def set_seed(self,seed=10e5):
 
         np.random.seed(int(self.pc.id())*int(seed))
@@ -277,7 +271,7 @@ if __name__ == "__main__":
 
     objectives = sys.argv[1]
     seed = sys.argv[2]
-    Opt = Optimise_modulation(setup_parent = objectives)
+    Opt = Optimise_modulation(setup = objectives)
     Opt.setup_load()
     Opt.set_gids()
     Opt.set_seed(seed)
