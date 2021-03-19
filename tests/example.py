@@ -1,11 +1,8 @@
-def add(a, b):
-    return a + b
+from neuromodulation.selection_functions import number_action_potentials
 
+def test_number_action_potentials():
 
-def test_add():
-    assert add(2, 3) == 5
-    assert add('space', 'ship') == 'spaceship'
+    voltage = [-100,-100,-100,100,-100,-100]
+    parameters = {'dt' : 0.025}
 
-
-def subtract(a, b):
-    return a + b  # <--- fix this in step 8
+    assert number_action_potentials(voltage,parameters) == 1
