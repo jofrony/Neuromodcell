@@ -23,9 +23,9 @@ def number_AP_increase(criteria,voltages):
                         
     modulated = sf.number_action_potentials(voltages[1],parameters)
     
-    zscore = abs(selection["mean"] - abs(modulated.take(0) - control.take(0)))/selection["std"]
+    zscore = abs(selection["mean"] - abs(modulated - control))/selection["std"]
 
-    diff = modulated.take(0) - control.take(0)
+    diff = modulated - control
 
     boolean = zscore < threshold and diff > 0
 

@@ -34,7 +34,7 @@ class optimisationResult:
         self.modulation = json.load(open(self.dir_path / 'modulation.json','rb'))
         self.modulations = json.load(open(self.dir_path / 'modulations.json','rb'))
         self.modulation_setup = json.load(open(self.dir_path / 'modulation_setup.json','rb'))
-        self.voltage_modulation_pass = json.load(open(self.dir_path / 'voltage_modulation_pass.json','rb'))
+        self.voltage_modulation_pass = np.loadtxt(self.dir_path /  'voltage_modulation_pass.csv')
 
         self.dt = self.voltages[0][1]-self.voltages[0][0]
 

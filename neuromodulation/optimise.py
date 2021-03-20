@@ -7,6 +7,7 @@ from neuromodulation.optimisation_setup import optimisation_setup
 from neuromodulation.NrnSimulatorParallel import NrnSimulatorParallel
 import neuromodulation.selection_criteria as sc
 from math import exp
+import pathlib
 
 '''
 
@@ -23,7 +24,7 @@ class Optimise_modulation():
 
     def __init__(self, setup=None):
 
-        self.setup = setup
+        self.setup = pathlib.Path(setup)
         self.modulation_setup = None
         self.unit_modulation = {"param_set" : list(), "receptor" : list()}
         self.sim = None
@@ -37,7 +38,7 @@ class Optimise_modulation():
 
     def setup_load(self):
 
-        self.modulation_setup = json.load(open(self.setup + 'modulation_setup.json'))
+        self.modulation_setup = json.load(open(self.setup / 'modulation_setup.json'))
 
     def set_seed(self,seed=10e5):
 
@@ -52,7 +53,7 @@ class Optimise_modulation():
         pc = h.ParallelContext()
         self.pc = pc
         self.gidlist = []
-        
+    
         for i in range(int(pc.id()),self.modulation_setup["population"], int(pc.nhost())):
             self.gidlist.append(i)
 
@@ -124,34 +125,43 @@ class Optimise_modulation():
 
     def save_optimisation(self,downsample=1):
 
-        world_model_pass = self.comm.gather(self.cell_model_pass, root=0)
-        world_model_voltage_pass = self.comm.gather(self.cell_model_voltage_pass, root=0)
+        world_model_pass_all = self.comm.gather(self.cell_model_pass, root=0)
+        world_model_voltage_pass_all = self.comm.gather(self.cell_model_voltage_pass, root=0)
 
         world_voltage = self.comm.gather(self.v_save,root = 0)
+
+        self.pc.barrier()
         
         if self.rank == 0:
+
+            world_model_voltage_pass = list()
             
-            out_file = open(self.setup + "modulation_pass.json", "w")
+            for result in world_model_voltage_pass_all:
 
-            out_v_file = open(self.setup + "voltage_modulation_pass.json","w")
+                for task,pass_volt in result.items():
+                    world_model_voltage_pass.append(pass_volt)
+
+            np.savetxt(self.setup / "voltage_modulation_pass.csv",world_model_voltage_pass)
+
+            print('Models passed  ', len(world_model_voltage_pass))
+
             
-            json.dump(world_model_voltage_pass, out_v_file, cls=NumpyEncoder)
-
-            pass_index = 0
             
-            for result in world_model_voltage_pass:
-
-                for pass_volt in result:
-                    pass_index = pass_index + 1
-
-            print('Models passed  ', pass_index)
-                    
-
-            ## print number of passing models
+            world_model_pass = list()
             
-            json.dump(world_model_pass, out_file, indent = 6) 
+            for result in world_model_pass_all:
+
+                for task, model in result.items():
+
+                    world_model_pass.append(pass_volt)
+
+            out_file = open(self.setup / "modulation_pass.json", "w")
+
+            json.dump(world_model_pass, out_file, indent = 6, cls=NumpyEncoder) 
             
             out_file.close()
+
+            
 
             voltage_saves = list()
 
@@ -164,17 +174,18 @@ class Optimise_modulation():
 
             voltage_saves.append(np.array(list(self.control_v))[::downsample])
 
-            np.savetxt(self.setup + "voltages.csv",voltage_saves)
+            np.savetxt(self.setup / "voltages.csv",voltage_saves)
 
 
     def export_modulation(self,size):
 
-        out_file = open(self.setup + "modulations.json", "w") 
-
+        
         world_model_pass = self.comm.gather(self.cell_model_pass, root=0)
 
         if self.rank == 0:
 
+            out_file = open(self.setup / "modulations.json", "w")
+            
             modulations_temp = list()
         
             for worker in world_model_pass:
@@ -193,12 +204,14 @@ class Optimise_modulation():
 
             json.dump(modulations_temp, out_file, indent = 6)
 
-        out_rc_file = open(self.setup + "receptor-modulations.json", "w") 
+         
 
         world_model_pass_receptor = self.comm.gather(self.cell_model_pass_receptor, root=0)
 
 
         if self.rank == 0:
+
+            out_rc_file = open(self.setup / "receptor-modulations.json", "w")
 
             modulations_temp = list()
         
