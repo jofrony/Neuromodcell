@@ -11,6 +11,28 @@ which contain at least boolean key, which returns True or False pass for the cri
 
 '''
 
+def number_AP_decrease(criteria,voltages):
+
+    parameters = criteria["parameters"]
+
+    selection = criteria["selection"]
+
+    threshold = criteria["selection"]["threshold"]
+    
+    control = sf.number_action_potentials(voltages[0],parameters)
+                        
+    modulated = sf.number_action_potentials(voltages[1],parameters)
+    
+    zscore = abs(selection["mean"] - abs(modulated - control))/selection["std"]
+
+    diff = modulated - control
+
+    boolean = zscore < threshold and diff < 0
+
+    result = { "boolean" : boolean, "zscore" : zscore, "diff" : diff, "controlAP" : control, "modulatedAP" : modulated}
+ 
+    return result
+
 def number_AP_increase(criteria,voltages):
 
     parameters = criteria["parameters"]

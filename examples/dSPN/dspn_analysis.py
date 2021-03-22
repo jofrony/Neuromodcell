@@ -38,10 +38,12 @@ class dSPNanalysis(optimisationResult):
 
     def num_ap_passing_traces(self,criteria):
 
-
         criteria.update({'dt' : self.dt})
          
         self.num_AP = list()
+
+        if not isinstance(self.voltage_modulation_pass[0],list):
+            self.voltage_modulation_pass = list(self.voltage_modulation_pass)
         
         for volt in self.voltage_modulation_pass:
 

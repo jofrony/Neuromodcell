@@ -161,7 +161,10 @@ def define_parameters(parameter_config=None, parameter_id=None):
                 "Multiple parametersets require parameterID set"
 
             num_params = len(param_configs)
-            param_configs = param_configs[parameter_id % num_params]
+
+            assert num_params > parameter_id
+            
+            param_configs = param_configs[parameter_id]
 
 
         for param_config in param_configs:

@@ -4,7 +4,7 @@ from neuromodulation.model_functions import define_parameters
 from neuromodulation.model_functions import define_morphology
 from neuromodulation.model_functions import define_modulation
 from neuromodulation.model_functions import files
-from Neuron_model_extended import NeuronModel
+from neuromodulation.Neuron_model_extended import NeuronModel
 import numpy as np
 from neuron import h
 import json

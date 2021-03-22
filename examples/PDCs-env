@@ -1,0 +1,18 @@
+Beskow
+
+module load anaconda/2019.03/py37 
+
+export PYTHONPATH=/cfs/klemming/nobackup/j/jofn/local/beskow/lib/python3.7/site-packages
+
+pip install . --prefix /cfs/klemming/nobackup/j/jofn/local/beskow/
+
+
+CSCS
+
+Run jupyterlab 
+
+source bpopt/bin/activate
+
+python -m pip install ipykernel --upgrade
+
+ipython kernel install --user --name=bpopt
