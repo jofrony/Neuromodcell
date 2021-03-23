@@ -1,4 +1,5 @@
 __pycache__/
+x86_64/
 *~
 *.pyc
 *.csv
