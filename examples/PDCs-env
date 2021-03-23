@@ -6,6 +6,8 @@ export PYTHONPATH=/cfs/klemming/nobackup/j/jofn/local/beskow/lib/python3.7/site-
 
 pip install . --prefix /cfs/klemming/nobackup/j/jofn/local/beskow/
 
+python setup.py install --prefix /cfs/klemming/nobackup/j/jofn/local/beskow/
+
 
 CSCS
 
@@ -16,3 +18,11 @@ source bpopt/bin/activate
 python -m pip install ipykernel --upgrade
 
 ipython kernel install --user --name=bpopt
+
+salloc -N 1 -t 30 -A 2020-5-636
+
+module sw PrgEnv-cray PrgEnv-intel/6.0.5
+module add neuron/7.7-py37
+module load mpi4py/3.0.3-INTEL-19.0
+
+nrnivmodl ./mechanisms/ > /dev/null

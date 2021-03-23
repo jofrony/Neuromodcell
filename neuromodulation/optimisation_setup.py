@@ -153,7 +153,9 @@ class optimisation_setup():
 
                             if "level" in mod_factor["mech_param"]:
                                 dt = self.modulation_setup["modulation_function"]["dt"]
+                                print(self.modulation_opt_setup[mod_factor["name"]]['vector'][0:10])
                                 self.modulation_opt_setup[mod_factor["name"]]['vector'] = self.sim.neuron.h.Vector(self.modulation_opt_setup[mod_factor["name"]]['vector'])
+                                
                                 self.modulation_opt_setup[mod_factor["name"]]['vector'].play(getattr(getattr(seg,mod_factor["mech"]),"_ref_" + mod_factor["mech_param"]),dt)
 
     def define_receptor(self):
