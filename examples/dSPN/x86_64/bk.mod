@@ -1,1 +1,0 @@
-../mechanisms-dspn//bk.mod

@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: neuromodulation
+Version: 0.0.1
+Summary: Code for neuromodulation fo single cell NEURON models
+Home-page: UNKNOWN
+Author: Johanna Frost Nylen
+Author-email: johanna.frost.nylen@ki.se
+License: UNKNOWN
+Description: 
+        
+        # Neuromodulation 
+        
+        Optimising multicompartmental neurons according to different neuromodulators.
+        
+        Select the ion channels to be modulated and the parameter changes for the modulation.
+        
+        The optimisation will then select the models which pass the criteria for modulation
+        
+        
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
