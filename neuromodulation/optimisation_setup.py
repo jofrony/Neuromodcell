@@ -104,8 +104,10 @@ class optimisation_setup():
         method = getattr(mf, mod_type)
 
         parameters.update({"ht" :  np.arange(0,parameters["tstop"],parameters["dt"])})
+
+        from neuron import h
         
-        vector = method(parameter=parameters)
+        vector = h.Vector(method(parameter=parameters))
         
         self.modulation_opt_setup.update({self.neuromodulation_name[name]: {"function": method,
                                                                             "parameters": parameters,
@@ -153,9 +155,7 @@ class optimisation_setup():
 
                             if "level" in mod_factor["mech_param"]:
                                 dt = self.modulation_setup["modulation_function"]["dt"]
-                                print(self.modulation_opt_setup[mod_factor["name"]]['vector'][0:10])
-                                self.modulation_opt_setup[mod_factor["name"]]['vector'] = self.sim.neuron.h.Vector(self.modulation_opt_setup[mod_factor["name"]]['vector'])
-                                
+                                                               
                                 self.modulation_opt_setup[mod_factor["name"]]['vector'].play(getattr(getattr(seg,mod_factor["mech"]),"_ref_" + mod_factor["mech_param"]),dt)
 
     def define_receptor(self):
