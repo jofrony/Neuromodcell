@@ -49,6 +49,7 @@ jobs:
     - name: Test with pytest
       run: |
         pytest tests/test_selection_functions.py
+        pytest tests/test_model_parameters.py
 
 
 
