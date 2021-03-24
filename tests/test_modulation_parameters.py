@@ -24,6 +24,8 @@ def test_model_setup():
     morph = define_morphology(morph_file=morph_file,replaceAxon=False)
     modulation = define_modulation(json.load(open(test_dir_path / 'modulation.json','r')))
 
+    modulation_file = json.load(open(test_dir_path / 'modulation.json','r'))
+
     sim = NrnSimulatorParallel(cvode_active=False)
 
     print("Running nrnivmodl:")
@@ -34,7 +36,7 @@ def test_model_setup():
     sim.neuron.h.nrn_load_dll(os.getcwd() + '/x86_64/.libs/libnrnmech.so')
     
 
-    test_model = NeuronModel(cell_name=cell_name,morph=morph,mech=mech,param=param, modulation=[])
+    test_model = NeuronModel(cell_name=cell_name,morph=morph,mech=mech,param=param, modulation=modulation)
 
     test_model.instantiate(sim=sim)
 
@@ -43,44 +45,48 @@ def test_model_setup():
 
     loaded_param = json.load(open(param_file,'r'))[parameterID]
 
-
+    translator = {'axon' : 'axonal', 'dend' : 'basal', 'soma' : 'somatic' }
+    
     model_params = list()        
 
     for tpart in ['axon','dend','soma']:
         for neuron_part in getattr(test_model.icell,tpart):
 
-            import pdb
-            pdb.set_trace()
+            sectionlist_name = translator[tpart]
+
+            for param, spec in neuron_part.psection()['density_mechs'].items():
+
+                for keys in spec.keys():
 
 
-            section_param = {
-		"dist_type": "uniform",
-		"param_name": "g_pas",
-		"sectionlist": "axonal",
-		"type": "section",
-		"value": 0.0007134535418891711
-            }
+                    if 'maxMod' in keys and spec[keys][0] != 1.0:
+
+                        value = spec[keys][0]
+
+                        type_modulation = 'modulation' + keys.replace('maxMod','')
+
+                        section_param = {
+                            "dist_type": "uniform",
+                            "mech": param,
+                            "mech_param": keys,
+                            "param_name": keys + '_' + param,
+                            "sectionlist": sectionlist_name,
+                            "type": "range",
+                            "name": type_modulation,
+                            "value": value
+                        }
+
+                        model_params.append(section_param)
+
 
             
-            model_params.append(section_param)
 
 
 
-    difference = DeepDiff(loaded_param[2:], model_params, ignore_order=True)
-
-    import pprint
-
-    pp = pprint.PrettyPrinter(indent=4)
-    pp.pprint(difference)
+    difference = DeepDiff(modulation_file, model_params, ignore_order=True)
 
     assert len(difference) == 0
-
-
-   
-        
-
-   
-                
+         
 
 if __name__ == "__main__":
 
