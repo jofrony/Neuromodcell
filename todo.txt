@@ -17,3 +17,8 @@
 - frequency change only positive
 
 - t_stop modulation defined automatically
+
+- add reload old setup
+
+- do test for morphology
+
