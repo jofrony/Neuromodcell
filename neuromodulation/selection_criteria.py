@@ -127,16 +127,43 @@ def cv_change(criteria,voltages):
     parameters = criteria["parameters"]
 
     selection = criteria["selection"]
+
+    threshold = criteria["selection"]["threshold"]
     
-    control = sf.cv(voltages[0],parameters["dt"])
+    control = sf.cv(voltages[0],parameters)
                         
-    modulated = sf.cv(voltages[1],parameters["dt"])
+    modulated = sf.cv(voltages[1],parameters)
 
-    zcore = abs(selection["mean"] - (control.take(0) - modulated.take(0)))/selection["std"]
+    zscore = abs(selection["mean"] - abs(control.take(0) - modulated.take(0)))/selection["std"]
 
-    boolean = (zcore < selection["threshold"]) > 0 
+    diff = modulated.take(0) - control.take(0)
 
-    result = { "boolean" : boolean}
+    boolean = zscore < threshold
+
+    result = { "boolean" : boolean, "zscore" : zscore, "diff" : diff, "controlcv" : control, "modulatedcv" : modulated}
+    
+    return  result
+
+
+def membrane_amplitude_increase(criteria,voltages):
+
+    parameters = criteria["parameters"]
+
+    selection = criteria["selection"]
+
+    threshold = criteria["selection"]["threshold"]
+    
+    control = sf.membrane_amplitude(voltages[0],parameters)
+                        
+    modulated = sf.membrane_amplitude(voltages[1],parameters)
+
+    zscore = abs(selection["mean"] - abs(control.take(0) - modulated.take(0)))/selection["std"]
+
+    diff = modulated.take(0) - control.take(0)
+
+    boolean = zscore < threshold and diff > 0
+
+    result = { "boolean" : boolean, "zscore" : zscore, "diff" : diff, "controlcv" : control, "modulatedcv" : modulated}
     
     return  result
 

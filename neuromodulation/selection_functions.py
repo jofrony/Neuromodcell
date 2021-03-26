@@ -47,7 +47,7 @@ def ISI(voltage,parameters):
 
 def cv(voltage,parameters):
 
-    isi = ISI(voltage,parameters["dt"])
+    isi = ISI(voltage,parameters)
     cv_isi = elp.statistics.cv(isi)
     
     return cv_isi
@@ -55,13 +55,15 @@ def cv(voltage,parameters):
 
 def membrane_amplitude(voltage,parameters):
     
-    start_slice = parameters['start_slice']
+    start_slice = int(parameters['start_base']/parameters['dt'])
 
-    start_measure = parameters['start_measure']
+    stop_slice = int(parameters['stop_base']/parameters['dt'])
+
+    start_measure = int(parameters['start_measure']/parameters['dt'])
     
-    stop_measure = parameters['stop_measure']
+    stop_measure = int(parameters['stop_measure']/parameters['dt'])
     
-    average = np.mean(voltage[start_slice])
+    average = np.mean(voltage[start_slice: stop_slice])
 
     amplitude = np.mean(voltage[start_measure:stop_measure]) - average
 
