@@ -68,3 +68,20 @@ def membrane_amplitude(voltage,parameters):
     amplitude = np.mean(voltage[start_measure:stop_measure]) - average
 
     return amplitude
+
+
+def synaptic_amplitude(voltage,parameters):
+
+    start_slice = int(parameters['start_base']/parameters['dt'])
+
+    stop_slice = int(parameters['stop_base']/parameters['dt'])
+
+    start_measure = int(parameters['start_measure']/parameters['dt'])
+    
+    stop_measure = int(parameters['stop_measure']/parameters['dt'])
+    
+    average = np.mean(voltage[start_slice: stop_slice])
+
+    amplitude = np.mean(voltage[start_measure:stop_measure]) - average
+
+    return amplitude

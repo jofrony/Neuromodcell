@@ -109,7 +109,7 @@ class Optimise_modulation():
             for i, select_method in enumerate(self.modulation_setup['selection_criteria']):
                 
                 method = getattr(sc,select_method["function"])
-                opt_result  = method(criteria = select_method["criteria"], voltages = [self.control_v, voltage])
+                opt_result  = method(criteria = select_method["criteria"], voltages = [np.array(self.control_v),np.array(voltage)])
                 trial_test[i] = opt_result['boolean']
             
             if np.all(trial_test):

@@ -167,4 +167,71 @@ def membrane_amplitude_increase(criteria,voltages):
     
     return  result
 
+def membrane_amplitude_increase_percentage(criteria,voltages):
+
+    parameters = criteria["parameters"]
+
+    selection = criteria["selection"]
+
+    threshold = criteria["selection"]["threshold"]
+    
+    control = sf.membrane_amplitude(voltages[0],parameters)
+                        
+    modulated = sf.membrane_amplitude(voltages[1],parameters)
+
+    percentage = ((modulated.take(0) -control.take(0))/control.take(0))*100 + 100
+
+    zscore = abs(selection["mean"] - abs(percentage))/selection["std"]
+
+    boolean = zscore < threshold and percentage > 100
+
+    result = { "boolean" : boolean, "zscore" : zscore, "percentage" : percentage, "controlcv" : control, "modulatedcv" : modulated}
+
+    return  result
+
+
+def membrane_amplitude_decrease_percentage(criteria,voltages):
+
+    parameters = criteria["parameters"]
+
+    selection = criteria["selection"]
+
+    threshold = criteria["selection"]["threshold"]
+    
+    control = sf.membrane_amplitude(voltages[0],parameters)
+                        
+    modulated = sf.membrane_amplitude(voltages[1],parameters)
+
+    percentage = ((modulated.take(0) -control.take(0))/control.take(0))*100 + 100
+
+    zscore = abs(selection["mean"] - abs(percentage))/selection["std"]
+
+    boolean = zscore < threshold and percentage < 100
+
+    result = { "boolean" : boolean, "zscore" : zscore, "percentage" : percentage, "controlcv" : control, "modulatedcv" : modulated}
+
+    return  result
+
+def synaptic_amplitude_decrease_percentage(criteria,voltages):
+
+    parameters = criteria["parameters"]
+
+    selection = criteria["selection"]
+
+    threshold = criteria["selection"]["threshold"]
+    
+    control = sf.synaptic_amplitude(voltages[0],parameters)
+                        
+    modulated = sf.synaptic_amplitude(voltages[1],parameters)
+
+    percentage = ((modulated.take(0) -control.take(0))/control.take(0))*100 + 100
+
+    zscore = abs(selection["mean"] - abs(percentage))/selection["std"]
+
+    boolean = zscore < threshold and percentage < 100
+
+    result = { "boolean" : boolean, "zscore" : zscore, "percentage" : percentage, "controlcv" : control, "modulatedcv" : modulated}
+
+    return  result
+
 
