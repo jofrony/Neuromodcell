@@ -53,6 +53,10 @@ jobs:
         pytest tests/test_model_parameters.py
         pytest tests/test_global_params.py
         pytest tests/test_modulation_parameters.py
+        steps:
+          - uses: actions/checkout@master
+          - uses: codecov/codecov-action@v1    
+    
 
 
 
