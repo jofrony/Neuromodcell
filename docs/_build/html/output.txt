@@ -1,0 +1,1 @@
+credit.rst:6: [redirected permanently] https://hpc-carpentry.github.io/hpc-python/ to http://www.hpc-carpentry.org/hpc-python/
