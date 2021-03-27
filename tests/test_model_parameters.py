@@ -23,15 +23,7 @@ def test_model_setup():
     mech = define_mechanisms(mech_file)
     morph = define_morphology(morph_file=morph_file,replaceAxon=False)
 
-    sim = NrnSimulatorParallel(cvode_active=False)
-
-    print("Running nrnivmodl:")
-    os.system("rm -r $PWD/x86_64/")
-
-    os.system("nrnivmodl examples/dSPN/mechanisms-dspn")
-
-    sim.neuron.h.nrn_load_dll(os.getcwd() + '/x86_64/.libs/libnrnmech.so')
-    
+    sim = NrnSimulatorParallel(cvode_active=False)    
 
     test_model = NeuronModel(cell_name=cell_name,morph=morph,mech=mech,param=param, modulation=[])
 
