@@ -8,4 +8,4 @@ x86_64/
 build
 dist
 *egg-info/
-__build/
+_build/
