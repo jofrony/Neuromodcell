@@ -18,7 +18,7 @@ The Class will set up the number of models (runs both in serial and parallel)
 
 '''
 
-class Optimise_modulation():
+class Optimise_modulation:
 
     def __init__(self, setup=None):
         
