@@ -91,27 +91,6 @@ class optimisationResult:
         else:
             plt.show()
 
-    def plot_validated_traces(self,title=None,filename=None, save=False):
-
-        plt.figure(figsize=(9,3))
-
-        time = self.voltages[0]
-
-        for workers in self.voltage_modulation_pass:
-            for i, voltage in workers.items():
-
-                plt.plot(time,voltage)
-
-
-
-        if save:
-            plt.savefig(pathlib.Path(self.dir_path) / filename, dpi=None, facecolor='w', edgecolor='w',
-                        orientation='portrait', papertype=None, format=None,
-                        transparent=False, bbox_inches=None, pad_inches=0.1,
-                        frameon=None, metadata=None)
-        else:
-            plt.show()
-
 
     
 
