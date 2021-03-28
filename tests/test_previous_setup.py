@@ -5,6 +5,7 @@ import pathlib
 def test_old_setup():
 
     abs_path =  os.path.dirname(os.path.abspath(__file__))
+    print(abs_path)
     test_dir_path = pathlib.Path(abs_path,'test_data')
 
     test_setup = old_setup(test_dir_path)
