@@ -142,21 +142,4 @@ class Optimise_modulation_seclamp(Optimise_modulation):
 
             np.savetxt(self.setup / "current.csv",current_saves)
 
-    
 
-if __name__ == "__main__":
-    
-    import sys
-
-    objectives = sys.argv[1]
-    seed = sys.argv[2]
-    Opt = Optimise_modulation(setup = objectives)
-    Opt.setup_load()
-    Opt.set_gids()
-    Opt.set_seed(seed)
-    Opt.modulation_list()
-    Opt.setup_optimisation()
-    Opt.select()
-    Opt.save_optimisation()
-    Opt.export_modulation(size=10)
-    
