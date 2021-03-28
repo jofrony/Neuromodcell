@@ -6,10 +6,6 @@
 
 [![codecov](https://codecov.io/gh/jofrony/Neuromodulation/branch/main/graph/badge.svg?token=LKUJ5SC457)](https://codecov.io/gh/jofrony/Neuromodulation)
 
-![GitHub](https://img.shields.io/github/license/jofrony/Neuromodulation)
-
-![GitHub repo size](https://img.shields.io/github/repo-size/jofrony/Neuromodulation)
-
 
 
 Optimising multicompartmental neurons according to different neuromodulators.
