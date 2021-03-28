@@ -40,6 +40,15 @@ def test_membrane_amplitude():
     assert sf.membrane_amplitude(voltage,parameters) == 20
 
 
+def test_synaptic_amplitude():
+
+    voltage = np.array([-100, -100, -100, -100,-80, -80, -80, -80, -100, -100, -100, -100])
+
+    parameters = {'start_base' : 0, 'stop_base': 0.2, 'start_measure' : 0.4, 'stop_measure' : 0.8,'dt':0.1}
+
+    assert sf.synaptic_amplitude(voltage,parameters) == 20
+
+
 
     
 
