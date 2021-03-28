@@ -3,3 +3,4 @@ bluepyopt
 NEURON
 deepdiff
 matplotlib
+mpi4py
