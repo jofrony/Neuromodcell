@@ -65,11 +65,7 @@ jobs:
         pip install pytest-cov
         pip install -r requirements.txt
         pip install .
-        py.test --cov-report=xml --cov=neuromodulation tests/test_global_params.py
-        py.test --cov-report=xml --cov=neuromodulation tests/test_model_parameters.py
-        py.test --cov-report=xml --cov=neuromodulation tests/test_modulation_parameters.py
-        py.test --cov-report=xml --cov=neuromodulation tests/test_selection_criteria.py
-        py.test --cov-report=xml --cov=neuromodulation tests/test_selection_functions.py 
+        pytest --cov=neuromodulation --cov-report=xml tests/
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
       with:
