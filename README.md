@@ -8,8 +8,6 @@
 
 ![GitHub](https://img.shields.io/github/license/jofrony/Neuromodulation)
 
-![GitHub Workflow Status (event)](https://img.shields.io/github/workflow/status/jofrony/Neuromodulation/Neuromodulation?event=push)
-
 ![GitHub repo size](https://img.shields.io/github/repo-size/jofrony/Neuromodulation)
 
 
