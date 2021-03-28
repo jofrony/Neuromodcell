@@ -9,4 +9,4 @@ def test_old_setup():
 
     test_setup = old_setup(test_dir_path)
 
-    assert test_setup.return_population() == 200
+    assert test_setup.return_population() == 3
