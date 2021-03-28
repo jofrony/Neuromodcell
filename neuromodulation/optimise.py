@@ -275,19 +275,3 @@ class NumpyEncoder(json.JSONEncoder):
 			return obj.tolist()
 		else:
 			return json.JSONEncoder.default(self, obj)
-                    
-if __name__ == "__main__":
-    
-    import sys
-
-    objectives = sys.argv[1]
-    seed = sys.argv[2]
-    Opt = Optimise_modulation(setup = objectives)
-    Opt.setup_load()
-    Opt.set_gids()
-    Opt.set_seed(seed)
-    Opt.modulation_list()
-    Opt.setup_optimisation()
-    Opt.select()
-    Opt.save_optimisation()
-    Opt.export_modulation(size=10)
