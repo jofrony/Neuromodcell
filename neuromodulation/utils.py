@@ -8,9 +8,9 @@ import pathlib
 import json
 import numpy as np
 
-def combine_neuromodulators(file_path,neuromodulators = None):
+def combine_neuromodulators(dir_path,ID,neuromodulators = None):
 
-    files_path = pathlib.Path(file_path)
+    files_path = pathlib.Path(dir_path)
 
     temp_dict = dict()
     
@@ -18,9 +18,9 @@ def combine_neuromodulators(file_path,neuromodulators = None):
 
     for f in files_path.iterdir():
         if f.is_dir():
-            
-            data = json.load(open(f / 'modulations.json'))
-            temp_dict.update({f.name : data})
+            f_ID  = pathlib.Path(f,'ID_' + str(ID))
+            data = json.load(open(f_ID / 'modulations.json'))
+            temp_dict.update({f_ID.name : data})
             size = len(data)
 
     final_dict = {"combined" : list()}
