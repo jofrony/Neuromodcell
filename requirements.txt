@@ -2,3 +2,4 @@ elephant
 bluepyopt
 NEURON
 deepdiff
+matplotlib
