@@ -146,14 +146,15 @@ class Optimise_modulation:
             
             
             world_model_pass = list()
-            
-            for result in world_model_pass_all:
 
-                for task, model in result.items():
+ 
+            for modulations_all in world_model_pass_all:
 
-                    world_model_pass.append(pass_volt)
+                for task, model in modulations_all.items():
 
-            out_file = open(self.setup / "modulation_pass.json", "w")
+                    world_model_pass.append(model)
+
+            out_file = open(self.setup / "modulations.json", "w")
 
             json.dump(world_model_pass, out_file, indent = 6, cls=NumpyEncoder) 
             
@@ -182,7 +183,7 @@ class Optimise_modulation:
 
         if self.rank == 0:
 
-            out_file = open(self.setup / "modulations.json", "w")
+            out_file = open(self.setup / "modulation_pass.json", "w")
             
             modulations_temp = list()
         
@@ -209,7 +210,7 @@ class Optimise_modulation:
 
         if self.rank == 0:
 
-            out_rc_file = open(self.setup / "receptor-modulations.json", "w")
+            out_rc_file = open(self.setup / "receptor_modulation_pass.json", "w")
 
             modulations_temp = list()
         
