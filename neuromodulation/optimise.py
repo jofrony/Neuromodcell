@@ -123,7 +123,7 @@ class Optimise_modulation:
 
     def save_optimisation(self,downsample=1):
 
-        world_model_pass_all = self.comm.gather(self.cell_model_pass, root=0)
+        world_model_pass_all = self.comm.gather(self.unit_modulation["param_set"], root=0)
         world_model_voltage_pass_all = self.comm.gather(self.cell_model_voltage_pass, root=0)
 
         world_voltage = self.comm.gather(self.v_save,root = 0)
@@ -150,7 +150,7 @@ class Optimise_modulation:
  
             for modulations_all in world_model_pass_all:
 
-                for task, model in modulations_all.items():
+                for model in modulations_all:
 
                     world_model_pass.append(model)
 
