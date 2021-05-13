@@ -5,16 +5,16 @@ import pathlib
 
 def plot_comparison(control,control_sim,modulated,modulated_sim, num_models,ylabel,title,x_ticks=tuple(),parameterID=None,dir_path=None,save=False,filename=None):
 
-    fig, ax = plt.subplots(1, figsize=(7,9))
+    fig, ax = plt.subplots(1, figsize=(3,4))
     for i in range(num_models):
 
         ax.errorbar(i, modulated['mean'], 
                 xerr=0, yerr=modulated['std'], 
-                fmt='rs',capsize=5,markersize=10,elinewidth=2)
+                    fmt='rs',capsize=5,markersize=8,elinewidth=4)
         
         ax.errorbar(i, control['mean'], 
                 xerr=0, yerr=control['std'], 
-                fmt='bs',capsize=2,markersize=5,elinewidth=1)
+                    fmt='bs',capsize=2,markersize=4,elinewidth=2)
 
         x=i*np.ones(len(modulated_sim[i]))
         modulated_sim[i]=np.sort(modulated_sim[i])
@@ -43,8 +43,8 @@ def plot_comparison(control,control_sim,modulated,modulated_sim, num_models,ylab
             sumnj = sumnj+nj
 
         #print('x',x)
-        plt.plot(x,modulated_sim[i],'ok')
-        plt.plot(i,control_sim[i],'og')
+        plt.plot(x,modulated_sim[i],'ok',markersize=3)
+        plt.plot(i,control_sim[i],'og',markersize=3)
         
         plt.xlim([-15*dx,15*dx])
 
@@ -55,16 +55,17 @@ def plot_comparison(control,control_sim,modulated,modulated_sim, num_models,ylab
     plt.xticks(ind, x_ticks, rotation=60)
     plt.ylabel(ylabel)
     plt.title(title)
+    plt.tight_layout()
 
     #legend
     legend_elements = [Line2D([0], [0], marker='s', color='w', label='Control Data',
-                              markerfacecolor='b', markersize=10),
+                              markerfacecolor='b', markersize=1),
                        Line2D([0], [0], marker='o', color='w', label='Optimised models',
-                              markerfacecolor='g', markersize=10),
+                              markerfacecolor='g', markersize=1),
                        Line2D([0], [0], marker='s', color='w', label='Modulated Data',
-                              markerfacecolor='r', markersize=10),
+                              markerfacecolor='r', markersize=1),
                        Line2D([0], [0], marker='o', color='w', label='Optimised Modulated models',
-                              markerfacecolor='k', markersize=10),]
+                              markerfacecolor='k', markersize=1),]
     ax.legend(handles=legend_elements, loc='upper right')
 
     if save:

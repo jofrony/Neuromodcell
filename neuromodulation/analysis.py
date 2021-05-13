@@ -25,12 +25,12 @@ class optimisationResult:
         self.voltage_modulation_pass = None
         self.dir_path = pathlib.Path(dir_path)
         self.dt = None
-        
+
     def load(self):
         
         self.voltages = np.loadtxt(self.dir_path / 'voltages.csv')
         self.model_pass_param = json.load(open(self.dir_path / 'modulation_pass.json','rb'))
-        self.model_pass_receptor = json.load(open(self.dir_path / 'receptor-modulations.json','rb'))
+        self.model_pass_receptor = json.load(open(self.dir_path / 'receptor_modulation_pass.json','rb'))
         self.modulation = json.load(open(self.dir_path / 'modulation.json','rb'))
         self.modulations = json.load(open(self.dir_path / 'modulations.json','rb'))
         self.modulation_setup = json.load(open(self.dir_path / 'modulation_setup.json','rb'))
