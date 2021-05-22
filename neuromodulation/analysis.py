@@ -36,6 +36,10 @@ class optimisationResult:
         self.modulation_setup = json.load(open(self.dir_path / 'modulation_setup.json','rb'))
         self.voltage_modulation_pass = np.loadtxt(self.dir_path /  'voltage_modulation_pass.csv')
 
+        if len(self.voltage_modulation_pass) == 0 or not(isinstance(self.voltage_modulation_pass[0],np.ndarray)):
+
+            self.voltage_modulation_pass = np.array([self.voltage_modulation_pass])
+
         self.dt = self.voltages[0][1]-self.voltages[0][0]
 
     def plot_control(self,title=None,filename=None, save=False):
