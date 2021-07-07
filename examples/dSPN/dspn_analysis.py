@@ -1,13 +1,13 @@
-import neuromodulation.selection_criteria as sc
-import neuromodulation.selection_functions as sf
-from neuromodulation.analysis import optimisationResult
+import neuromodcell.selection_criteria as sc
+import neuromodcell.selection_functions as sf
+from neuromodcell.analysis import optimisationResult
 import numpy as np
-from neuromodulation.plotting import plot_comparison
+from neuromodcell.plotting import plot_comparison
 import matplotlib.pyplot as plt
 import pathlib
 import os
 import json
-from neuromodulation.modulation_set import NumpyEncoder
+from neuromodcell.modulation_set import NumpyEncoder
 
 class dSPNanalysis(optimisationResult):
     
@@ -136,22 +136,28 @@ class dSPNanalysis(optimisationResult):
 
         voltage_sub = np.take(self.voltages[1:-1],index_original,axis=0)[0]
 
-        index = np.where(np.transpose(results_pass)[0] ==  min(np.transpose(results_pass)[0]))
+        if len(np.transpose(results_pass)[0])>0:
+            index = np.where(np.transpose(results_pass)[0] ==  min(np.transpose(results_pass)[0]))
 
-        if len(index[0])>1:
-            import random
-            index = random.choice(index[0])
+            if len(index[0])>1:
+                import random
+                index = random.choice(index[0])
+            else:
+                index = index[0][0]
+            
+            chosen = modulations_sub[index]
+
+            self.final_modulation_result  = results_pass[index]
+            self.final_modulation_voltage = voltage_sub[index]
+
+            with open(pathlib.Path(os.path.abspath(self.dir_path)) / 'final_modulation.json','w') as f:
+                json.dump(chosen,f,cls=NumpyEncoder)
         else:
-            index = index[0][0]
- 
-        chosen = modulations_sub[index]
+            print('No modulation was found in this optimisation')
 
-        self.final_modulation_result  = results_pass[index]
-        self.final_modulation_voltage = voltage_sub[index]
-
-        with open(pathlib.Path(os.path.abspath(self.dir_path)) / 'final_modulation.json','w') as f:
-            json.dump(chosen,f,cls=NumpyEncoder)
-
+            self.final_modulation_result  = []
+            self.final_modulation_voltage = []
+            
     def get_final_modulation(self):
 
         return self.final_modulation_result, self.final_modulation_voltage
@@ -164,10 +170,12 @@ class dSPNanalysis(optimisationResult):
 
         modulation, voltage = self.get_final_modulation()
 
-        plt.plot(self.voltages[0],voltage, label='chosen')
-        plt.plot(self.voltages[0],self.voltages[-1],label='control',c='black')
-        plt.show()
-        
+        if len(modulation)>1:
+            plt.plot(self.voltages[0],voltage, label='chosen')
+            plt.plot(self.voltages[0],self.voltages[-1],label='control',c='black')
+            plt.show()
+        else:
+            print('No modulation exists')        
 
     def plot_validated_traces_with_control(self,titles=None,filename=None, save=False,skip=50,plot_protocols=True,resting_tick=True):
 

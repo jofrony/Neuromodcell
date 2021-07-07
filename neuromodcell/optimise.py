@@ -3,9 +3,9 @@ from neuron import h
 import json
 import copy
 import numpy as np
-from neuromodulation.optimisation_setup import optimisation_setup
-from neuromodulation.NrnSimulatorParallel import NrnSimulatorParallel
-import neuromodulation.selection_criteria as sc
+from neuromodcell.optimisation_setup import optimisation_setup
+from neuromodcell.NrnSimulatorParallel import NrnSimulatorParallel
+import neuromodcell.selection_criteria as sc
 from math import exp
 import pathlib
 

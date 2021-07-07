@@ -1,4 +1,4 @@
-from neuromodulation.optimisation_setup import optimisation_setup
+from neuromodcell.optimisation_setup import optimisation_setup
 
 
 class optimisation_setup_seclamp(optimisation_setup):

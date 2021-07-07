@@ -1,9 +1,9 @@
-from neuromodulation.optimise import Optimise_modulation
-from neuromodulation.optimise import NumpyEncoder
-from neuromodulation.optimisation_setup_seclamp import optimisation_setup_seclamp
-from neuromodulation.NrnSimulatorParallel import NrnSimulatorParallel
+from neuromodcell.optimise import Optimise_modulation
+from neuromodcell.optimise import NumpyEncoder
+from neuromodcell.optimisation_setup_seclamp import optimisation_setup_seclamp
+from neuromodcell.NrnSimulatorParallel import NrnSimulatorParallel
 import numpy as np
-import neuromodulation.selection_criteria as sc
+import neuromodcell.selection_criteria as sc
 import json
 
 class Optimise_modulation_seclamp(Optimise_modulation):

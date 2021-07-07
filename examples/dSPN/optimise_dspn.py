@@ -1,4 +1,4 @@
-from neuromodulation.optimise import Optimise_modulation
+from neuromodcell.optimise import Optimise_modulation
 import sys
 import time
 

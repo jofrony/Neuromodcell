@@ -1,10 +1,10 @@
-import neuromodulation.modulation_functions as mf
-from neuromodulation.model_functions import define_mechanisms
-from neuromodulation.model_functions import define_parameters
-from neuromodulation.model_functions import define_morphology
-from neuromodulation.model_functions import define_modulation
-from neuromodulation.model_functions import files
-from neuromodulation.Neuron_model_extended import NeuronModel
+import neuromodcell.modulation_functions as mf
+from neuromodcell.model_functions import define_mechanisms
+from neuromodcell.model_functions import define_parameters
+from neuromodcell.model_functions import define_morphology
+from neuromodcell.model_functions import define_modulation
+from neuromodcell.model_functions import files
+from neuromodcell.Neuron_model_extended import NeuronModel
 import numpy as np
 import json
 import logging

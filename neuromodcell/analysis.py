@@ -1,7 +1,7 @@
 import pathlib
 import numpy as np
 import json
-import neuromodulation.modulation_functions as mf
+import neuromodcell.modulation_functions as mf
 import matplotlib.pyplot as plt
 
 

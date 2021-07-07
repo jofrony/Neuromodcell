@@ -1,4 +1,4 @@
-import neuromodulation.selection_functions as sf
+import neuromodcell.selection_functions as sf
 import numpy as np
 
 '''
