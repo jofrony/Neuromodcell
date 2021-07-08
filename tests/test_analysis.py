@@ -4,8 +4,8 @@ import pathlib
 
 
 def test_analysis():
-    abs_path = os.path.dirname(os.path.abspath(__file__))
-    test_dir_path = pathlib.Path(abs_path, 'test_result')
+
+    test_dir_path = pathlib.Path('Neuromodcell/test/test_result')
 
     testdl = OptimisationResult(test_dir_path)
     testdl.load()

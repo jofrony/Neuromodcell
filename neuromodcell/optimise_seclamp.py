@@ -11,12 +11,13 @@ class OptimiseModulationSeclamp(OptimiseModulation):
 
     def __init__(self, setup=None):
 
-        self.control_c = self.comm.recv(source=0, tag=self.rank)
         self.c_save = None
 
         self.cell_model_current_pass = dict()
 
         super(OptimiseModulationSeclamp, self).__init__(setup=setup)
+
+        self.control_c = self.comm.recv(source=0, tag=self.rank)
 
     def select(self):
 
