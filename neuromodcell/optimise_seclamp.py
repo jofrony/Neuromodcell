@@ -16,7 +16,7 @@ class OptimiseModulationSeclamp(Optimise_modulation):
 
         self.cell_model_current_pass = dict()
 
-        super(Optimise_modulation_seclamp, self).__init__(setup=setup)
+        super(OptimiseModulationSeclamp, self).__init__(setup=setup)
 
     def select(self):
 

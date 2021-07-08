@@ -1,3 +1,7 @@
+import pathlib
+import json
+
+
 def combine_neuromodulators(dir_path, neuromodulators=None):
     files_path = pathlib.Path(dir_path)
 
@@ -29,7 +33,7 @@ def combine_neuromodulators(dir_path, neuromodulators=None):
     return temp_list
 
 
-def save(out_dir):
+def save(out_dir, temp_list):
     
     with open(pathlib.Path(out_dir) / 'modulation.json', 'w') as f:
         json.dump(temp_list, f)
