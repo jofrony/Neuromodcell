@@ -55,7 +55,7 @@ class OptimiseModulation:
 
         self.sim = NrnSimulatorParallel(cvode_active=False)
 
-        opt = optimisation_setup(self.modulation_setup)
+        opt = OptimisationSetup(self.modulation_setup)
         opt.set_gidlist(self.gidlist)
         opt.start_logging()
 

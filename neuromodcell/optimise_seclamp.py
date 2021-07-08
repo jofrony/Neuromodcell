@@ -54,7 +54,7 @@ class OptimiseModulationSeclamp(Optimise_modulation):
 
         self.sim = NrnSimulatorParallel(cvode_active=False)
 
-        opt = optimisation_setup_seclamp(self.modulation_setup)
+        opt = OptimisationSetupSeclamp(self.modulation_setup)
         opt.set_gidlist(self.gidlist)
         opt.start_logging()
 
