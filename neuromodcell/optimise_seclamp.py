@@ -7,7 +7,7 @@ import neuromodcell.selection_criteria as sc
 import json
 
 
-class OptimiseModulationSeclamp(Optimise_modulation):
+class OptimiseModulationSeclamp(OptimiseModulation):
 
     def __init__(self, setup=None):
 
