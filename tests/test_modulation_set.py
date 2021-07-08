@@ -11,7 +11,7 @@ def test_modulation_set():
 
     out_put_test_dir = cell_test_folder
 
-    mod_set = DefineModulationefineModulation(parameterID=100)
+    mod_set = DefineModulation(parameterID=100)
     mod_set.cell_name('test')
     mod_set.define_neuromodulation(modulationA = "neuromodulatorX")
     mod_set.new_modulation_dir(out_put_test_dir)
