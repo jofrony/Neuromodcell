@@ -27,7 +27,6 @@ class NeuronModel(ephys.models.CellModel):
         self.syn_list = []
         self.section_lookup = None
 
-        
     def instantiate(self, sim=None):
         """Instantiate model in simulator"""
 

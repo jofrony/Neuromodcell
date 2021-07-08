@@ -1,25 +1,14 @@
-
-'''
-
-Different functions for modulating the cells
-
-The functions return array which contain the modulation level per time step of the simulation
-
-
-'''
-
-
 import numpy as np
 
-def alpha(parameter=None):
 
+def alpha(parameter=None):
     time_step_array = parameter['time_step_array']
     tstart = parameter['tstart']
     gmax = parameter['gmax']
     tau = parameter['tau']
 
     mag = list()
-    
+
     '''
     calc and returns a "magnitude" using an alpha function -> used for modulation
         transients
@@ -42,40 +31,35 @@ def alpha(parameter=None):
 
 
 def step(parameter=None):
-
     time_step_array = parameter['time_step_array']
     tstart = parameter['tstart']
     step_stop = parameter['duration'] + parameter['tstart']
     gmax = parameter['gmax']
 
     mag = list()
-    
+
     for t_step in time_step_array:
         if t_step > tstart and t_step < step_stop:
             mag.append(gmax)
         else:
             mag.append(0)
-            
 
     return mag
 
 
 def bath_application(parameter=None):
-
     time_step_array = parameter['time_step_array']
     gmax = parameter['gmax']
 
     mag = list()
 
     for t_step in time_step_array:
-
         mag.append(gmax)
 
     return mag
 
 
 def alpha_background(parameter=None):
-
     time_step_array = parameter['time_step_array']
     tstart = parameter['tstart']
     gmax_decrease = parameter['gmax_decrease']
@@ -101,7 +85,6 @@ def alpha_background(parameter=None):
 
 
 def time_series(parameter=None):
-
     mag = eval(parameter['array'])
-    
+
     return mag

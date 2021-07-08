@@ -11,10 +11,9 @@ Class which sets up the modulation parameters for the neuron models
 '''
 
 
+class DefineModulation:
 
-class defineModulation:
-
-    def __init__(self,parameterID,population_size=None,cellDir=None):
+    def __init__(self, parameterID, population_size=None, cellDir=None):
 
         self.set_mod = list()
         self.neuromodulation_name = dict()
@@ -30,14 +29,14 @@ class defineModulation:
         self.tstop = None
         self.dt = None
 
-    def set_time_step(self,dt):
+    def set_time_step(self, dt):
 
         self.dt = dt
 
-    def cell_name(self,name):
+    def cell_name(self, name):
 
         self.name = name
-        
+
     def define_neuromodulation(self, **kwargs):
 
         for key, value in kwargs.items():
@@ -51,56 +50,53 @@ class defineModulation:
 
         else:
 
-            modulation_function.update({'tstop' : self.tstop})
-            modulation_function.update({'dt' : self.dt})
+            modulation_function.update({'tstop': self.tstop})
+            modulation_function.update({'dt': self.dt})
 
-            modulation_function.update({'time_step_array' : np.arange(0,self.tstop,self.dt)})
+            modulation_function.update({'time_step_array': np.arange(0, self.tstop, self.dt)})
 
         self.modulation_function = modulation_function
-  
-    def define_selection_criteria(self,function,criteria):
 
-        criteria['parameters'].update({'dt' : self.dt})
+    def define_selection_criteria(self, function, criteria):
 
-        self.selection_criteria.append({ "function" : function, "criteria" : criteria})
+        criteria['parameters'].update({'dt': self.dt})
+
+        self.selection_criteria.append({"function": function, "criteria": criteria})
 
     def define_protocol(self, typeEx, parameters):
 
         self.protocols.append({'type': typeEx,
-                                   'parameters': parameters})
+                               'parameters': parameters})
 
     def define_modulation_receptor(self, syn, neuromod, syn_param, modulation_param):
 
         name = self.neuromodulation_name[neuromod]
 
-        synaptic_param = {syn : list()}
+        synaptic_param = {syn: list()}
 
         for mod_param, bounds in modulation_param.items():
-
             syn_param_key = mod_param + self.neuromodulation_name[neuromod].replace("modulation", "")
             level_syn_key = "level" + self.neuromodulation_name[neuromod].replace("modulation", "")
             on_syn_key = self.neuromodulation_name[neuromod].replace("ulation", "")
-            
+
             setmod = {
                 "syn": syn,
                 "param_name": syn_param_key,
                 "level_param": level_syn_key,
                 "bounds": bounds,
-                "modON" : on_syn_key,
-                "name" : name
+                "modON": on_syn_key,
+                "name": name
             }
 
             synaptic_param[syn].append(setmod)
 
-        synaptic_param.update({"syn_param" : syn_param})
-
-
+        synaptic_param.update({"syn_param": syn_param})
 
         self.set_receptor.append(synaptic_param)
 
     def define_modulation_parameter(self, mech, mech_param, sectionlist, bounds=None):
         name = self.neuromodulation_name[mech_param]
-    
+
         if bounds is None:
             bounds = []
         mech_param_key = self.neuromodulation_name[mech_param].replace("ulation", "").replace("m", "maxM")
@@ -112,7 +108,7 @@ class defineModulation:
             "sectionlist": sectionlist,
             "type": "range",
             "bounds": bounds,
-            "name" : name
+            "name": name
         }
 
         level_param_key = "level" + self.neuromodulation_name[mech_param].replace("modulation", "")
@@ -124,7 +120,7 @@ class defineModulation:
             "sectionlist": sectionlist,
             "type": "range",
             "value": 0,
-            "name" : name
+            "name": name
         }
 
         on_param_key = self.neuromodulation_name[mech_param].replace("ulation", "")
@@ -136,7 +132,7 @@ class defineModulation:
             "sectionlist": sectionlist,
             "type": "range",
             "value": 0,
-            "name" : name
+            "name": name
         }
         self.set_mod.append(setmod)
         self.set_mod.append(level)
@@ -147,42 +143,41 @@ class defineModulation:
         for key, value in self.neuromodulation_name.items():
             parameterID_name = 'ID_' + str(self.parameterID)
 
-            neuromodulationDir = Path(directory,key,parameterID_name)
-            
+            neuromodulationDir = Path(directory, key, parameterID_name)
+
             if not neuromodulationDir.exists():
                 neuromodulationDir.mkdir(parents=True, exist_ok=True)
 
             self.neuromodulationDir = neuromodulationDir
 
-
-    def save_modulation(self, name = 'modulation.json'):
+    def save_modulation(self, name='modulation.json'):
 
         with open(self.neuromodulationDir / name, 'w') as f:
             json.dump(self.set_mod, f)
 
-        
-    def save_modulation_setup(self, name='modulation_setup.json'):      
+    def save_modulation_setup(self, name='modulation_setup.json'):
 
         define_modulation = dict()
 
         for key, value in self.neuromodulation_name.items():
             define_modulation.update({
                 "name": key,
-                "key" : value,
+                "key": value,
                 "tstop": self.tstop,
                 "ion_channel_modulation": self.set_mod,
-                "receptor_modulation" : self.set_receptor,
+                "receptor_modulation": self.set_receptor,
                 "population": self.population,
                 "protocols": self.protocols,
                 "parameterID": self.parameterID,
                 "cellDir": self.cellDir,
-                "modulation_function" : self.modulation_function,
-                "selection_criteria" : self.selection_criteria,
-                "cell_name" : self.name
+                "modulation_function": self.modulation_function,
+                "selection_criteria": self.selection_criteria,
+                "cell_name": self.name
             })
-       
+
         with open(self.neuromodulationDir / name, 'w') as f:
             json.dump(define_modulation, f, cls=NumpyEncoder)
+
 
 class NumpyEncoder(json.JSONEncoder):
     def default(self, obj):
@@ -192,7 +187,7 @@ class NumpyEncoder(json.JSONEncoder):
             return float(obj)
         elif isinstance(obj, np.ndarray):
             return obj.tolist()
-        elif isinstance(obj,pathlib.PosixPath):
+        elif isinstance(obj, pathlib.PosixPath):
             return str(obj)
         else:
             return json.JSONEncoder.default(self, obj)

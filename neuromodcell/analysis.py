@@ -13,7 +13,7 @@ functions for analysing the data
 '''
 
 
-class optimisationResult:
+class OptimisationResult:
     
     def __init__(self,dir_path):
         
