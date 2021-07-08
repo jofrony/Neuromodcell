@@ -17,7 +17,7 @@ class OptimiseModulationSeclamp(OptimiseModulation):
 
         super(OptimiseModulationSeclamp, self).__init__(setup=setup)
 
-        self.control_c = self.comm.recv(source=0, tag=self.rank)
+        self.control_c = None
 
     def select(self):
 

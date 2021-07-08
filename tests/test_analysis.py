@@ -5,6 +5,8 @@ import pathlib
 
 def test_analysis():
 
+    '''
+
     test_dir_path = pathlib.Path('Neuromodcell/tests/test_result')
 
     testdl = OptimisationResult(test_dir_path)
@@ -13,3 +15,7 @@ def test_analysis():
     testdl.plot_control(title='test', filename='test.pdf', save=True)
 
     testdl.plot_all_traces(title='test', filename='test.pdf', save=True)
+
+    '''
+
+    return
