@@ -5,7 +5,7 @@ import pathlib
 
 def test_analysis():
 
-    test_dir_path = pathlib.Path('Neuromodcell/test/test_result')
+    test_dir_path = pathlib.Path('Neuromodcell/tests/test_result')
 
     testdl = OptimisationResult(test_dir_path)
     testdl.load()
