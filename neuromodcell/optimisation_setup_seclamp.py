@@ -1,6 +1,7 @@
-from neuromodcell.optimisation_setup import optimisation_setup
+from neuromodcell.optimisation_setup import OptimisationSetup
 
-class OptimisationSetupSeclamp(optimisation_setup):
+
+class OptimisationSetupSeclamp(OptimisationSetup):
 
     def __init__(self, modulation_setup):
         self.seclamp = list()
