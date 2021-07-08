@@ -18,4 +18,4 @@ def test_optimise_seclamp():
 
     '''
 
-    return
+    assert 1 == 1

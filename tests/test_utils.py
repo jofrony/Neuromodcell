@@ -15,4 +15,4 @@ def test_combine_neuromodulators():
 
     '''
 
-    return
+    assert 1 == 1

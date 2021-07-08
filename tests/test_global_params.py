@@ -12,6 +12,7 @@ import os
 
 def test_model_setup():
     abs_path = os.path.dirname(os.path.abspath(__file__))
+    print(abs_path)
     test_dir_path = pathlib.Path(abs_path, 'test_model')
 
     parameter_id = 0
@@ -55,3 +56,7 @@ def test_model_setup():
     difference = DeepDiff(loaded_param[0:2], model_params, ignore_order=True)
 
     assert len(difference) == 0
+
+if __name__ == '__main__':
+
+    test_model_setup()

@@ -18,4 +18,4 @@ def test_analysis():
 
     '''
 
-    return
+    assert 1 == 1
