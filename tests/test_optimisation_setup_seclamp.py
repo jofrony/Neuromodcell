@@ -1,4 +1,4 @@
-from neuromodcell.optimisation_setup_seclamp import optimisation_setup_seclamp
+from neuromodcell.optimisation_setup_seclamp import OptimisationSetupSeclamp
 from neuromodcell.NrnSimulatorParallel import NrnSimulatorParallel
 import json
 import os
@@ -15,7 +15,7 @@ def test_optimisation_setup_seclamp():
 
     sim = NrnSimulatorParallel(cvode_active=False)
 
-    opt = optimisation_setup_seclamp(modulation_setup)
+    opt = OptimisationSetupSeclamp(modulation_setup)
     opt.set_gidlist([0])
     opt.start_logging()
 

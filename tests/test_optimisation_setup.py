@@ -1,4 +1,4 @@
-from neuromodcell.optimisation_setup import optimisation_setup
+from neuromodcell.optimisation_setup import OptimisationSetup
 from neuromodcell.NrnSimulatorParallel import NrnSimulatorParallel
 import json
 import os
@@ -15,7 +15,7 @@ def test_optimisation_setup():
 
     sim = NrnSimulatorParallel(cvode_active=False)
 
-    opt = optimisation_setup(modulation_setup)
+    opt = OptimisationSetup(modulation_setup)
     opt.set_gidlist([0])
     opt.start_logging()
 
