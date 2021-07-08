@@ -3,7 +3,7 @@ from neuron import h
 import json
 import copy
 import numpy as np
-from neuromodcell.optimisation_setup import optimisation_setup
+from neuromodcell.optimisation_setup import OptimisationSetup
 from neuromodcell.NrnSimulatorParallel import NrnSimulatorParallel
 import neuromodcell.selection_criteria as sc
 from math import exp

@@ -1,6 +1,6 @@
 from neuromodcell.optimise import Optimise_modulation
 from neuromodcell.optimise import NumpyEncoder
-from neuromodcell.optimisation_setup_seclamp import optimisation_setup_seclamp
+from neuromodcell.optimisation_setup_seclamp import OptimisationSetupSeclamp
 from neuromodcell.NrnSimulatorParallel import NrnSimulatorParallel
 import numpy as np
 import neuromodcell.selection_criteria as sc
