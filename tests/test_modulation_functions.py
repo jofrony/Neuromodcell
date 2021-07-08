@@ -1,4 +1,4 @@
-import neuromodulation.modulation_functions as mf
+import neuromodcell.modulation_functions as mf
 import numpy as np
 
 def test_alpha():

@@ -1,4 +1,4 @@
-from neuromodulation.analysis import optimisationResult
+from neuromodcell.analysis import optimisationResult
 import os
 import pathlib
 

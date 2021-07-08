@@ -1,4 +1,4 @@
-from neuromodulation.experimental_data import experimental
+from neuromodcell.experimental_data import experimental
 
 
 def test_experimental():

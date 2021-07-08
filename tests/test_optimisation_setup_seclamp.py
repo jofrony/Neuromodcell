@@ -1,21 +1,20 @@
-from neuromodulation.optimisation_setup_seclamp import optimisation_setup_seclamp
-from neuromodulation.NrnSimulatorParallel import NrnSimulatorParallel
+from neuromodcell.optimisation_setup_seclamp import optimisation_setup_seclamp
+from neuromodcell.NrnSimulatorParallel import NrnSimulatorParallel
 import json
 import os
 import pathlib
 
-def test_optimisation_setup_seclamp():
 
-    abs_path =  os.path.dirname(os.path.abspath(__file__))
-    test_dir_path = pathlib.Path(abs_path,'test_data')
+def test_optimisation_setup_seclamp():
+    abs_path = os.path.dirname(os.path.abspath(__file__))
+    test_dir_path = pathlib.Path(abs_path, 'test_data')
 
     modulation_setup = json.load(open(test_dir_path / 'modulation_setup.json'))
 
-    unit_modulation = {'receptor' : [[]], 'param_set' : [[]]}
+    unit_modulation = {'receptor': [[]], 'param_set': [[]]}
 
     sim = NrnSimulatorParallel(cvode_active=False)
 
-    
     opt = optimisation_setup_seclamp(modulation_setup)
     opt.set_gidlist([0])
     opt.start_logging()
@@ -24,10 +23,10 @@ def test_optimisation_setup_seclamp():
     opt.control_neuron()
 
     opt.setup_neurons(opt.unit_modulation)
-            
+
     opt.define_neuromodulation()
- 
-    opt.instantiate(sim = sim)
+
+    opt.instantiate(sim=sim)
 
     t_save = opt.time_save()
 
@@ -38,7 +37,7 @@ def test_optimisation_setup_seclamp():
     opt.define_ion_channel()
 
     opt.define_receptor()
-        
+
     opt.define_protocol()
 
     opt.run()

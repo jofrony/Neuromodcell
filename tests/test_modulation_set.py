@@ -1,4 +1,4 @@
-from neuromodulation.modulation_set import defineModulation
+from neuromodcell.modulation_set import defineModulation
 import pathlib
 import os
 
