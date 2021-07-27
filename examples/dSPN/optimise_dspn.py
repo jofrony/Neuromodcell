@@ -1,4 +1,4 @@
-from neuromodcell.optimise import Optimise_modulation
+from neuromodcell.optimise import OptimiseModulation
 import sys
 import time
 
@@ -13,7 +13,7 @@ seconds = time.time()
 
 objectives = sys.argv[1]
 seed = sys.argv[2]
-Opt = Optimise_modulation(setup = objectives)
+Opt = OptimiseModulation(setup = objectives)
 Opt.setup_load()
 Opt.set_gids()
 Opt.set_seed(seed)

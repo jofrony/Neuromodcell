@@ -27,8 +27,14 @@ def combine_neuromodulators(dir_path, neuromodulators=None):
                 final_dict.update({id_name: data_id})
             else:
                 final_dict[id_name] = final_dict[id_name] + data_id
+    print(final_dict)
 
-    temp_list = [*final_dict.values()]
+    num_parameter_sets = len([*final_dict.values()])
+    temp_list = list()
+    
+    for i in range(num_parameter_sets):
+
+        temp_list.append(final_dict['ID_' + str(i)])
 
     return temp_list
 

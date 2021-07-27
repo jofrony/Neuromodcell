@@ -13,21 +13,21 @@ Class which sets up the modulation parameters for the neuron models
 
 class DefineModulation:
 
-    def __init__(self, parameterID, population_size=None, cellDir=None):
+    def __init__(self, parameterID=None,cell_name = None,output_dir = None, cell_dir = None, population_size=None,tstop = None,time_step = None,  cellDir=None):
 
         self.set_mod = list()
         self.neuromodulation_name = dict()
         self.population = population_size
         self.protocols = list()
         self.parameterID = parameterID
-        self.neuromodulationDir = None
-        self.cellDir = cellDir
+        self.neuromodulationDir = output_dir
+        self.cellDir = cell_dir
         self.selection_criteria = list()
         self.modulation_function = None
-        self.name = None
+        self.name = cell_name
         self.set_receptor = list()
-        self.tstop = None
-        self.dt = None
+        self.tstop = tstop
+        self.dt = time_step
 
     def set_time_step(self, dt):
 
@@ -57,13 +57,38 @@ class DefineModulation:
 
         self.modulation_function = modulation_function
 
-    def define_selection_criteria(self, function, criteria):
+    def define_selection_criteria(self,**kwargs):
+
+        criteria = {'parameters' : dict(), 'selection' : dict()}
+        for key, value in kwargs.items():
+
+
+            if 'function' in key:
+                function = value
+
+            elif 'mean' in key or 'std' in key or 'threshold' in key:
+
+                criteria['selection'].update({key : value})
+
+            else:
+                criteria['parameters'].update({key : value})
 
         criteria['parameters'].update({'dt': self.dt})
 
         self.selection_criteria.append({"function": function, "criteria": criteria})
 
-    def define_protocol(self, typeEx, parameters):
+    def define_protocol(self,**kwargs):
+
+        parameters = dict()
+
+        for key, value in kwargs.items():
+
+            if 'typeEx' in key:
+                typeEx = value
+            else:
+                parameters.update({key,value})
+            
+            self.neuromodulation_name.update({value: key})
 
         self.protocols.append({'type': typeEx,
                                'parameters': parameters})
@@ -177,6 +202,8 @@ class DefineModulation:
 
         with open(self.neuromodulationDir / name, 'w') as f:
             json.dump(define_modulation, f, cls=NumpyEncoder)
+
+        self.save_modulation()
 
 
 class NumpyEncoder(json.JSONEncoder):
