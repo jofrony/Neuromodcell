@@ -33,7 +33,7 @@ We provide support via gitter chat or github issues page
 
 # Requirements
 <ul>
-<li>neuron/li>
+<li>neuron</li>
 <li>elephant</li>
 <li>bluepyopt</li>
 <li>deepdif</li>
