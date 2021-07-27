@@ -16,7 +16,7 @@ See examples/ for Jupyter Notebook on dSPN optimization and analysis
 
 # Install
 
-To use Neuromodcell, you first have to install [!NEURON](https://www.neuron.yale.edu/neuron/download) on your machine , then install Neuromodcell via
+To use Neuromodcell, you first have to install [NEURON](https://www.neuron.yale.edu/neuron/download) on your machine , then install Neuromodcell via
 
 ```
 pip install neuromodcell
