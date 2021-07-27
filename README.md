@@ -7,7 +7,7 @@
 [![codecov](https://codecov.io/gh/jofrony/Neuromodulation/branch/main/graph/badge.svg?token=LKUJ5SC457)](https://codecov.io/gh/jofrony/Neuromodulation)
 
 
-Optimising multicompartmental neurons according to different neuromodulators.
+Optimizing multicompartmental neurons according to different neuromodulators.
 
 ### Tutorial for setting up neuromodulation for single cell models
 

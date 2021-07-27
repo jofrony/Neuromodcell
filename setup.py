@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='Neuromodcell',# Replace with your own username
-    version="0.0.1",
+    version="0.0.2",
     author="Johanna Frost Nylen",
     author_email="johanna.frost.nylen@ki.se",
     description="Code for optimising for neuromodulation fo single cell NEURON models",
