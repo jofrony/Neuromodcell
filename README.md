@@ -11,6 +11,8 @@ Optimising multicompartmental neurons according to different neuromodulators.
 
 ### Tutorial for setting up neuromodulation for single cell models
 
+See examples for Jupyter Notebook on dSPN optimization
+
 ### Example of neuromodulation of striatal projection neuron
 
 
