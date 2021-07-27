@@ -7,12 +7,42 @@
 [![codecov](https://codecov.io/gh/jofrony/Neuromodulation/branch/main/graph/badge.svg?token=LKUJ5SC457)](https://codecov.io/gh/jofrony/Neuromodulation)
 
 
-Optimizing multicompartmental neurons according to different neuromodulators.
+Optimizing neuromodulation in multicompartmental neuron model.
 
 ### Tutorial for setting up neuromodulation for single cell models
 
-See examples for Jupyter Notebook on dSPN optimization
+See examples/ for Jupyter Notebook on dSPN optimization and analysis
 
-### Example of neuromodulation of striatal projection neuron
+
+# Install
+
+To use Neuromodcell, you first have to install [!NEURON](https://www.neuron.yale.edu/neuron/download) on your machine , then install Neuromodcell via
+
+```
+pip install neuromodcell
+
+```
+
+# Models
+
+The multicompartmental models should have morphology file (SWC), mechanisms.json (JSON) and parameters.json (JSON) files. See examples/models/dspn for examples of dSPN multicompartmental models. 
+
+# Support
+
+We provide support via gitter chat or github issues page
+
+# Requirements
+<ul>
+<li>neuron/li>
+<li>elephant</li>
+<li>bluepyopt</li>
+<li>deepdif</li>
+<li>matplotlib</li>
+</ul>
+
+
+
+
+
 
 
