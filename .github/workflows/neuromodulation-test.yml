@@ -22,7 +22,9 @@ jobs:
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
-        python-version: ${{ matrix.python-version }}   
+        python-version: ${{ matrix.python-version }} 
+    - name: Update
+      run: sudo apt-get update
     - name: Install MPI
       run: sudo apt-get install openmpi-bin libopenmpi-dev
     - name: Install NEURON
