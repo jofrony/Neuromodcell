@@ -162,7 +162,7 @@ class OptimiseModulation:
 
             np.savetxt(self.setup / "voltages.csv", voltage_saves)
 
-    def export_modulation(self):
+    def export_modulation(self,size):
 
         world_model_pass = self.comm.gather(self.cell_model_pass, root=0)
 
