@@ -193,7 +193,7 @@ def define_parameters(parameter_config=None, parameter_id=None):
             elif param_config['dist_type'] in ['exp', 'distance']:
                 scaler = ephys.parameterscalers.NrnSegmentSomaDistanceScaler(
                     distribution=param_config['dist'])
-                seclist_loc = ephys.locations.NrnSeclistLocation(
+            seclist_loc = ephys.locations.NrnSeclistLocation(
                     param_config['sectionlist'],
                     seclist_name=param_config['sectionlist'])
 
