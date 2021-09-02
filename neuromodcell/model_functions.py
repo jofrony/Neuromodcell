@@ -231,7 +231,7 @@ def define_parameters(parameter_config=None, parameter_id=None):
             # import pdb
             # pdb.set_trace()
 
-        return parameters
+    return parameters
 
 
 ##############################################################################
