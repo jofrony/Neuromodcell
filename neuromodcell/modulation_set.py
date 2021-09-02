@@ -13,14 +13,14 @@ Class which sets up the modulation parameters for the neuron models
 
 class DefineModulation:
 
-    def __init__(self, parameterID=None,cell_name = None,output_dir = None, cell_dir = None, population_size=None,tstop = None,time_step = None,  cellDir=None):
+    def __init__(self, parameterID=None,cell_name = None,output_dir = None, cell_dir = None, population=None,tstop = None,time_step = None,  cellDir=None):
 
         self.set_mod = list()
         self.neuromodulation_name = dict()
-        self.population = population_size
+        self.population = population
         self.protocols = list()
         self.parameterID = parameterID
-        self.neuromodulationDir = output_dir
+        self.neuromodulationDir = pathlib.Path(output_dir)
         self.cellDir = cell_dir
         self.selection_criteria = list()
         self.modulation_function = None
@@ -42,20 +42,23 @@ class DefineModulation:
         for key, value in kwargs.items():
             self.neuromodulation_name.update({value: key})
 
-    def define_modulation_function(self, modulation_function):
+    def define_modulation_function(self, modulation_function, **kwargs):
 
         if self.tstop is None or self.dt is None:
 
             print("Define tstop and dt before defining the modulation function")
 
         else:
+            modulation_functions = dict()
+            modulation_functions.update({"function" : modulation_function})
+            for key, value in kwargs.items():
+                modulation_functions.update({key : value})
+            modulation_functions.update({'tstop': self.tstop})
+            modulation_functions.update({'dt': self.dt})
 
-            modulation_function.update({'tstop': self.tstop})
-            modulation_function.update({'dt': self.dt})
+            modulation_functions.update({'time_step_array': np.arange(0, self.tstop, self.dt)})
 
-            modulation_function.update({'time_step_array': np.arange(0, self.tstop, self.dt)})
-
-        self.modulation_function = modulation_function
+        self.modulation_function = modulation_functions
 
     def define_selection_criteria(self,**kwargs):
 
@@ -86,9 +89,9 @@ class DefineModulation:
             if 'typeEx' in key:
                 typeEx = value
             else:
-                parameters.update({key,value})
+                parameters.update({key : value})
             
-            self.neuromodulation_name.update({value: key})
+            #self.neuromodulation_name.update({value: key})
 
         self.protocols.append({'type': typeEx,
                                'parameters': parameters})
@@ -183,6 +186,8 @@ class DefineModulation:
     def save_modulation_setup(self, name='modulation_setup.json'):
 
         define_modulation = dict()
+
+        self.new_modulation_dir(self.neuromodulationDir)
 
         for key, value in self.neuromodulation_name.items():
             define_modulation.update({

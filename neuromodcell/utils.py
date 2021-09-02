@@ -8,9 +8,16 @@ def combine_neuromodulators(dir_path, neuromodulators=None):
     temp_dict = dict()
 
     for f in files_path.iterdir():
+
         if f.is_dir() and f.name in neuromodulators:
             for ids in f.iterdir():
-                data = json.load(open(ids / 'final_modulation.json'))
+                final_modulation = ids / 'final_modulation.json'
+
+                if final_modulation.is_file():
+                    data = json.load(open(final_modulation))
+                else:
+                    print('Skipping folder',dir_path.name, f.name, 'ID' , ids.name)
+                    data = []
                 if f.name in temp_dict.keys():
                     temp_dict[f.name].update({ids.name: data})
 
@@ -22,12 +29,12 @@ def combine_neuromodulators(dir_path, neuromodulators=None):
     for name, modulations in temp_dict.items():
 
         for id_name, data_id in modulations.items():
-            print(id_name)
+         
             if id_name not in final_dict.keys():
                 final_dict.update({id_name: data_id})
             else:
                 final_dict[id_name] = final_dict[id_name] + data_id
-    print(final_dict)
+
 
     num_parameter_sets = len([*final_dict.values()])
     temp_list = list()
