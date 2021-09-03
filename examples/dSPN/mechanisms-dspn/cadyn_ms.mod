@@ -1,7 +1,7 @@
 TITLE Calcium dynamics for N, P/Q, R calcium pool
 
 NEURON {
-    SUFFIX cadyn
+    SUFFIX cadyn_ms
     USEION ca READ ica, cai WRITE cai VALENCE 2
     RANGE pump, cainf, taur, drive, depth
 }

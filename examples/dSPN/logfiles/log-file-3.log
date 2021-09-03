@@ -23941,3 +23941,2085 @@ DEBUG:bluepyopt.ephys.parameters:Set modA_cal13 in ['basal'] to 0 with scaler 1.
 DEBUG:bluepyopt.ephys.parameters:Set maxModA_can in ['somatic'] to 0.22948670900176682 with scaler 1.0 * value + 0.0
 DEBUG:bluepyopt.ephys.parameters:Set levelA_can in ['somatic'] to 0 with scaler 1.0 * value + 0.0
 DEBUG:bluepyopt.ephys.parameters:Set modA_can in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+INFO:root:This worker : 2
+DEBUG:bluepyopt.ephys.morphologies:Loading morphology /home/jofrony/Documents/Repositories/Neuromodcell/examples/model/dspn/morphology.swc
+DEBUG:bluepyopt.ephys.morphologies:Replace axon with AIS
+DEBUG:bluepyopt.ephys.mechanisms:Inserted pas in ['all']
+INFO:root:This worker : 2
+DEBUG:bluepyopt.ephys.morphologies:Loading morphology /home/jofrony/Documents/Repositories/Neuromodcell/examples/model/dspn/morphology.swc
+DEBUG:bluepyopt.ephys.morphologies:Replace axon with AIS
+DEBUG:bluepyopt.ephys.mechanisms:Inserted pas in ['all']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted can_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted Im_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat32_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat33_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['basal']
+DEBUG:bluepyopt.ephys.parameters:Set celsius to 35
+DEBUG:bluepyopt.ephys.parameters:Set v_init to -86
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in axonal to 0.0007134535418891711
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in basal to 5.828056045339046e-05
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in somatic to 0.0004074086931113763
+DEBUG:bluepyopt.ephys.parameters:Set e_pas in all to -62.924465893600484
+DEBUG:bluepyopt.ephys.parameters:Set cm in all to 1
+DEBUG:bluepyopt.ephys.parameters:Set Ra in all to 244.79131177304342
+DEBUG:bluepyopt.ephys.parameters:Set ena in all to 53.34
+DEBUG:bluepyopt.ephys.parameters:Set ek in all to -105.9
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['axonal'] to 4.042390776218749 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['axonal'] to 0.0658655288608823 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['somatic'] to 13.173846089864908 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['somatic'] to 0.06181422759886168 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['somatic'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['somatic'] to 0.00014118089261333874 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['somatic'] to 1.2713246932509827e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['somatic'] to 0.002371373529930333 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['somatic'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['somatic'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_can_ms in ['somatic'] to 3e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['somatic'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['somatic'] to 2.5050365326956362e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['somatic'] to 5.442181321072439e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['basal'] to 0.02947557594336315 with scaler ((0.1) + (0.9)/(1 + math.exp(({distance}-(40))/(10))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['basal'] to 0.049078734836304386 with scaler ((1.0) + (0.5)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['basal'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['basal'] to 0.0014644876795824908 with scaler ((1.0) + (9.0)*math.exp(({distance}-(0.0))/(-5.0)))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['basal'] to 1.641395641391293e-07 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['basal'] to 0.0001462450155461687 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['basal'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['basal'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['basal'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat32_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat33_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['basal'] to 2.9894010017957142e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['basal'] to 2.096004367587358e-07 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['somatic'] to 0.6605040900474796 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['basal'] to 0.7947517911619009 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['somatic'] to 0.6561308078494962 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['basal'] to 0.7966344203834945 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['somatic'] to 0.7606423658774147 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['basal'] to 0.789694523414358 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['somatic'] to 0.9556699682750547 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['basal'] to 1.120970355083523 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['somatic'] to 1.5244886523182641 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['basal'] to 1.9948343044398502 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['somatic'] to 1.421091055493248 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['basal'] to 1.7393887750372903 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_can_ms in ['somatic'] to 0.445257805167393 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.morphologies:Loading morphology /home/jofrony/Documents/Repositories/Neuromodcell/examples/model/dspn/morphology.swc
+DEBUG:bluepyopt.ephys.morphologies:Replace axon with AIS
+DEBUG:bluepyopt.ephys.mechanisms:Inserted pas in ['all']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted can_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted Im_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat32_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat33_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['basal']
+DEBUG:bluepyopt.ephys.parameters:Set celsius to 35
+DEBUG:bluepyopt.ephys.parameters:Set v_init to -86
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in axonal to 0.0007134535418891711
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in basal to 5.828056045339046e-05
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in somatic to 0.0004074086931113763
+DEBUG:bluepyopt.ephys.parameters:Set e_pas in all to -62.924465893600484
+DEBUG:bluepyopt.ephys.parameters:Set cm in all to 1
+DEBUG:bluepyopt.ephys.parameters:Set Ra in all to 244.79131177304342
+DEBUG:bluepyopt.ephys.parameters:Set ena in all to 53.34
+DEBUG:bluepyopt.ephys.parameters:Set ek in all to -105.9
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['axonal'] to 4.042390776218749 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['axonal'] to 0.0658655288608823 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['somatic'] to 13.173846089864908 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['somatic'] to 0.06181422759886168 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['somatic'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['somatic'] to 0.00014118089261333874 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['somatic'] to 1.2713246932509827e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['somatic'] to 0.002371373529930333 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['somatic'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['somatic'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_can_ms in ['somatic'] to 3e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['somatic'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['somatic'] to 2.5050365326956362e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['somatic'] to 5.442181321072439e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['basal'] to 0.02947557594336315 with scaler ((0.1) + (0.9)/(1 + math.exp(({distance}-(40))/(10))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['basal'] to 0.049078734836304386 with scaler ((1.0) + (0.5)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['basal'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['basal'] to 0.0014644876795824908 with scaler ((1.0) + (9.0)*math.exp(({distance}-(0.0))/(-5.0)))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['basal'] to 1.641395641391293e-07 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['basal'] to 0.0001462450155461687 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['basal'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['basal'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['basal'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat32_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat33_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['basal'] to 2.9894010017957142e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['basal'] to 2.096004367587358e-07 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['somatic'] to 0.7830895082429907 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['basal'] to 0.7556861412088538 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['somatic'] to 0.7525280110328181 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['basal'] to 0.6682283760624846 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['somatic'] to 0.8105693771375639 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['basal'] to 0.8310630090116877 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['somatic'] to 1.23739104994306 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['basal'] to 0.9817650152115079 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['somatic'] to 1.2680908967096016 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['basal'] to 1.132929597592157 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['somatic'] to 1.0160039010805466 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['basal'] to 1.280307080925129 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_can_ms in ['somatic'] to 0.22948670900176682 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+INFO:root:This worker : 2
+DEBUG:bluepyopt.ephys.morphologies:Loading morphology /home/jofrony/Documents/Repositories/Neuromodcell/examples/model/dspn/morphology.swc
+DEBUG:bluepyopt.ephys.morphologies:Replace axon with AIS
+DEBUG:bluepyopt.ephys.mechanisms:Inserted pas in ['all']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted can_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted Im_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat32_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat33_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['basal']
+DEBUG:bluepyopt.ephys.parameters:Set celsius to 35
+DEBUG:bluepyopt.ephys.parameters:Set v_init to -86
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in axonal to 0.0006632319518338934
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in basal to 6.188919057896925e-05
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in somatic to 0.0008628221744694058
+DEBUG:bluepyopt.ephys.parameters:Set e_pas in all to -62.924465893600484
+DEBUG:bluepyopt.ephys.parameters:Set cm in all to 1
+DEBUG:bluepyopt.ephys.parameters:Set Ra in all to 244.79131177304342
+DEBUG:bluepyopt.ephys.parameters:Set ena in all to 53.34
+DEBUG:bluepyopt.ephys.parameters:Set ek in all to -105.9
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['axonal'] to 4.543078862977853 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['axonal'] to 0.09140752109801772 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['somatic'] to 14.130090454403431 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['somatic'] to 0.41464425208854044 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['somatic'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['somatic'] to 0.016129422011401957 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['somatic'] to 0.0001758514450475772 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['somatic'] to 0.0023133661885525905 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['somatic'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['somatic'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_can_ms in ['somatic'] to 3e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['somatic'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['somatic'] to 8.939946068757094e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['somatic'] to 2.5487270625356765e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['basal'] to 0.023911168621656133 with scaler ((0.1) + (0.9)/(1 + math.exp(({distance}-(40))/(10))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['basal'] to 0.019722816622515123 with scaler ((1.0) + (0.5)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['basal'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['basal'] to 0.0004529244036193877 with scaler ((1.0) + (9.0)*math.exp(({distance}-(0.0))/(-5.0)))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['basal'] to 4.822460232438132e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['basal'] to 0.0001817276221268577 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['basal'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['basal'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['basal'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat32_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat33_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['basal'] to 1.19724318256265e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['basal'] to 1.2459198822345925e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['somatic'] to 0.6605040900474796 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['basal'] to 0.7947517911619009 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['somatic'] to 0.6561308078494962 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['basal'] to 0.7966344203834945 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['somatic'] to 0.7606423658774147 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['basal'] to 0.789694523414358 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['somatic'] to 0.9556699682750547 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['basal'] to 1.120970355083523 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['somatic'] to 1.5244886523182641 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['basal'] to 1.9948343044398502 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['somatic'] to 1.421091055493248 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['basal'] to 1.7393887750372903 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_can_ms in ['somatic'] to 0.445257805167393 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.morphologies:Loading morphology /home/jofrony/Documents/Repositories/Neuromodcell/examples/model/dspn/morphology.swc
+DEBUG:bluepyopt.ephys.morphologies:Replace axon with AIS
+DEBUG:bluepyopt.ephys.mechanisms:Inserted pas in ['all']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted can_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted Im_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat32_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat33_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['basal']
+DEBUG:bluepyopt.ephys.parameters:Set celsius to 35
+DEBUG:bluepyopt.ephys.parameters:Set v_init to -86
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in axonal to 0.0006632319518338934
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in basal to 6.188919057896925e-05
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in somatic to 0.0008628221744694058
+DEBUG:bluepyopt.ephys.parameters:Set e_pas in all to -62.924465893600484
+DEBUG:bluepyopt.ephys.parameters:Set cm in all to 1
+DEBUG:bluepyopt.ephys.parameters:Set Ra in all to 244.79131177304342
+DEBUG:bluepyopt.ephys.parameters:Set ena in all to 53.34
+DEBUG:bluepyopt.ephys.parameters:Set ek in all to -105.9
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['axonal'] to 4.543078862977853 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['axonal'] to 0.09140752109801772 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['somatic'] to 14.130090454403431 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['somatic'] to 0.41464425208854044 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['somatic'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['somatic'] to 0.016129422011401957 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['somatic'] to 0.0001758514450475772 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['somatic'] to 0.0023133661885525905 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['somatic'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['somatic'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_can_ms in ['somatic'] to 3e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['somatic'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['somatic'] to 8.939946068757094e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['somatic'] to 2.5487270625356765e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['basal'] to 0.023911168621656133 with scaler ((0.1) + (0.9)/(1 + math.exp(({distance}-(40))/(10))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['basal'] to 0.019722816622515123 with scaler ((1.0) + (0.5)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['basal'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['basal'] to 0.0004529244036193877 with scaler ((1.0) + (9.0)*math.exp(({distance}-(0.0))/(-5.0)))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['basal'] to 4.822460232438132e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['basal'] to 0.0001817276221268577 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['basal'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['basal'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['basal'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat32_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat33_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['basal'] to 1.19724318256265e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['basal'] to 1.2459198822345925e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['somatic'] to 0.7830895082429907 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['basal'] to 0.7556861412088538 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['somatic'] to 0.7525280110328181 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['basal'] to 0.6682283760624846 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['somatic'] to 0.8105693771375639 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['basal'] to 0.8310630090116877 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['somatic'] to 1.23739104994306 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['basal'] to 0.9817650152115079 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['somatic'] to 1.2680908967096016 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['basal'] to 1.132929597592157 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['somatic'] to 1.0160039010805466 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['basal'] to 1.280307080925129 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_can_ms in ['somatic'] to 0.22948670900176682 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+INFO:root:This worker : 2
+DEBUG:bluepyopt.ephys.morphologies:Loading morphology /home/jofrony/Documents/Repositories/Neuromodcell/examples/model/dspn/morphology.swc
+DEBUG:bluepyopt.ephys.morphologies:Replace axon with AIS
+DEBUG:bluepyopt.ephys.mechanisms:Inserted pas in ['all']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted can_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted Im_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat32_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat33_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['basal']
+DEBUG:bluepyopt.ephys.parameters:Set celsius to 35
+DEBUG:bluepyopt.ephys.parameters:Set v_init to -86
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in axonal to 0.0009810596859212272
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in basal to 7.357749162476346e-05
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in somatic to 0.00011802320160430129
+DEBUG:bluepyopt.ephys.parameters:Set e_pas in all to -62.924465893600484
+DEBUG:bluepyopt.ephys.parameters:Set cm in all to 1
+DEBUG:bluepyopt.ephys.parameters:Set Ra in all to 244.79131177304342
+DEBUG:bluepyopt.ephys.parameters:Set ena in all to 53.34
+DEBUG:bluepyopt.ephys.parameters:Set ek in all to -105.9
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['axonal'] to 2.6721340195112857 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['axonal'] to 0.08323824024878974 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['somatic'] to 13.816847485150406 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['somatic'] to 0.5147042245582072 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['somatic'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['somatic'] to 1.3658768779074658e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['somatic'] to 0.0001418791134927079 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['somatic'] to 0.0007306244928220482 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['somatic'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['somatic'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_can_ms in ['somatic'] to 3e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['somatic'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['somatic'] to 2.8251198729686025e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['somatic'] to 5.190389703142545e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['basal'] to 0.022780613451203923 with scaler ((0.1) + (0.9)/(1 + math.exp(({distance}-(40))/(10))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['basal'] to 0.011049343777524293 with scaler ((1.0) + (0.5)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['basal'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['basal'] to 0.00183884719236309 with scaler ((1.0) + (9.0)*math.exp(({distance}-(0.0))/(-5.0)))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['basal'] to 0.000917527837819724 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['basal'] to 0.000245420428061465 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['basal'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['basal'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['basal'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat32_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat33_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['basal'] to 2.279904334595832e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['basal'] to 1.174159209152004e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['somatic'] to 0.6605040900474796 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['basal'] to 0.7947517911619009 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['somatic'] to 0.6561308078494962 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['basal'] to 0.7966344203834945 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['somatic'] to 0.7606423658774147 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['basal'] to 0.789694523414358 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['somatic'] to 0.9556699682750547 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['basal'] to 1.120970355083523 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['somatic'] to 1.5244886523182641 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['basal'] to 1.9948343044398502 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['somatic'] to 1.421091055493248 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['basal'] to 1.7393887750372903 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_can_ms in ['somatic'] to 0.445257805167393 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.morphologies:Loading morphology /home/jofrony/Documents/Repositories/Neuromodcell/examples/model/dspn/morphology.swc
+DEBUG:bluepyopt.ephys.morphologies:Replace axon with AIS
+DEBUG:bluepyopt.ephys.mechanisms:Inserted pas in ['all']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted can_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted Im_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat32_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat33_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['basal']
+DEBUG:bluepyopt.ephys.parameters:Set celsius to 35
+DEBUG:bluepyopt.ephys.parameters:Set v_init to -86
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in axonal to 0.0009810596859212272
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in basal to 7.357749162476346e-05
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in somatic to 0.00011802320160430129
+DEBUG:bluepyopt.ephys.parameters:Set e_pas in all to -62.924465893600484
+DEBUG:bluepyopt.ephys.parameters:Set cm in all to 1
+DEBUG:bluepyopt.ephys.parameters:Set Ra in all to 244.79131177304342
+DEBUG:bluepyopt.ephys.parameters:Set ena in all to 53.34
+DEBUG:bluepyopt.ephys.parameters:Set ek in all to -105.9
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['axonal'] to 2.6721340195112857 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['axonal'] to 0.08323824024878974 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['somatic'] to 13.816847485150406 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['somatic'] to 0.5147042245582072 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['somatic'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['somatic'] to 1.3658768779074658e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['somatic'] to 0.0001418791134927079 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['somatic'] to 0.0007306244928220482 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['somatic'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['somatic'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_can_ms in ['somatic'] to 3e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['somatic'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['somatic'] to 2.8251198729686025e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['somatic'] to 5.190389703142545e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['basal'] to 0.022780613451203923 with scaler ((0.1) + (0.9)/(1 + math.exp(({distance}-(40))/(10))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['basal'] to 0.011049343777524293 with scaler ((1.0) + (0.5)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['basal'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['basal'] to 0.00183884719236309 with scaler ((1.0) + (9.0)*math.exp(({distance}-(0.0))/(-5.0)))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['basal'] to 0.000917527837819724 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['basal'] to 0.000245420428061465 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['basal'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['basal'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['basal'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat32_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat33_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['basal'] to 2.279904334595832e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['basal'] to 1.174159209152004e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['somatic'] to 0.7830895082429907 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['basal'] to 0.7556861412088538 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['somatic'] to 0.7525280110328181 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['basal'] to 0.6682283760624846 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['somatic'] to 0.8105693771375639 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['basal'] to 0.8310630090116877 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['somatic'] to 1.23739104994306 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['basal'] to 0.9817650152115079 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['somatic'] to 1.2680908967096016 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['basal'] to 1.132929597592157 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['somatic'] to 1.0160039010805466 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['basal'] to 1.280307080925129 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_can_ms in ['somatic'] to 0.22948670900176682 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+INFO:root:This worker : 2
+DEBUG:bluepyopt.ephys.morphologies:Loading morphology /home/jofrony/Documents/Repositories/Neuromodcell/examples/model/dspn/morphology.swc
+DEBUG:bluepyopt.ephys.morphologies:Replace axon with AIS
+DEBUG:bluepyopt.ephys.mechanisms:Inserted pas in ['all']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted can_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted Im_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat32_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat33_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['basal']
+DEBUG:bluepyopt.ephys.parameters:Set celsius to 35
+DEBUG:bluepyopt.ephys.parameters:Set v_init to -86
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in axonal to 0.0008838239824485519
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in basal to 7.670974860523492e-05
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in somatic to 0.0003931816830812342
+DEBUG:bluepyopt.ephys.parameters:Set e_pas in all to -62.924465893600484
+DEBUG:bluepyopt.ephys.parameters:Set cm in all to 1
+DEBUG:bluepyopt.ephys.parameters:Set Ra in all to 244.79131177304342
+DEBUG:bluepyopt.ephys.parameters:Set ena in all to 53.34
+DEBUG:bluepyopt.ephys.parameters:Set ek in all to -105.9
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['axonal'] to 4.1036368320488315 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['axonal'] to 0.05661608826268234 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['somatic'] to 15.895337603668768 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['somatic'] to 0.6830860597899964 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['somatic'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['somatic'] to 0.00010541107691503719 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['somatic'] to 1.2713246932509827e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['somatic'] to 0.002371373529930333 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['somatic'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['somatic'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_can_ms in ['somatic'] to 3e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['somatic'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['somatic'] to 4.4016072722043766e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['somatic'] to 5.0814655326842737e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['basal'] to 0.04026657146112019 with scaler ((0.1) + (0.9)/(1 + math.exp(({distance}-(40))/(10))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['basal'] to 0.020575161912447515 with scaler ((1.0) + (0.5)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['basal'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['basal'] to 0.001479272284292845 with scaler ((1.0) + (9.0)*math.exp(({distance}-(0.0))/(-5.0)))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['basal'] to 3.4500688034682945e-07 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['basal'] to 0.00015302893845186205 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['basal'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['basal'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['basal'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat32_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat33_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['basal'] to 3.62179892511193e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['basal'] to 8.461375961441514e-08 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['somatic'] to 0.6605040900474796 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['basal'] to 0.7947517911619009 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['somatic'] to 0.6561308078494962 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['basal'] to 0.7966344203834945 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['somatic'] to 0.7606423658774147 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['basal'] to 0.789694523414358 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['somatic'] to 0.9556699682750547 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['basal'] to 1.120970355083523 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['somatic'] to 1.5244886523182641 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['basal'] to 1.9948343044398502 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['somatic'] to 1.421091055493248 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['basal'] to 1.7393887750372903 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_can_ms in ['somatic'] to 0.445257805167393 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.morphologies:Loading morphology /home/jofrony/Documents/Repositories/Neuromodcell/examples/model/dspn/morphology.swc
+DEBUG:bluepyopt.ephys.morphologies:Replace axon with AIS
+DEBUG:bluepyopt.ephys.mechanisms:Inserted pas in ['all']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted can_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted Im_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat32_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat33_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['basal']
+DEBUG:bluepyopt.ephys.parameters:Set celsius to 35
+DEBUG:bluepyopt.ephys.parameters:Set v_init to -86
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in axonal to 0.0008838239824485519
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in basal to 7.670974860523492e-05
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in somatic to 0.0003931816830812342
+DEBUG:bluepyopt.ephys.parameters:Set e_pas in all to -62.924465893600484
+DEBUG:bluepyopt.ephys.parameters:Set cm in all to 1
+DEBUG:bluepyopt.ephys.parameters:Set Ra in all to 244.79131177304342
+DEBUG:bluepyopt.ephys.parameters:Set ena in all to 53.34
+DEBUG:bluepyopt.ephys.parameters:Set ek in all to -105.9
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['axonal'] to 4.1036368320488315 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['axonal'] to 0.05661608826268234 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['somatic'] to 15.895337603668768 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['somatic'] to 0.6830860597899964 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['somatic'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['somatic'] to 0.00010541107691503719 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['somatic'] to 1.2713246932509827e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['somatic'] to 0.002371373529930333 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['somatic'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['somatic'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_can_ms in ['somatic'] to 3e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['somatic'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['somatic'] to 4.4016072722043766e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['somatic'] to 5.0814655326842737e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['basal'] to 0.04026657146112019 with scaler ((0.1) + (0.9)/(1 + math.exp(({distance}-(40))/(10))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['basal'] to 0.020575161912447515 with scaler ((1.0) + (0.5)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['basal'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['basal'] to 0.001479272284292845 with scaler ((1.0) + (9.0)*math.exp(({distance}-(0.0))/(-5.0)))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['basal'] to 3.4500688034682945e-07 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['basal'] to 0.00015302893845186205 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['basal'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['basal'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['basal'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat32_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat33_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['basal'] to 3.62179892511193e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['basal'] to 8.461375961441514e-08 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['somatic'] to 0.7830895082429907 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['basal'] to 0.7556861412088538 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['somatic'] to 0.7525280110328181 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['basal'] to 0.6682283760624846 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['somatic'] to 0.8105693771375639 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['basal'] to 0.8310630090116877 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['somatic'] to 1.23739104994306 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['basal'] to 0.9817650152115079 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['somatic'] to 1.2680908967096016 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['basal'] to 1.132929597592157 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['somatic'] to 1.0160039010805466 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['basal'] to 1.280307080925129 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_can_ms in ['somatic'] to 0.22948670900176682 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+INFO:root:This worker : 2
+DEBUG:bluepyopt.ephys.morphologies:Loading morphology /home/jofrony/Documents/Repositories/Neuromodcell/examples/model/dspn/morphology.swc
+DEBUG:bluepyopt.ephys.morphologies:Replace axon with AIS
+DEBUG:bluepyopt.ephys.mechanisms:Inserted pas in ['all']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted can_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted Im_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat32_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat33_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['basal']
+DEBUG:bluepyopt.ephys.parameters:Set celsius to 35
+DEBUG:bluepyopt.ephys.parameters:Set v_init to -86
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in axonal to 0.0007134535418891711
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in basal to 5.828056045339046e-05
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in somatic to 0.0004074086931113763
+DEBUG:bluepyopt.ephys.parameters:Set e_pas in all to -62.924465893600484
+DEBUG:bluepyopt.ephys.parameters:Set cm in all to 1
+DEBUG:bluepyopt.ephys.parameters:Set Ra in all to 244.79131177304342
+DEBUG:bluepyopt.ephys.parameters:Set ena in all to 53.34
+DEBUG:bluepyopt.ephys.parameters:Set ek in all to -105.9
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['axonal'] to 4.042390776218749 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['axonal'] to 0.0658655288608823 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['somatic'] to 13.173846089864908 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['somatic'] to 0.06181422759886168 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['somatic'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['somatic'] to 0.00014118089261333874 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['somatic'] to 1.2713246932509827e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['somatic'] to 0.002371373529930333 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['somatic'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['somatic'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_can_ms in ['somatic'] to 3e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['somatic'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['somatic'] to 2.5050365326956362e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['somatic'] to 5.442181321072439e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['basal'] to 0.02947557594336315 with scaler ((0.1) + (0.9)/(1 + math.exp(({distance}-(40))/(10))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['basal'] to 0.049078734836304386 with scaler ((1.0) + (0.5)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['basal'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['basal'] to 0.0014644876795824908 with scaler ((1.0) + (9.0)*math.exp(({distance}-(0.0))/(-5.0)))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['basal'] to 1.641395641391293e-07 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['basal'] to 0.0001462450155461687 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['basal'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['basal'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['basal'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat32_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat33_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['basal'] to 2.9894010017957142e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['basal'] to 2.096004367587358e-07 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['somatic'] to 0.7753945827803722 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['basal'] to 0.6318547033492352 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['somatic'] to 0.6902880561034371 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['basal'] to 0.8347727358221351 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['somatic'] to 0.7816358014121916 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['basal'] to 0.8002206499393241 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['somatic'] to 1.1222516034677097 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['basal'] to 0.8757951181360685 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['somatic'] to 1.808054515488152 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['basal'] to 1.222276876485528 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['somatic'] to 1.7542406596099847 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['basal'] to 1.22388280752702 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_can_ms in ['somatic'] to 0.44998202195243353 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.morphologies:Loading morphology /home/jofrony/Documents/Repositories/Neuromodcell/examples/model/dspn/morphology.swc
+DEBUG:bluepyopt.ephys.morphologies:Replace axon with AIS
+DEBUG:bluepyopt.ephys.mechanisms:Inserted pas in ['all']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted can_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted Im_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat32_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat33_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['basal']
+DEBUG:bluepyopt.ephys.parameters:Set celsius to 35
+DEBUG:bluepyopt.ephys.parameters:Set v_init to -86
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in axonal to 0.0007134535418891711
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in basal to 5.828056045339046e-05
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in somatic to 0.0004074086931113763
+DEBUG:bluepyopt.ephys.parameters:Set e_pas in all to -62.924465893600484
+DEBUG:bluepyopt.ephys.parameters:Set cm in all to 1
+DEBUG:bluepyopt.ephys.parameters:Set Ra in all to 244.79131177304342
+DEBUG:bluepyopt.ephys.parameters:Set ena in all to 53.34
+DEBUG:bluepyopt.ephys.parameters:Set ek in all to -105.9
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['axonal'] to 4.042390776218749 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['axonal'] to 0.0658655288608823 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['somatic'] to 13.173846089864908 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['somatic'] to 0.06181422759886168 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['somatic'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['somatic'] to 0.00014118089261333874 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['somatic'] to 1.2713246932509827e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['somatic'] to 0.002371373529930333 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['somatic'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['somatic'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_can_ms in ['somatic'] to 3e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['somatic'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['somatic'] to 2.5050365326956362e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['somatic'] to 5.442181321072439e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['basal'] to 0.02947557594336315 with scaler ((0.1) + (0.9)/(1 + math.exp(({distance}-(40))/(10))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['basal'] to 0.049078734836304386 with scaler ((1.0) + (0.5)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['basal'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['basal'] to 0.0014644876795824908 with scaler ((1.0) + (9.0)*math.exp(({distance}-(0.0))/(-5.0)))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['basal'] to 1.641395641391293e-07 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['basal'] to 0.0001462450155461687 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['basal'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['basal'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['basal'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat32_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat33_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['basal'] to 2.9894010017957142e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['basal'] to 2.096004367587358e-07 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['somatic'] to 0.6496149875900341 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['basal'] to 0.6471704815230789 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['somatic'] to 0.6926789117995079 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['basal'] to 0.7596614991546625 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['somatic'] to 0.8076329795346263 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['basal'] to 0.8071301052490519 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['somatic'] to 1.2242785152711888 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['basal'] to 1.1962581420838003 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['somatic'] to 1.63855991013277 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['basal'] to 1.1531689100540943 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['somatic'] to 1.457150588238059 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['basal'] to 1.7363285556617658 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_can_ms in ['somatic'] to 0.8941897269960954 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+INFO:root:This worker : 2
+DEBUG:bluepyopt.ephys.morphologies:Loading morphology /home/jofrony/Documents/Repositories/Neuromodcell/examples/model/dspn/morphology.swc
+DEBUG:bluepyopt.ephys.morphologies:Replace axon with AIS
+DEBUG:bluepyopt.ephys.mechanisms:Inserted pas in ['all']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted can_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted Im_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat32_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat33_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['basal']
+DEBUG:bluepyopt.ephys.parameters:Set celsius to 35
+DEBUG:bluepyopt.ephys.parameters:Set v_init to -86
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in axonal to 0.0008838239824485519
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in basal to 7.670974860523492e-05
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in somatic to 0.0003931816830812342
+DEBUG:bluepyopt.ephys.parameters:Set e_pas in all to -62.924465893600484
+DEBUG:bluepyopt.ephys.parameters:Set cm in all to 1
+DEBUG:bluepyopt.ephys.parameters:Set Ra in all to 244.79131177304342
+DEBUG:bluepyopt.ephys.parameters:Set ena in all to 53.34
+DEBUG:bluepyopt.ephys.parameters:Set ek in all to -105.9
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['axonal'] to 4.1036368320488315 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['axonal'] to 0.05661608826268234 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['somatic'] to 15.895337603668768 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['somatic'] to 0.6830860597899964 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['somatic'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['somatic'] to 0.00010541107691503719 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['somatic'] to 1.2713246932509827e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['somatic'] to 0.002371373529930333 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['somatic'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['somatic'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_can_ms in ['somatic'] to 3e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['somatic'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['somatic'] to 4.4016072722043766e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['somatic'] to 5.0814655326842737e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['basal'] to 0.04026657146112019 with scaler ((0.1) + (0.9)/(1 + math.exp(({distance}-(40))/(10))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['basal'] to 0.020575161912447515 with scaler ((1.0) + (0.5)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['basal'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['basal'] to 0.001479272284292845 with scaler ((1.0) + (9.0)*math.exp(({distance}-(0.0))/(-5.0)))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['basal'] to 3.4500688034682945e-07 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['basal'] to 0.00015302893845186205 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['basal'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['basal'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['basal'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat32_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat33_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['basal'] to 3.62179892511193e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['basal'] to 8.461375961441514e-08 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['somatic'] to 0.6605040900474796 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['basal'] to 0.7947517911619009 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['somatic'] to 0.6561308078494962 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['basal'] to 0.7966344203834945 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['somatic'] to 0.7606423658774147 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['basal'] to 0.789694523414358 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['somatic'] to 0.9556699682750547 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['basal'] to 1.120970355083523 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['somatic'] to 1.5244886523182641 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['basal'] to 1.9948343044398502 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['somatic'] to 1.421091055493248 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['basal'] to 1.7393887750372903 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_can_ms in ['somatic'] to 0.445257805167393 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.morphologies:Loading morphology /home/jofrony/Documents/Repositories/Neuromodcell/examples/model/dspn/morphology.swc
+DEBUG:bluepyopt.ephys.morphologies:Replace axon with AIS
+DEBUG:bluepyopt.ephys.mechanisms:Inserted pas in ['all']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted can_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted Im_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat32_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat33_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['basal']
+DEBUG:bluepyopt.ephys.parameters:Set celsius to 35
+DEBUG:bluepyopt.ephys.parameters:Set v_init to -86
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in axonal to 0.0008838239824485519
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in basal to 7.670974860523492e-05
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in somatic to 0.0003931816830812342
+DEBUG:bluepyopt.ephys.parameters:Set e_pas in all to -62.924465893600484
+DEBUG:bluepyopt.ephys.parameters:Set cm in all to 1
+DEBUG:bluepyopt.ephys.parameters:Set Ra in all to 244.79131177304342
+DEBUG:bluepyopt.ephys.parameters:Set ena in all to 53.34
+DEBUG:bluepyopt.ephys.parameters:Set ek in all to -105.9
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['axonal'] to 4.1036368320488315 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['axonal'] to 0.05661608826268234 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['somatic'] to 15.895337603668768 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['somatic'] to 0.6830860597899964 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['somatic'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['somatic'] to 0.00010541107691503719 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['somatic'] to 1.2713246932509827e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['somatic'] to 0.002371373529930333 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['somatic'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['somatic'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_can_ms in ['somatic'] to 3e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['somatic'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['somatic'] to 4.4016072722043766e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['somatic'] to 5.0814655326842737e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['basal'] to 0.04026657146112019 with scaler ((0.1) + (0.9)/(1 + math.exp(({distance}-(40))/(10))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['basal'] to 0.020575161912447515 with scaler ((1.0) + (0.5)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['basal'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['basal'] to 0.001479272284292845 with scaler ((1.0) + (9.0)*math.exp(({distance}-(0.0))/(-5.0)))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['basal'] to 3.4500688034682945e-07 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['basal'] to 0.00015302893845186205 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['basal'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['basal'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['basal'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat32_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat33_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['basal'] to 3.62179892511193e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['basal'] to 8.461375961441514e-08 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['somatic'] to 0.7830895082429907 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['basal'] to 0.7556861412088538 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['somatic'] to 0.7525280110328181 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['basal'] to 0.6682283760624846 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['somatic'] to 0.8105693771375639 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['basal'] to 0.8310630090116877 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['somatic'] to 1.23739104994306 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['basal'] to 0.9817650152115079 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['somatic'] to 1.2680908967096016 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['basal'] to 1.132929597592157 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['somatic'] to 1.0160039010805466 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['basal'] to 1.280307080925129 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_can_ms in ['somatic'] to 0.22948670900176682 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+INFO:root:This worker : 7
+DEBUG:bluepyopt.ephys.morphologies:Loading morphology /home/jofrony/Documents/Repositories/Neuromodcell/examples/model/dspn/morphology.swc
+DEBUG:bluepyopt.ephys.morphologies:Replace axon with AIS
+DEBUG:bluepyopt.ephys.mechanisms:Inserted pas in ['all']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted can_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted Im_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat32_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat33_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['basal']
+DEBUG:bluepyopt.ephys.parameters:Set celsius to 35
+DEBUG:bluepyopt.ephys.parameters:Set v_init to -86
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in axonal to 0.0008838239824485519
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in basal to 7.670974860523492e-05
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in somatic to 0.0003931816830812342
+DEBUG:bluepyopt.ephys.parameters:Set e_pas in all to -62.924465893600484
+DEBUG:bluepyopt.ephys.parameters:Set cm in all to 1
+DEBUG:bluepyopt.ephys.parameters:Set Ra in all to 244.79131177304342
+DEBUG:bluepyopt.ephys.parameters:Set ena in all to 53.34
+DEBUG:bluepyopt.ephys.parameters:Set ek in all to -105.9
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['axonal'] to 4.1036368320488315 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['axonal'] to 0.05661608826268234 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['somatic'] to 15.895337603668768 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['somatic'] to 0.6830860597899964 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['somatic'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['somatic'] to 0.00010541107691503719 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['somatic'] to 1.2713246932509827e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['somatic'] to 0.002371373529930333 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['somatic'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['somatic'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_can_ms in ['somatic'] to 3e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['somatic'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['somatic'] to 4.4016072722043766e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['somatic'] to 5.0814655326842737e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['basal'] to 0.04026657146112019 with scaler ((0.1) + (0.9)/(1 + math.exp(({distance}-(40))/(10))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['basal'] to 0.020575161912447515 with scaler ((1.0) + (0.5)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['basal'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['basal'] to 0.001479272284292845 with scaler ((1.0) + (9.0)*math.exp(({distance}-(0.0))/(-5.0)))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['basal'] to 3.4500688034682945e-07 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['basal'] to 0.00015302893845186205 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['basal'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['basal'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['basal'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat32_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat33_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['basal'] to 3.62179892511193e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['basal'] to 8.461375961441514e-08 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['somatic'] to 0.6605040900474796 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['basal'] to 0.7947517911619009 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['somatic'] to 0.6561308078494962 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['basal'] to 0.7966344203834945 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['somatic'] to 0.7606423658774147 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['basal'] to 0.789694523414358 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['somatic'] to 0.9556699682750547 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['basal'] to 1.120970355083523 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['somatic'] to 1.5244886523182641 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['basal'] to 1.9948343044398502 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['somatic'] to 1.421091055493248 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['basal'] to 1.7393887750372903 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_can_ms in ['somatic'] to 0.445257805167393 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.morphologies:Loading morphology /home/jofrony/Documents/Repositories/Neuromodcell/examples/model/dspn/morphology.swc
+DEBUG:bluepyopt.ephys.morphologies:Replace axon with AIS
+DEBUG:bluepyopt.ephys.mechanisms:Inserted pas in ['all']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted can_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted Im_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat32_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat33_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['basal']
+DEBUG:bluepyopt.ephys.parameters:Set celsius to 35
+DEBUG:bluepyopt.ephys.parameters:Set v_init to -86
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in axonal to 0.0008838239824485519
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in basal to 7.670974860523492e-05
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in somatic to 0.0003931816830812342
+DEBUG:bluepyopt.ephys.parameters:Set e_pas in all to -62.924465893600484
+DEBUG:bluepyopt.ephys.parameters:Set cm in all to 1
+DEBUG:bluepyopt.ephys.parameters:Set Ra in all to 244.79131177304342
+DEBUG:bluepyopt.ephys.parameters:Set ena in all to 53.34
+DEBUG:bluepyopt.ephys.parameters:Set ek in all to -105.9
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['axonal'] to 4.1036368320488315 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['axonal'] to 0.05661608826268234 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['somatic'] to 15.895337603668768 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['somatic'] to 0.6830860597899964 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['somatic'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['somatic'] to 0.00010541107691503719 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['somatic'] to 1.2713246932509827e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['somatic'] to 0.002371373529930333 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['somatic'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['somatic'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_can_ms in ['somatic'] to 3e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['somatic'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['somatic'] to 4.4016072722043766e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['somatic'] to 5.0814655326842737e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['basal'] to 0.04026657146112019 with scaler ((0.1) + (0.9)/(1 + math.exp(({distance}-(40))/(10))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['basal'] to 0.020575161912447515 with scaler ((1.0) + (0.5)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['basal'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['basal'] to 0.001479272284292845 with scaler ((1.0) + (9.0)*math.exp(({distance}-(0.0))/(-5.0)))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['basal'] to 3.4500688034682945e-07 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['basal'] to 0.00015302893845186205 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['basal'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['basal'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['basal'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat32_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat33_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['basal'] to 3.62179892511193e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['basal'] to 8.461375961441514e-08 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['somatic'] to 0.7830895082429907 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['basal'] to 0.7556861412088538 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['somatic'] to 0.7525280110328181 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['basal'] to 0.6682283760624846 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['somatic'] to 0.8105693771375639 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['basal'] to 0.8310630090116877 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['somatic'] to 1.23739104994306 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['basal'] to 0.9817650152115079 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['somatic'] to 1.2680908967096016 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['basal'] to 1.132929597592157 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['somatic'] to 1.0160039010805466 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['basal'] to 1.280307080925129 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_can_ms in ['somatic'] to 0.22948670900176682 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.morphologies:Loading morphology /home/jofrony/Documents/Repositories/Neuromodcell/examples/model/dspn/morphology.swc
+DEBUG:bluepyopt.ephys.morphologies:Replace axon with AIS
+DEBUG:bluepyopt.ephys.mechanisms:Inserted pas in ['all']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted can_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted Im_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat32_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat33_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['basal']
+DEBUG:bluepyopt.ephys.parameters:Set celsius to 35
+DEBUG:bluepyopt.ephys.parameters:Set v_init to -86
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in axonal to 0.0008838239824485519
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in basal to 7.670974860523492e-05
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in somatic to 0.0003931816830812342
+DEBUG:bluepyopt.ephys.parameters:Set e_pas in all to -62.924465893600484
+DEBUG:bluepyopt.ephys.parameters:Set cm in all to 1
+DEBUG:bluepyopt.ephys.parameters:Set Ra in all to 244.79131177304342
+DEBUG:bluepyopt.ephys.parameters:Set ena in all to 53.34
+DEBUG:bluepyopt.ephys.parameters:Set ek in all to -105.9
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['axonal'] to 4.1036368320488315 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['axonal'] to 0.05661608826268234 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['somatic'] to 15.895337603668768 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['somatic'] to 0.6830860597899964 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['somatic'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['somatic'] to 0.00010541107691503719 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['somatic'] to 1.2713246932509827e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['somatic'] to 0.002371373529930333 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['somatic'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['somatic'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_can_ms in ['somatic'] to 3e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['somatic'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['somatic'] to 4.4016072722043766e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['somatic'] to 5.0814655326842737e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['basal'] to 0.04026657146112019 with scaler ((0.1) + (0.9)/(1 + math.exp(({distance}-(40))/(10))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['basal'] to 0.020575161912447515 with scaler ((1.0) + (0.5)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['basal'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['basal'] to 0.001479272284292845 with scaler ((1.0) + (9.0)*math.exp(({distance}-(0.0))/(-5.0)))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['basal'] to 3.4500688034682945e-07 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['basal'] to 0.00015302893845186205 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['basal'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['basal'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['basal'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat32_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat33_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['basal'] to 3.62179892511193e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['basal'] to 8.461375961441514e-08 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['somatic'] to 0.7221616828239322 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['basal'] to 0.659746557261156 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['somatic'] to 0.6771804967064741 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['basal'] to 0.754690042342187 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['somatic'] to 0.7800423185722459 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['basal'] to 0.8188815074009341 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['somatic'] to 1.2136949740984229 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['basal'] to 1.080617267352773 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['somatic'] to 1.3079791271305279 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['basal'] to 1.5249653317363019 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['somatic'] to 1.9899570235671011 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['basal'] to 1.5866452657022425 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_can_ms in ['somatic'] to 0.8265225472739246 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.morphologies:Loading morphology /home/jofrony/Documents/Repositories/Neuromodcell/examples/model/dspn/morphology.swc
+DEBUG:bluepyopt.ephys.morphologies:Replace axon with AIS
+DEBUG:bluepyopt.ephys.mechanisms:Inserted pas in ['all']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted can_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted Im_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat32_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat33_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['basal']
+DEBUG:bluepyopt.ephys.parameters:Set celsius to 35
+DEBUG:bluepyopt.ephys.parameters:Set v_init to -86
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in axonal to 0.0008838239824485519
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in basal to 7.670974860523492e-05
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in somatic to 0.0003931816830812342
+DEBUG:bluepyopt.ephys.parameters:Set e_pas in all to -62.924465893600484
+DEBUG:bluepyopt.ephys.parameters:Set cm in all to 1
+DEBUG:bluepyopt.ephys.parameters:Set Ra in all to 244.79131177304342
+DEBUG:bluepyopt.ephys.parameters:Set ena in all to 53.34
+DEBUG:bluepyopt.ephys.parameters:Set ek in all to -105.9
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['axonal'] to 4.1036368320488315 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['axonal'] to 0.05661608826268234 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['somatic'] to 15.895337603668768 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['somatic'] to 0.6830860597899964 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['somatic'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['somatic'] to 0.00010541107691503719 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['somatic'] to 1.2713246932509827e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['somatic'] to 0.002371373529930333 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['somatic'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['somatic'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_can_ms in ['somatic'] to 3e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['somatic'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['somatic'] to 4.4016072722043766e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['somatic'] to 5.0814655326842737e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['basal'] to 0.04026657146112019 with scaler ((0.1) + (0.9)/(1 + math.exp(({distance}-(40))/(10))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['basal'] to 0.020575161912447515 with scaler ((1.0) + (0.5)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['basal'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['basal'] to 0.001479272284292845 with scaler ((1.0) + (9.0)*math.exp(({distance}-(0.0))/(-5.0)))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['basal'] to 3.4500688034682945e-07 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['basal'] to 0.00015302893845186205 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['basal'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['basal'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['basal'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat32_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat33_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['basal'] to 3.62179892511193e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['basal'] to 8.461375961441514e-08 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['somatic'] to 0.6094538911791695 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['basal'] to 0.7813393510255491 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['somatic'] to 0.6991138667447073 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['basal'] to 0.7854655655197404 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['somatic'] to 0.7939454773974192 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['basal'] to 0.8122216720650042 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['somatic'] to 0.9522135997028559 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['basal'] to 1.083146820525355 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['somatic'] to 1.2529246597674086 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['basal'] to 1.8926981699448686 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['somatic'] to 1.404341819043951 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['basal'] to 1.7675372184457183 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_can_ms in ['somatic'] to 0.3107054411445755 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.morphologies:Loading morphology /home/jofrony/Documents/Repositories/Neuromodcell/examples/model/dspn/morphology.swc
+DEBUG:bluepyopt.ephys.morphologies:Replace axon with AIS
+DEBUG:bluepyopt.ephys.mechanisms:Inserted pas in ['all']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted can_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted Im_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat32_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat33_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['basal']
+DEBUG:bluepyopt.ephys.parameters:Set celsius to 35
+DEBUG:bluepyopt.ephys.parameters:Set v_init to -86
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in axonal to 0.0008838239824485519
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in basal to 7.670974860523492e-05
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in somatic to 0.0003931816830812342
+DEBUG:bluepyopt.ephys.parameters:Set e_pas in all to -62.924465893600484
+DEBUG:bluepyopt.ephys.parameters:Set cm in all to 1
+DEBUG:bluepyopt.ephys.parameters:Set Ra in all to 244.79131177304342
+DEBUG:bluepyopt.ephys.parameters:Set ena in all to 53.34
+DEBUG:bluepyopt.ephys.parameters:Set ek in all to -105.9
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['axonal'] to 4.1036368320488315 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['axonal'] to 0.05661608826268234 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['somatic'] to 15.895337603668768 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['somatic'] to 0.6830860597899964 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['somatic'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['somatic'] to 0.00010541107691503719 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['somatic'] to 1.2713246932509827e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['somatic'] to 0.002371373529930333 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['somatic'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['somatic'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_can_ms in ['somatic'] to 3e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['somatic'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['somatic'] to 4.4016072722043766e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['somatic'] to 5.0814655326842737e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['basal'] to 0.04026657146112019 with scaler ((0.1) + (0.9)/(1 + math.exp(({distance}-(40))/(10))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['basal'] to 0.020575161912447515 with scaler ((1.0) + (0.5)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['basal'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['basal'] to 0.001479272284292845 with scaler ((1.0) + (9.0)*math.exp(({distance}-(0.0))/(-5.0)))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['basal'] to 3.4500688034682945e-07 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['basal'] to 0.00015302893845186205 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['basal'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['basal'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['basal'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat32_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat33_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['basal'] to 3.62179892511193e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['basal'] to 8.461375961441514e-08 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['somatic'] to 0.7952183640557023 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['basal'] to 0.7208680763073113 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['somatic'] to 0.8127182241488592 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['basal'] to 0.7548582303383808 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['somatic'] to 0.7825837137454692 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['basal'] to 0.7947198130291336 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['somatic'] to 0.9673499479677445 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['basal'] to 0.9630680290384107 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['somatic'] to 1.126169023971034 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['basal'] to 1.3830686263402723 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['somatic'] to 1.898427544898077 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['basal'] to 1.1656512644392265 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_can_ms in ['somatic'] to 0.9893900751099864 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.morphologies:Loading morphology /home/jofrony/Documents/Repositories/Neuromodcell/examples/model/dspn/morphology.swc
+DEBUG:bluepyopt.ephys.morphologies:Replace axon with AIS
+DEBUG:bluepyopt.ephys.mechanisms:Inserted pas in ['all']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted can_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted Im_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat32_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat33_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['basal']
+DEBUG:bluepyopt.ephys.parameters:Set celsius to 35
+DEBUG:bluepyopt.ephys.parameters:Set v_init to -86
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in axonal to 0.0008838239824485519
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in basal to 7.670974860523492e-05
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in somatic to 0.0003931816830812342
+DEBUG:bluepyopt.ephys.parameters:Set e_pas in all to -62.924465893600484
+DEBUG:bluepyopt.ephys.parameters:Set cm in all to 1
+DEBUG:bluepyopt.ephys.parameters:Set Ra in all to 244.79131177304342
+DEBUG:bluepyopt.ephys.parameters:Set ena in all to 53.34
+DEBUG:bluepyopt.ephys.parameters:Set ek in all to -105.9
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['axonal'] to 4.1036368320488315 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['axonal'] to 0.05661608826268234 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['somatic'] to 15.895337603668768 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['somatic'] to 0.6830860597899964 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['somatic'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['somatic'] to 0.00010541107691503719 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['somatic'] to 1.2713246932509827e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['somatic'] to 0.002371373529930333 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['somatic'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['somatic'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_can_ms in ['somatic'] to 3e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['somatic'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['somatic'] to 4.4016072722043766e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['somatic'] to 5.0814655326842737e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['basal'] to 0.04026657146112019 with scaler ((0.1) + (0.9)/(1 + math.exp(({distance}-(40))/(10))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['basal'] to 0.020575161912447515 with scaler ((1.0) + (0.5)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['basal'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['basal'] to 0.001479272284292845 with scaler ((1.0) + (9.0)*math.exp(({distance}-(0.0))/(-5.0)))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['basal'] to 3.4500688034682945e-07 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['basal'] to 0.00015302893845186205 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['basal'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['basal'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['basal'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat32_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat33_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['basal'] to 3.62179892511193e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['basal'] to 8.461375961441514e-08 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['somatic'] to 0.7935649049850276 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['basal'] to 0.752095442208564 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['somatic'] to 0.6539166912983918 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['basal'] to 0.7246722914680233 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['somatic'] to 0.7613616988483087 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['basal'] to 0.7767997779716694 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['somatic'] to 0.9767671593549322 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['basal'] to 1.234219634973498 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['somatic'] to 1.9218802140785198 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['basal'] to 1.7380942306509892 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['somatic'] to 1.3383808110441384 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['basal'] to 1.5859998399052038 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_can_ms in ['somatic'] to 0.9469365192174466 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.morphologies:Loading morphology /home/jofrony/Documents/Repositories/Neuromodcell/examples/model/dspn/morphology.swc
+DEBUG:bluepyopt.ephys.morphologies:Replace axon with AIS
+DEBUG:bluepyopt.ephys.mechanisms:Inserted pas in ['all']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted can_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['somatic']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted Im_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['axonal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted naf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kaf_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kas_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kdr_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted kir_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal12_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cal13_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted car_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat32_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cat33_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted cadyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted caldyn_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted sk_ms in ['basal']
+DEBUG:bluepyopt.ephys.mechanisms:Inserted bk_ms in ['basal']
+DEBUG:bluepyopt.ephys.parameters:Set celsius to 35
+DEBUG:bluepyopt.ephys.parameters:Set v_init to -86
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in axonal to 0.0008838239824485519
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in basal to 7.670974860523492e-05
+DEBUG:bluepyopt.ephys.parameters:Set g_pas in somatic to 0.0003931816830812342
+DEBUG:bluepyopt.ephys.parameters:Set e_pas in all to -62.924465893600484
+DEBUG:bluepyopt.ephys.parameters:Set cm in all to 1
+DEBUG:bluepyopt.ephys.parameters:Set Ra in all to 244.79131177304342
+DEBUG:bluepyopt.ephys.parameters:Set ena in all to 53.34
+DEBUG:bluepyopt.ephys.parameters:Set ek in all to -105.9
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['axonal'] to 4.1036368320488315 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['axonal'] to 0.05661608826268234 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['somatic'] to 15.895337603668768 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['somatic'] to 0.6830860597899964 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['somatic'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['somatic'] to 0.00010541107691503719 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['somatic'] to 1.2713246932509827e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['somatic'] to 0.002371373529930333 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['somatic'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['somatic'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_can_ms in ['somatic'] to 3e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['somatic'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['somatic'] to 4.4016072722043766e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['somatic'] to 5.0814655326842737e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_naf_ms in ['basal'] to 0.04026657146112019 with scaler ((0.1) + (0.9)/(1 + math.exp(({distance}-(40))/(10))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kaf_ms in ['basal'] to 0.020575161912447515 with scaler ((1.0) + (0.5)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set q_kaf_ms in ['basal'] to 1.2310764224556812 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kas_ms in ['basal'] to 0.001479272284292845 with scaler ((1.0) + (9.0)*math.exp(({distance}-(0.0))/(-5.0)))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kdr_ms in ['basal'] to 3.4500688034682945e-07 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_kir_ms in ['basal'] to 0.00015302893845186205 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal12_ms in ['basal'] to 1e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cal13_ms in ['basal'] to 1e-06 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_car_ms in ['basal'] to 0.0001 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat32_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set pbar_cat33_ms in ['basal'] to 2e-09 with scaler ((0.0) + (1.0)/(1 + math.exp(({distance}-(120))/(-30))))*{value}
+DEBUG:bluepyopt.ephys.parameters:Set gbar_bk_ms in ['basal'] to 3.62179892511193e-05 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set gbar_sk_ms in ['basal'] to 8.461375961441514e-08 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['somatic'] to 0.7662892139873235 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_naf_ms in ['basal'] to 0.7520556544313253 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_naf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['somatic'] to 0.7541720380603556 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kas_ms in ['basal'] to 0.8372233300819044 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kas_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['somatic'] to 0.7572121454629979 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kaf_ms in ['basal'] to 0.8394763519386694 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kaf_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['somatic'] to 1.1861711235229624 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_kir_ms in ['basal'] to 0.9926726844548399 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_kir_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['somatic'] to 1.2299812606815355 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal12_ms in ['basal'] to 1.025919409220272 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal12_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['somatic'] to 1.5264972521509192 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_cal13_ms in ['basal'] to 1.4145136541878223 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_cal13_ms in ['basal'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set maxModDA_can_ms in ['somatic'] to 0.8037496408279008 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set levelDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0
+DEBUG:bluepyopt.ephys.parameters:Set modDA_can_ms in ['somatic'] to 0 with scaler 1.0 * value + 0.0

@@ -1,6 +1,6 @@
 import neuromodcell.selection_criteria as sc
 import neuromodcell.selection_functions as sf
-from neuromodcell.analysis import optimisationResult
+from neuromodcell.analysis import OptimisationResult
 import numpy as np
 from neuromodcell.plotting import plot_comparison
 import matplotlib.pyplot as plt
@@ -9,7 +9,7 @@ import os
 import json
 from neuromodcell.modulation_set import NumpyEncoder
 
-class dSPNanalysis(optimisationResult):
+class dSPNanalysis(OptimisationResult):
     
     def __init__(self,dir_path):
 
@@ -136,46 +136,38 @@ class dSPNanalysis(optimisationResult):
 
         voltage_sub = np.take(self.voltages[1:-1],index_original,axis=0)[0]
 
-        if len(np.transpose(results_pass)[0])>0:
-            index = np.where(np.transpose(results_pass)[0] ==  min(np.transpose(results_pass)[0]))
+        index = np.where(np.transpose(results_pass)[0] ==  min(np.transpose(results_pass)[0]))
 
-            if len(index[0])>1:
-                import random
-                index = random.choice(index[0])
-            else:
-                index = index[0][0]
-            
-            chosen = modulations_sub[index]
-
-            self.final_modulation_result  = results_pass[index]
-            self.final_modulation_voltage = voltage_sub[index]
-
-            with open(pathlib.Path(os.path.abspath(self.dir_path)) / 'final_modulation.json','w') as f:
-                json.dump(chosen,f,cls=NumpyEncoder)
+        if len(index[0])>1:
+            import random
+            index = random.choice(index[0])
         else:
-            print('No modulation was found in this optimisation')
+            index = index[0][0]
+ 
+        chosen = modulations_sub[index]
 
-            self.final_modulation_result  = []
-            self.final_modulation_voltage = []
-            
+        self.final_modulation_result  = results_pass[index]
+        self.final_modulation_voltage = voltage_sub[index]
+
+        with open(pathlib.Path(os.path.abspath(self.dir_path)) / 'final_modulation.json','w') as f:
+            json.dump(chosen,f,cls=NumpyEncoder)
+
     def get_final_modulation(self):
 
         return self.final_modulation_result, self.final_modulation_voltage
         
-    def plot_comparison(self,control,control_sim,modulated,modulated_sim, num_models,ylabel,title,x_ticks=tuple(),parameterID=None,save=False,filename=None):
+    def plot_comparison(self,control,control_sim,modulated,modulated_sim, num_models,ylabel,title,x_ticks=tuple(),width=None,height=None,parameterID=None,save=False,filename=None):
 
-        plot_comparison(control=control,control_sim=control_sim,modulated=modulated,modulated_sim=modulated_sim, num_models=num_models,ylabel=ylabel,title=title,x_ticks=x_ticks,dir_path=self.dir_path,save=save,filename=filename)
+        plot_comparison(control=control,control_sim=control_sim,modulated=modulated,modulated_sim=modulated_sim, num_models=num_models,ylabel=ylabel,width=width,height=height,title=title,x_ticks=x_ticks,dir_path=self.dir_path,save=save,filename=filename)
 
     def plot_chosen_modulation(self):
 
         modulation, voltage = self.get_final_modulation()
 
-        if len(modulation)>1:
-            plt.plot(self.voltages[0],voltage, label='chosen')
-            plt.plot(self.voltages[0],self.voltages[-1],label='control',c='black')
-            plt.show()
-        else:
-            print('No modulation exists')        
+        plt.plot(self.voltages[0],voltage, label='chosen')
+        plt.plot(self.voltages[0],self.voltages[-1],label='control',c='black')
+        plt.show()
+        
 
     def plot_validated_traces_with_control(self,titles=None,filename=None, save=False,skip=50,plot_protocols=True,resting_tick=True):
 
@@ -230,7 +222,7 @@ class dSPNanalysis(optimisationResult):
 
 
         if save:
-            plt.savefig(pathlib.Path(self.dir_path) / filename, dpi=None, facecolor='w', edgecolor='w',
+            plt.savefig(pathlib.Path(self.dir_path) / filename, dpi=300, facecolor='w', edgecolor='w',
                         orientation='portrait', papertype=None, format=None,
                         transparent=False, bbox_inches=None, pad_inches=0.1,
                         frameon=None, metadata=None)

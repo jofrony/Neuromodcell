@@ -1,7 +1,7 @@
 TITLE Calcium dynamics for L and T calcium pool
 
 NEURON {
-    SUFFIX caldyn
+    SUFFIX caldyn_ms
     USEION cal READ ical, cali WRITE cali VALENCE 2
     RANGE pump, cainf, taur, drive, depth
 }

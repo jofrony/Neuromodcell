@@ -1,4 +1,4 @@
-TITLE T-type calcium current (Cav3.3)
+TITLE T-type calcium current (Cav3.2)
 
 UNITS {
     (mV) = (millivolt)
@@ -11,7 +11,7 @@ UNITS {
 }
 
 NEURON {
-    SUFFIX cat33
+    SUFFIX cat32_ms
     USEION cal READ cali, calo WRITE ical VALENCE 2
     RANGE pbar, ical
 }
@@ -56,10 +56,10 @@ DERIVATIVE states {
 
 PROCEDURE rates() {
     UNITSOFF
-    minf = 1/(1+exp((v-(-81))/(-5.8)))
-    mtau = (2.3+20/(1+exp((v-(-60))/9)))*3
-    hinf = 1/(1+exp((v-(-78.3))/6.5))
-    htau = 125+140/(1+exp((v-(-60))/3))
+    minf = 1/(1+exp((v-(-54))/(-7.8)))
+    mtau = (2.1+23/(1+exp((v-(-61))/6)))*3
+    hinf = 1/(1+exp((v-(-64.2))/8.8))
+    htau = 30+280/(1+exp((v-(-52))/7))
     UNITSON
 }
 
