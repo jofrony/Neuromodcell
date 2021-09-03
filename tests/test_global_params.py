@@ -31,7 +31,7 @@ def test_model_setup():
 
     os.system("rm -r $PWD/x86_64/")
 
-    os.system("nrnivmodl examples/dSPN/mechanisms-dspn")
+    os.system("nrnivmodl tests/mechanisms/")
 
     sim.neuron.h.nrn_load_dll(os.getcwd() + '/x86_64/.libs/libnrnmech.so')
 
