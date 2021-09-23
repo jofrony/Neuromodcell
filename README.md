@@ -2,7 +2,7 @@
 
 # Neuromodcell
 
-[![Join the chat at https://gitter.im/Neuro_modulation/community](https://badges.gitter.im/Neuro_modulation/community.svg)](https://gitter.im/Neuro_modulation/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/Neuro_modulation/community](https://badges.gitter.im/Neuro_modulation/community.svg)](https://gitter.im/Neuromodcell/community)
 
 Optimizing neuromodulation in multicompartmental neuron model.
 
