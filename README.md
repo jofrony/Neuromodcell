@@ -38,6 +38,11 @@ We provide support via gitter chat or github issues page
 </ul>
 
 
+# Citation
+Frost Nylen J, Hjorth J J J,Grillner S, and Hellgren Kotaleski J, Dopaminergic and Cholinergic Modulation of Large Scale Networks in silico Using Snudda, Frontiers in Neural Circuits, vol. 15, Oct. 2021.
+https://doi.org/10.3389/fncir.2021.748989
+
+
 
 
 
