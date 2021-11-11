@@ -58,13 +58,13 @@ class OptimisationSetup:
 
         self.modulation_type()
 
-    def setup_neurons(self, unit_modulation):
+    def setup_neurons(self, unit_modulation, keys=True):
 
         self.unit_modulation = unit_modulation
 
         param_file, morph_file, self.mod_file, mech_file = files(self.cellDir)
 
-        param = define_parameters(parameter_config=param_file, parameter_id=self.modulation_setup["parameterID"])
+        param = define_parameters(parameter_config=param_file, parameter_id="p09b0945d")
         mech = define_mechanisms(mech_file)
         morph = define_morphology(morph_file=morph_file)
 
@@ -73,19 +73,52 @@ class OptimisationSetup:
         for k in range(len(self.gidlist)):
             modulation = define_modulation(param_set=unit_modulation["param_set"][k])
 
-            self.neurons[k] = NeuronModel(cell_name=self.modulation_setup["cell_name"], morph=morph, mech=mech,
+            mod_dict = {"temp" : unit_modulation["param_set"][k]}
+
+            #with open('temp.json', "w") as f:
+            #    json.dump(mod_dict,f)
+
+            print(self.cellDir)
+
+            if not(keys):
+
+                self.neurons[k] = NeuronModel(cell_name=self.modulation_setup["cell_name"], morph=morph, mech=mech,
                                           param=param, modulation=modulation)
+
+            else:
+
+                self.neurons[k] = NeuronModel(param_file=param_file,
+                                               morph_path=morph_file,
+                                               mech_file=mech_file,
+                                               cell_name=self.modulation_setup["cell_name"],
+                                               modulation_file="temp.json",
+                                               morphology_id=0,
+                                               parameter_id=0,
+                                               modulation_id=0,
+                                               parameter_key="p09b0945d",
+                                               morphology_key="m9c778ecf",
+                                               modulation_key="temp")
 
     def control_neuron(self):
 
         param_file, morph_file, self.mod_file, mech_file = files(self.cellDir)
 
-        param = define_parameters(parameter_config=param_file, parameter_id=self.modulation_setup["parameterID"])
-        mech = define_mechanisms(mech_file)
-        morph = define_morphology(morph_file=morph_file)
+        #param = define_parameters(parameter_config=param_file, parameter_id=self.modulation_setup["parameterID"])
+        #mech = define_mechanisms(mech_file)
+        #morph = define_morphology(morph_file=morph_file)
 
-        self.neurons[-1] = NeuronModel(cell_name=self.modulation_setup["cell_name"], morph=morph, mech=mech,
-                                       param=param, modulation=[])
+        self.neurons[-1] = NeuronModel(param_file=param_file,
+                                               morph_path=morph_file,
+                                               mech_file=mech_file,
+                                               cell_name=self.modulation_setup["cell_name"],
+                                               morphology_id=0,
+                                               parameter_id=0,
+                                               modulation_id=0,
+                                               parameter_key="p09b0945d",
+                                               morphology_key="m9c778ecf")
+        
+        #self.neurons[-1] = NeuronModel(cell_name=self.modulation_setup["cell_name"], morph=morph, mech=mech,
+                                       #param=param, modulation=[])
 
     def modulation_type(self):
 

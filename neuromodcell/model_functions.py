@@ -6,40 +6,50 @@ import json
 import numpy as np
 import glob
 import bluepyopt.ephys as ephys
+from collections import OrderedDict
 
 
 ##############################################################################
-def files(modeldir):
+def files(modeldir,keys=True):
     modeldir = os.path.abspath(modeldir)
 
     param_file = os.path.join(modeldir, "parameters.json")
     mod_file = os.path.join(modeldir, "modulation.json")
 
-    if len(glob.glob(os.path.join(modeldir, "*.swc"))) == 1:
-        morph_file = glob.glob(os.path.join(modeldir, "*.swc"))[0]
-    else:
-        import pdb
-        pdb.set_trace()
-        raise ValueError("There should be only one swc file.")
+    if not(keys):
+        if len(glob.glob(os.path.join(modeldir, "*.swc"))) == 1:
+            morph_file = glob.glob(os.path.join(modeldir, "*.swc"))[0]
+        else:
+            import pdb
+            pdb.set_trace()
+            raise ValueError("There should be only one swc file.")
 
+    else:
+        morph_file=os.path.join(modeldir,"morphology")
     mech_file = os.path.join(modeldir, "mechanisms.json")
 
     return param_file, morph_file, mod_file, mech_file
 
 
-def define_mechanisms(mechanism_config=None, script_dir=None):
+script_dir = os.path.dirname(__file__)
+config_dir = os.path.join(script_dir, 'config')
+
+
+##############################################################################
+
+
+def define_mechanisms(mechanism_config=None):
     """Define mechanisms"""
 
     assert (mechanism_config is not None)
-    # print("Using mechanism config: " + mechanism_config)
+    # print("Using mechanmism config: " + mechanism_config)
 
-    mech_definitions = json.load(
-        open(
-            os.path.join(mechanism_config)))
+    with open(os.path.join(config_dir, mechanism_config), "r") as f:
+        mech_definitions = json.load(f, object_pairs_hook=OrderedDict)
 
     if "modpath" in mech_definitions:
         mod_path = os.path.join(script_dir, mech_definitions["modpath"])
-        print("mod_path set to " + mod_path + " (not yet implemented)")
+        print(f"mod_path set to {mod_path} (not yet implemented)")
     else:
         mod_path = None
 
@@ -67,7 +77,6 @@ def define_mechanisms(mechanism_config=None, script_dir=None):
 
 
 ##############################################################################
-
 def define_modulation(param_set):
     modulation_params = list()
 
@@ -132,115 +141,184 @@ def define_modulation(param_set):
 
     return modulation_params
 
-
-def define_parameters(parameter_config=None, parameter_id=None):
+def define_parameters(parameter_config=None,parameter_id="p09b0945d"):
     """Define parameters"""
 
     assert (parameter_config is not None)
 
     # print("Using parameter config: " + parameter_config)
 
-    try:
-        param_configs = json.load(open(parameter_config))
-    except:
-        import traceback
-        tstr = traceback.format_exc()
-        print(tstr)
-        import pdb
-        pdb.set_trace()
-
+    with open(os.path.join(config_dir, parameter_config), "r") as f:
+        param_configs = json.load(f, object_pairs_hook=OrderedDict)
     parameters = []
 
-    if type(param_configs[0]) == list:
-        # If it was a dict, then we have one parameterset,
-        # if it was a list we have multiple parametersets, pick one.
-
-        assert parameter_id is not None, \
-            "Multiple parametersets require parameterID set"
-
-        num_params = len(param_configs)
-
-        assert num_params > parameter_id
-
-        param_configs = param_configs[parameter_id]
-
-    for param_config in param_configs:
-
-        if 'morphology' in param_config.keys():
-            continue
+    for param_config in param_configs[parameter_id]:
+     
+        if 'value' in param_config:
+            frozen = True
+            value = param_config['value']
+            bounds = None
+        elif 'bounds':
+            frozen = False
+            bounds = param_config['bounds']
+            value = None
         else:
-            if 'value' in param_config:
-                frozen = True
-                value = param_config['value']
-                bounds = None
-            elif 'bounds' in param_config:
-                frozen = False
-                bounds = param_config['bounds']
-                value = None
-            else:
-                raise Exception(
-                    'Parameter config has to have bounds or value: %s'
-                    % param_config)
+            raise Exception(
+                'Parameter config has to have bounds or value: %s'
+                % param_config)
 
-            if param_config['type'] == 'global':
+        if param_config['type'] == 'global':
+            parameters.append(
+                ephys.parameters.NrnGlobalParameter(
+                    name=param_config['param_name'],
+                    param_name=param_config['param_name'],
+                    frozen=frozen,
+                    bounds=bounds,
+                    value=value))
+        elif param_config['type'] in ['section', 'range']:
+            if param_config['dist_type'] == 'uniform':
+                scaler = ephys.parameterscalers.NrnSegmentLinearScaler()
+            elif param_config['dist_type'] == 'exp':
+                scaler = ephys.parameterscalers.NrnSegmentSomaDistanceScaler(
+                    distribution=param_config['dist'])
+            seclist_loc = ephys.locations.NrnSeclistLocation(
+                param_config['sectionlist'],
+                seclist_name=param_config['sectionlist'])
+
+            name = '%s.%s' % (param_config['param_name'],
+                              param_config['sectionlist'])
+
+            if param_config['type'] == 'section':
                 parameters.append(
-                    ephys.parameters.NrnGlobalParameter(
-                        name=param_config['param_name'],
+                    ephys.parameters.NrnSectionParameter(
+                        name=name,
                         param_name=param_config['param_name'],
+                        value_scaler=scaler,
+                        value=value,
                         frozen=frozen,
                         bounds=bounds,
-                        value=value))
-            elif param_config['type'] in ['section', 'range']:
-                if param_config['dist_type'] == 'uniform':
-                    scaler = ephys.parameterscalers.NrnSegmentLinearScaler()
-                elif param_config['dist_type'] in ['exp', 'distance']:
-                    scaler = ephys.parameterscalers.NrnSegmentSomaDistanceScaler(
-                        distribution=param_config['dist'])
-                seclist_loc = ephys.locations.NrnSeclistLocation(
-                        param_config['sectionlist'],
-                        seclist_name=param_config['sectionlist'])
+                        locations=[seclist_loc]))
+            elif param_config['type'] == 'range':
+                parameters.append(
+                    ephys.parameters.NrnRangeParameter(
+                        name=name,
+                        param_name=param_config['param_name'],
+                        value_scaler=scaler,
+                        value=value,
+                        frozen=frozen,
+                        bounds=bounds,
+                        locations=[seclist_loc]))
+        else:
+            raise Exception(
+                'Param config type has to be global, section or range: %s' %
+                param_config)
 
-                name = '%s.%s' % (param_config['param_name'],
-                                  param_config['sectionlist'])
-
-                if param_config['type'] == 'section':
-                    parameters.append(
-                        ephys.parameters.NrnSectionParameter(
-                            name=name,
-                            param_name=param_config['param_name'],
-                            value_scaler=scaler,
-                            value=value,
-                            frozen=frozen,
-                            bounds=bounds,
-                            locations=[seclist_loc]))
-                elif param_config['type'] == 'range':
-                    parameters.append(
-                        ephys.parameters.NrnRangeParameter(
-                            name=name,
-                            param_name=param_config['param_name'],
-                            value_scaler=scaler,
-                            value=value,
-                            frozen=frozen,
-                            bounds=bounds,
-                            locations=[seclist_loc]))
-            else:
-                raise Exception(
-                    'Param config type has to be global, section or range: %s' %
-                    param_config)
-
-            # import pdb
-            # pdb.set_trace()
+    # import pdb
+    # pdb.set_trace()
 
     return parameters
 
 
 ##############################################################################
 
-def define_morphology(replaceAxon=True, morph_file=None):
+def define_morphology(replace_axon=True, morph_file=None):
     """Define morphology. Handles SWC and ASC."""
 
     assert (morph_file is not None)
 
     # print("Using morphology: " + morph_file)
 
-    return ephys.morphologies.NrnFileMorphology(morph_file, do_replace_axon=replaceAxon)
+    return ephys.morphologies.NrnFileMorphology(
+        os.path.join(
+            script_dir,
+            morph_file,
+        ),
+        do_replace_axon=replace_axon)
+
+
+##############################################################################
+
+def create(param_config=None, morph_file=None, mechanisms_file=None, cell_name="Unknown"):
+    """Create cell model"""
+
+    cell = ephys.models.CellModel(
+        cell_name,
+        morph=define_morphology(replace_axon=True, morph_file=morph_file),
+        mechs=define_mechanisms(mechanism_config=mechanisms_file),
+        params=define_parameters(param_config))
+
+    return cell
+
+
+def find_dend_compartment(neuron, synapse_xyz, loc_type, sim):
+    """Locate where on dend sections each synapse is"""
+
+    dend_loc = []
+
+    sec_lookup = {}
+
+    n_points = 0
+    # Find out how many points we need to allocate space for
+    for sec in neuron.icell.dend:
+        for seg in sec:
+            # There must be a cleaner way to get the 3d points
+            # when we already have the section
+            n_points = n_points + int(sim.neuron.h.n3d(sec=sec))
+
+    sec_points = np.zeros(shape=(n_points, 5))  # x,y,z,isec,arclen
+    point_ctr = 0
+
+    # Create secPoints with a list of all segment points
+    for isec, sec in enumerate(neuron.icell.dend):
+        sec_lookup[isec] = sec  # Lookup table
+        print("Parsing ", sec)
+
+        # TODO: Check if the seg loop is redundant!!
+        for seg in sec:
+            for i in range(int(sim.neuron.h.n3d(sec=sec))):
+                sec_len = sim.neuron.h.arc3d(int(sim.neuron.h.n3d(sec=sec) - 1), sec=sec)
+                # We work in SI units, so convert units from neuron
+                sec_points[point_ctr, :] = [sim.neuron.h.x3d(i, sec=sec) * 1e-6,
+                                            sim.neuron.h.y3d(i, sec=sec) * 1e-6,
+                                            sim.neuron.h.z3d(i, sec=sec) * 1e-6,
+                                            isec,
+                                            (sim.neuron.h.arc3d(i, sec=sec) / sec_len)]
+                point_ctr = point_ctr + 1
+
+    # Loop through all (axon-dendritic) synapse locations and find matching compartment
+    # type 1 = axon-dendritic
+    for row, l_type in zip(synapse_xyz, loc_type):  # [locType == 1]:
+        if l_type == 1:
+            dist = np.sum((sec_points[:, 0:3] - row) ** 2, axis=-1)
+            min_idx = np.argmin(dist)
+
+            # Just to double check, the synapse coordinate and the compartment
+            # we match it against should not be too far away
+            assert (dist[min_idx] < 5e-6)
+
+            min_info = sec_points[min_idx, :]
+            # Save section and distance within section
+            dend_loc.insert(len(dend_loc), [sec_lookup[min_info[3]], min_info[4]])
+
+        # axo-somatic synapses (type = 2)
+        if l_type == 2:
+            dend_loc.insert(len(dend_loc), [neuron.icell.soma[0], 0.5])
+
+        # For gap junctions (locType == 3) see how Network_simulate.py
+        # creates a list of coordinates and calls the function
+        if l_type == 3:
+            dist = np.sum((sec_points[:, 0:3] - row) ** 2, axis=-1)
+            min_idx = np.argmin(dist)
+
+            # Just to double check, the synapse coordinate and the compartment
+            # we match it against should not be too far away
+            assert (dist[min_idx] < 5e-6)
+
+            min_info = sec_points[min_idx, :]
+            dend_loc.insert(len(dend_loc), [sec_lookup[min_info[3]], min_info[4]])
+
+    # Currently only support axon-dend, and axon-soma synapses, not axon-axon
+    # check that there are none in indata
+    assert (all(x == 1 or x == 2 or x == 4 for x in loc_type))
+
+    return dend_loc
