@@ -73,7 +73,7 @@ class OptimisationSetup:
         for k in range(len(self.gidlist)):
             modulation = define_modulation(param_set=unit_modulation["param_set"][k])
 
-            mod_dict = {"temp" : unit_modulation["param_set"][k]}
+            mod_dict = {"temp": unit_modulation["param_set"][k]}
 
             #with open('temp.json', "w") as f:
             #    json.dump(mod_dict,f)

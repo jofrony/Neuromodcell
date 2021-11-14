@@ -13,14 +13,16 @@ Class which sets up the modulation parameters for the neuron models
 
 class DefineModulation:
 
-    def __init__(self, parameterID=None,cell_name = None,output_dir = None, cell_dir = None, population=None,tstop = None,time_step = None,  cellDir=None):
+    def __init__(self, parameterID=None, morph_key=None, parameter_key=None, cell_name=None, output_dir=None, cell_dir=None, population=None, tstop=None, time_step=None):
 
         self.set_mod = list()
         self.neuromodulation_name = dict()
         self.population = population
         self.protocols = list()
-        self.parameterID = parameterID
-        self.neuromodulationDir = pathlib.Path(output_dir)
+        self.parameter_id = parameterID
+        self.morph_key = morph_key
+        self.parameter_key = parameter_key
+        self.neuromodulation_dir = pathlib.Path(output_dir)
         self.cellDir = cell_dir
         self.selection_criteria = list()
         self.modulation_function = None
@@ -80,7 +82,7 @@ class DefineModulation:
 
         self.selection_criteria.append({"function": function, "criteria": criteria})
 
-    def define_protocol(self,**kwargs):
+    def define_protocol(self, **kwargs):
 
         parameters = dict()
 
@@ -166,19 +168,37 @@ class DefineModulation:
         self.set_mod.append(level)
         self.set_mod.append(on)
 
-    def new_modulation_dir(self, directory=''):
+    def new_modulation_dir(self, directory=None):
+
+        dir_name = None
+
+        if directory is None:
+            raise ValueError("directory is not defined")
 
         for key, value in self.neuromodulation_name.items():
-            parameterID_name = 'ID_' + str(self.parameterID)
 
-            neuromodulationDir = Path(directory, key, parameterID_name)
+            if self.parameter_key is None and self.morph_key is None:
+                pass
+            else:
+                dir_name = f"{self.parameter_key}_{self.morph_key}"
 
-            if not neuromodulationDir.exists():
-                neuromodulationDir.mkdir(parents=True, exist_ok=True)
+            if self.parameter_id is None:
+                pass
+            else:
+                dir_name = f"ID_{self.parameter_id}"
 
-            self.neuromodulationDir = neuromodulationDir
+            if dir_name is None:
+                raise ValueError(f"dir name is not defined, either parameter_id {self.parameter_id} or "
+                                 f"morph_key {self.morph_key} and parameter_key {self.parameter_key} cannot be None")
 
-    def save_modulation(self, name='modulation.json'):
+            neuromodulation_dir = Path(directory, key, dir_name)
+
+            if not neuromodulation_dir.exists():
+                neuromodulation_dir.mkdir(parents=True, exist_ok=True)
+
+            self.neuromodulation_dir = neuromodulation_dir
+
+    def save_modulation(self, name="modulation.json"):
 
         with open(self.neuromodulationDir / name, 'w') as f:
             json.dump(self.set_mod, f)
@@ -187,7 +207,7 @@ class DefineModulation:
 
         define_modulation = dict()
 
-        self.new_modulation_dir(self.neuromodulationDir)
+        self.new_modulation_dir(self.neuromodulation_dir)
 
         for key, value in self.neuromodulation_name.items():
             define_modulation.update({
@@ -198,14 +218,14 @@ class DefineModulation:
                 "receptor_modulation": self.set_receptor,
                 "population": self.population,
                 "protocols": self.protocols,
-                "parameterID": self.parameterID,
+                "parameterID": self.parameter_id,
                 "cellDir": self.cellDir,
                 "modulation_function": self.modulation_function,
                 "selection_criteria": self.selection_criteria,
                 "cell_name": self.name
             })
 
-        with open(self.neuromodulationDir / name, 'w') as f:
+        with open(self.neuromodulation_dir / name, 'w') as f:
             json.dump(define_modulation, f, cls=NumpyEncoder)
 
         self.save_modulation()
