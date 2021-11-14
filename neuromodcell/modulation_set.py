@@ -13,7 +13,9 @@ Class which sets up the modulation parameters for the neuron models
 
 class DefineModulation:
 
-    def __init__(self, parameterID=None, morph_key=None, parameter_key=None, cell_name=None, output_dir=None, cell_dir=None, population=None, tstop=None, time_step=None):
+    def __init__(self, parameterID=None, morph_key=None, parameter_key=None,
+                 cell_name=None, output_dir=None, cell_dir=None, population=None,
+                 tstop=None, time_step=None):
 
         self.set_mod = list()
         self.neuromodulation_name = dict()
@@ -203,7 +205,7 @@ class DefineModulation:
         with open(self.neuromodulationDir / name, 'w') as f:
             json.dump(self.set_mod, f)
 
-    def save_modulation_setup(self, name='modulation_setup.json'):
+    def save_modulation_setup(self, name="modulation_setup.json"):
 
         define_modulation = dict()
 
@@ -225,7 +227,7 @@ class DefineModulation:
                 "cell_name": self.name
             })
 
-        with open(self.neuromodulation_dir / name, 'w') as f:
+        with open(self.neuromodulation_dir / name, "w") as f:
             json.dump(define_modulation, f, cls=NumpyEncoder)
 
         self.save_modulation()
