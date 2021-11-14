@@ -25,14 +25,16 @@ class OptimiseModulation:
         self.rank = None
         self.size = None
         self.pc = None
-        self.gidlist = None
+        self.gid_list = None
         self.cell_model_pass = dict()
         self.cell_model_voltage_pass = dict()
         self.cell_model_pass_receptor = dict()
+        self.neuromodulation_dir = None
 
     def setup_load(self):
 
         self.modulation_setup = json.load(open(self.setup / 'modulation_setup.json'))
+        self.neuromodulation_dir = pathlib.Path(self.modulation_setup["neuromodulation_dir"])
 
     def set_seed(self, seed=10e5):
 
@@ -46,25 +48,34 @@ class OptimiseModulation:
 
         pc = h.ParallelContext()
         self.pc = pc
-        self.gidlist = []
+        self.gid_list = []
 
-        for i in range(int(pc.id()), self.modulation_setup["population"], int(pc.nhost())):
-            self.gidlist.append(i)
+        for i in range(int(self.pc.id()), self.modulation_setup["population"], int(self.pc.nhost())):
+            self.gid_list.append(i)
 
     def setup_optimisation(self):
 
         self.sim = NrnSimulatorParallel(cvode_active=False)
 
-        opt = OptimisationSetup(self.modulation_setup)
-        opt.set_gidlist(self.gidlist)
-        opt.start_logging()
+        mod_dict = dict()
+
+        for k in range(len(self.gid_list)):
+            mod_dict.update({f"temp_{k}": self.unit_modulation["param_set"][k]})
+
+        with open(self.neuromodulation_dir / f"temp_{self.pc.id()}.json", "w") as f:
+            json.dump(mod_dict, f)
+
+        opt = OptimisationSetup(modulation_setup=self.modulation_setup,
+                                unit_modulation=self.unit_modulation,
+                                gid_list=self.gid_list,
+                                pc_id=self.pc.id())
 
         if self.rank == 0:
-            opt.setup_neurons(self.unit_modulation)
+            opt.setup_neurons()
             opt.control_neuron()
 
         else:
-            opt.setup_neurons(self.unit_modulation)
+            opt.setup_neurons()
 
         opt.define_neuromodulation()
 
@@ -210,7 +221,7 @@ class OptimiseModulation:
 
     def modulation_list(self):
 
-        for _ in self.gidlist:
+        for _ in self.gid_list:
             temp = copy.deepcopy(self.modulation_setup["ion_channel_modulation"])
 
             for modulation_unit in temp:

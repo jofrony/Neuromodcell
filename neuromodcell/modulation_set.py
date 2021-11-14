@@ -25,7 +25,7 @@ class DefineModulation:
         self.morph_key = morph_key
         self.parameter_key = parameter_key
         self.neuromodulation_dir = pathlib.Path(output_dir)
-        self.cellDir = cell_dir
+        self.cell_dir = cell_dir
         self.selection_criteria = list()
         self.modulation_function = None
         self.name = cell_name
@@ -54,51 +54,51 @@ class DefineModulation:
 
         else:
             modulation_functions = dict()
-            modulation_functions.update({"function" : modulation_function})
+            modulation_functions.update({"function": modulation_function})
             for key, value in kwargs.items():
-                modulation_functions.update({key : value})
-            modulation_functions.update({'tstop': self.tstop})
-            modulation_functions.update({'dt': self.dt})
+                modulation_functions.update({key: value})
+            modulation_functions.update({"tstop": self.tstop})
+            modulation_functions.update({"dt": self.dt})
 
-            modulation_functions.update({'time_step_array': np.arange(0, self.tstop, self.dt)})
+            modulation_functions.update({"time_step_array": np.arange(0, self.tstop, self.dt)})
 
-        self.modulation_function = modulation_functions
+            self.modulation_function = modulation_functions
 
-    def define_selection_criteria(self,**kwargs):
+    def define_selection_criteria(self, **kwargs):
 
-        criteria = {'parameters' : dict(), 'selection' : dict()}
+        criteria = {"parameters": dict(), "selection": dict()}
+        function = None
+
         for key, value in kwargs.items():
 
-
-            if 'function' in key:
+            if "function" in key:
                 function = value
 
-            elif 'mean' in key or 'std' in key or 'threshold' in key:
+            elif "mean" in key or "std" in key or "threshold" in key:
 
-                criteria['selection'].update({key : value})
+                criteria["selection"].update({key: value})
 
             else:
-                criteria['parameters'].update({key : value})
+                criteria["parameters"].update({key: value})
 
-        criteria['parameters'].update({'dt': self.dt})
+        criteria["parameters"].update({"dt": self.dt})
 
         self.selection_criteria.append({"function": function, "criteria": criteria})
 
     def define_protocol(self, **kwargs):
 
         parameters = dict()
+        type_ex = None
 
         for key, value in kwargs.items():
 
-            if 'typeEx' in key:
-                typeEx = value
+            if "experiment_type" in key or "typeEx" in key:
+                type_ex = value
             else:
-                parameters.update({key : value})
-            
-            #self.neuromodulation_name.update({value: key})
+                parameters.update({key: value})
 
-        self.protocols.append({'type': typeEx,
-                               'parameters': parameters})
+        self.protocols.append({"experiment_type": type_ex,
+                               "parameters": parameters})
 
     def define_modulation_receptor(self, syn, neuromod, syn_param, modulation_param):
 
@@ -136,7 +136,7 @@ class DefineModulation:
             "dist_type": "uniform",
             "mech": mech,
             "mech_param": mech_param_key,
-            "param_name": mech_param_key + '_' + mech,
+            "param_name": f"{mech_param_key}_{mech}",
             "sectionlist": sectionlist,
             "type": "range",
             "bounds": bounds,
@@ -148,7 +148,7 @@ class DefineModulation:
             "dist_type": "uniform",
             "mech": mech,
             "mech_param": level_param_key,
-            "param_name": level_param_key + '_' + mech,
+            "param_name": f"{level_param_key}_{mech}",
             "sectionlist": sectionlist,
             "type": "range",
             "value": 0,
@@ -160,7 +160,7 @@ class DefineModulation:
             "dist_type": "uniform",
             "mech": mech,
             "mech_param": on_param_key,
-            "param_name": on_param_key + '_' + mech,
+            "param_name": f"{on_param_key}_{mech}",
             "sectionlist": sectionlist,
             "type": "range",
             "value": 0,
@@ -200,12 +200,18 @@ class DefineModulation:
 
             self.neuromodulation_dir = neuromodulation_dir
 
-    def save_modulation(self, name="modulation.json"):
+    def save_modulation(self, name=None):
 
-        with open(self.neuromodulationDir / name, 'w') as f:
+        if name is None:
+            name = "modulation.json"
+
+        with open(self.neuromodulation_dir / name, "w") as f:
             json.dump(self.set_mod, f)
 
-    def save_modulation_setup(self, name="modulation_setup.json"):
+    def save_modulation_setup(self, name=None):
+
+        if name is None:
+            name = "modulation_setup.json"
 
         define_modulation = dict()
 
@@ -213,18 +219,22 @@ class DefineModulation:
 
         for key, value in self.neuromodulation_name.items():
             define_modulation.update({
+                "cell_name": self.name,
+                "parameter_key": self.parameter_key,
+                "morph_key": self.morph_key,
+                "parameter_id": self.parameter_id,
                 "name": key,
                 "key": value,
                 "tstop": self.tstop,
-                "ion_channel_modulation": self.set_mod,
-                "receptor_modulation": self.set_receptor,
+                "time_step": self.dt,
                 "population": self.population,
                 "protocols": self.protocols,
-                "parameterID": self.parameter_id,
-                "cellDir": self.cellDir,
+                "model_dir": self.cell_dir,
+                "neuromodulation_dir": pathlib.Path(self.neuromodulation_dir).resolve(),
+                "ion_channel_modulation": self.set_mod,
+                "receptor_modulation": self.set_receptor,
                 "modulation_function": self.modulation_function,
-                "selection_criteria": self.selection_criteria,
-                "cell_name": self.name
+                "selection_criteria": self.selection_criteria
             })
 
         with open(self.neuromodulation_dir / name, "w") as f:

@@ -9,14 +9,15 @@ import numpy as np
 import json
 import logging
 import os
+import pathlib
 
 
 class OptimisationSetup:
 
-    def __init__(self, modulation_setup):
+    def __init__(self, modulation_setup, unit_modulation, gid_list, pc_id):
 
         self.modulation_setup = modulation_setup
-        self.cellDir = self.modulation_setup["cellDir"]
+        self.cell_dir = self.modulation_setup["model_dir"]
         self.neurons = dict()
         self.sim = None
         self.mod_file = None
@@ -25,16 +26,19 @@ class OptimisationSetup:
         self.neuromodulation_name = dict()
         self.t_save = None
         self.v_save = dict()
-        self.gidlist = None
         self.i_stim = list()
         self.receptors = list()
         self.synapses = list()
         self.netcon = list()
-        self.unit_modulation = list()
-
-    def set_gidlist(self, gidlist):
-
-        self.gidlist = gidlist
+        self.unit_modulation = unit_modulation
+        self.gid_list = gid_list
+        self.cell_name = self.modulation_setup["cell_name"]
+        self.neuromodulation_dir = pathlib.Path(self.modulation_setup["neuromodulation_dir"])
+        self.parameter_id = self.modulation_setup["parameter_id"]
+        self.morph_key = self.modulation_setup["morph_key"]
+        self.parameter_key = self.modulation_setup["parameter_key"]
+        self.start_logging()
+        self.pc_id = pc_id
 
     def start_logging(self):
 
@@ -43,7 +47,7 @@ class OptimisationSetup:
         if not os.path.exists(directory):
             os.makedirs(directory)
 
-        logging.basicConfig(filename="logfiles/log-file-" + str(self.gidlist[0]) + ".log", level=logging.DEBUG)
+        logging.basicConfig(filename="logfiles/log-file-" + str(self.gid_list[0]) + ".log", level=logging.DEBUG)
 
     @staticmethod
     def section_translation(section_name):
@@ -58,50 +62,49 @@ class OptimisationSetup:
 
         self.modulation_type()
 
-    def setup_neurons(self, unit_modulation, keys=True):
+    def setup_neurons(self):
 
-        self.unit_modulation = unit_modulation
+        param_file, morph_file, self.mod_file, mech_file = files(self.cell_dir)
 
-        param_file, morph_file, self.mod_file, mech_file = files(self.cellDir)
+        logging.info('This worker : ' + str(len(self.gid_list)))
 
-        param = define_parameters(parameter_config=param_file, parameter_id="p09b0945d")
-        mech = define_mechanisms(mech_file)
-        morph = define_morphology(morph_file=morph_file)
+        for k in range(len(self.gid_list)):
 
-        logging.info('This worker : ' + str(len(self.gidlist)))
+            if self.parameter_id is None:
 
-        for k in range(len(self.gidlist)):
-            modulation = define_modulation(param_set=unit_modulation["param_set"][k])
-
-            mod_dict = {"temp": unit_modulation["param_set"][k]}
-
-            #with open('temp.json', "w") as f:
-            #    json.dump(mod_dict,f)
-
-            print(self.cellDir)
-
-            if not(keys):
-
-                self.neurons[k] = NeuronModel(cell_name=self.modulation_setup["cell_name"], morph=morph, mech=mech,
-                                          param=param, modulation=modulation)
+                self.neurons[k] = NeuronModel(param_file=param_file,
+                                              morph_path=morph_file,
+                                              mech_file=mech_file,
+                                              cell_name=self.cell_name,
+                                              modulation_file=self.neuromodulation_dir / f"temp_{self.pc_id}.json",
+                                              parameter_key=self.parameter_key,
+                                              morphology_key=self.morph_key,
+                                              modulation_key=f"temp_{k}")
 
             else:
 
+                self.neurons[k] = NeuronModel(cell_name=self.modulation_setup["cell_name"],
+                                              morph=morph, mech=mech,
+                                              param=param, modulation=modulation)
+                param = define_parameters(parameter_config=param_file, parameter_id="p09b0945d")
+                mech = define_mechanisms(mech_file)
+                morph = define_morphology(morph_file=morph_file)
+
+                modulation = define_modulation(param_set=self.unit_modulation["param_set"][k])
+
                 self.neurons[k] = NeuronModel(param_file=param_file,
-                                               morph_path=morph_file,
-                                               mech_file=mech_file,
-                                               cell_name=self.modulation_setup["cell_name"],
-                                               modulation_file="temp.json",
-                                               morphology_id=0,
-                                               parameter_id=0,
-                                               modulation_id=0,
-                                               parameter_key="p09b0945d",
-                                               morphology_key="m9c778ecf",
-                                               modulation_key="temp")
+                                              morph_path=morph_file,
+                                              mech_file=mech_file,
+                                              cell_name=self.modulation_setup["cell_name"],
+                                              modulation_file=self.neuromodulation_dir / "temp.json",
+                                              morphology_id=0,
+                                              parameter_id=self.parameter_id,
+                                              modulation_key="temp")
+
 
     def control_neuron(self):
 
-        param_file, morph_file, self.mod_file, mech_file = files(self.cellDir)
+        param_file, morph_file, self.mod_file, mech_file = files(self.cell_dir)
 
         #param = define_parameters(parameter_config=param_file, parameter_id=self.modulation_setup["parameterID"])
         #mech = define_mechanisms(mech_file)
@@ -227,14 +230,14 @@ class OptimisationSetup:
 
             for protocol in self.modulation_setup["protocols"]:
 
-                if 'current_clamp' == protocol['type']:
+                if 'current_clamp' == protocol['experiment_type']:
                     cur_stim = self.sim.neuron.h.IClamp(0.5, sec=self.neurons[i].icell.soma[0])
                     cur_stim.delay = protocol['parameters']["start"]
                     cur_stim.dur = protocol['parameters']["duration"]
                     cur_stim.amp = protocol['parameters']["amp"]
                     self.i_stim.append(cur_stim)
 
-                elif 'synaptic_input' == protocol['type']:
+                elif 'synaptic_input' == protocol['experiment_type']:
 
                     for syn in self.receptors:
 
