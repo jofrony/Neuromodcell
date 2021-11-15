@@ -230,7 +230,7 @@ class DefineModulation:
                 "population": self.population,
                 "protocols": self.protocols,
                 "model_dir": self.cell_dir,
-                "neuromodulation_dir": pathlib.Path(self.neuromodulation_dir).resolve(),
+                "neuromodulation_dir": pathlib.Path(self.neuromodulation_dir),
                 "ion_channel_modulation": self.set_mod,
                 "receptor_modulation": self.set_receptor,
                 "modulation_function": self.modulation_function,
