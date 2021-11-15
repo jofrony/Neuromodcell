@@ -61,9 +61,7 @@ class OptimiseModulation:
 
         self.modulation_setup = json.load(open(self.setup / 'modulation_setup.json'))
         self.neuromodulation_dir = pathlib.Path(self.modulation_setup["neuromodulation_dir"])
-        self.modulation_setup["neuromodulation_dir"] = self.setup.parent / self.modulation_setup["neuromodulation_dir"]
-        #print(self.modulation_setup["neuromodulation_dir"])
-        print(f" printing {self.setup.parent}")
+        self.modulation_setup["neuromodulation_dir"] = self.setup.parent / self.modulation_setup["folder_name"]
 
     def set_seed(self, seed=10e5):
 
