@@ -40,30 +40,30 @@ class NeuronPrototype:
             self.morphology_path = None
 
         if mechanism_path:
-            self.mechanism_path = snudda_parse_path(mechanism_path)
+            self.mechanism_path = mechanism_path
         elif self.neuron_path:
-            self.mechanism_path = snudda_parse_path(os.path.join(self.neuron_path, "mechanisms.json"))
+            self.mechanism_path = os.path.join(self.neuron_path, "mechanisms.json")
         else:
             self.mechanism_path = None
 
         if parameter_path:
-            self.parameter_path = snudda_parse_path(parameter_path)
+            self.parameter_path = parameter_path
         elif self.neuron_path:
-            self.parameter_path = snudda_parse_path(os.path.join(self.neuron_path, "parameters.json"))
+            self.parameter_path = os.path.join(self.neuron_path, "parameters.json")
         else:
             self.parameter_path = None
 
         if meta_path:
-            self.meta_path = snudda_parse_path(meta_path)
+            self.meta_path = meta_path
         elif self.neuron_path:
-            self.meta_path = snudda_parse_path(os.path.join(self.neuron_path, "meta.json"))
+            self.meta_path = os.path.join(self.neuron_path, "meta.json")
         else:
             self.meta_path = None
 
         if modulation_path:
-            self.modulation_path = snudda_parse_path(modulation_path)
+            self.modulation_path = modulation_path
         elif self.neuron_path:
-            self.modulation_path = snudda_parse_path(os.path.join(self.neuron_path, "modulation.json"))
+            self.modulation_path = os.path.join(self.neuron_path, "modulation.json")
 
             if not os.path.exists(self.modulation_path):
                 self.modulation_path = None
