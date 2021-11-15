@@ -26,42 +26,42 @@ class NeuronPrototype:
         self.verbose = verbose
 
         if neuron_path:
-            self.neuron_path = neuron_path
+            self.neuron_path = os.path.abspath(neuron_path)
         elif parameter_path:
             self.neuron_path = os.path.dirname(parameter_path)
         else:
             self.neuron_path = None
 
         if morphology_path:
-            self.morphology_path = morphology_path
+            self.morphology_path = os.path.abspath(morphology_path)
         elif self.neuron_path:
             self.morphology_path = os.path.join(self.neuron_path, "morphology")
         else:
             self.morphology_path = None
 
         if mechanism_path:
-            self.mechanism_path = mechanism_path
+            self.mechanism_path = os.path.abspath(mechanism_path)
         elif self.neuron_path:
             self.mechanism_path = os.path.join(self.neuron_path, "mechanisms.json")
         else:
             self.mechanism_path = None
 
         if parameter_path:
-            self.parameter_path = parameter_path
+            self.parameter_path = os.path.abspath(parameter_path)
         elif self.neuron_path:
             self.parameter_path = os.path.join(self.neuron_path, "parameters.json")
         else:
             self.parameter_path = None
 
         if meta_path:
-            self.meta_path = meta_path
+            self.meta_path = os.path.abspath(meta_path)
         elif self.neuron_path:
             self.meta_path = os.path.join(self.neuron_path, "meta.json")
         else:
             self.meta_path = None
 
         if modulation_path:
-            self.modulation_path = modulation_path
+            self.modulation_path = os.path.abspath(modulation_path)
         elif self.neuron_path:
             self.modulation_path = os.path.join(self.neuron_path, "modulation.json")
 
