@@ -32,6 +32,7 @@ class DefineModulation:
         self.set_receptor = list()
         self.tstop = tstop
         self.dt = time_step
+        self.dir_name = None
 
     def set_time_step(self, dt):
 
@@ -195,6 +196,8 @@ class DefineModulation:
 
             neuromodulation_dir = Path(directory, key, dir_name)
 
+            self.dir_name = dir_name
+
             if not neuromodulation_dir.exists():
                 neuromodulation_dir.mkdir(parents=True, exist_ok=True)
 
@@ -230,6 +233,7 @@ class DefineModulation:
                 "population": self.population,
                 "protocols": self.protocols,
                 "model_dir": self.cell_dir,
+                "dir_name": self.dir_name,
                 "neuromodulation_dir": pathlib.Path(self.neuromodulation_dir),
                 "ion_channel_modulation": self.set_mod,
                 "receptor_modulation": self.set_receptor,
