@@ -93,6 +93,8 @@ class OptimiseModulation:
         with open(self.neuromodulation_dir / f"temp_{self.pc.id()}.json", "w") as f:
             json.dump(mod_dict, f)
 
+        print(self.gid_list)
+
         opt = OptimisationSetup(modulation_setup=self.modulation_setup,
                                 unit_modulation=self.unit_modulation,
                                 gid_list=self.gid_list,
