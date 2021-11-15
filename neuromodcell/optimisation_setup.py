@@ -271,6 +271,6 @@ class OptimisationSetup:
         return self.v_save
 
     def run(self):
-
+        logging.info("Simulation starts now")
         self.sim.neuron.h.tstop = self.modulation_setup["tstop"]
         self.sim.neuron.h.run()
