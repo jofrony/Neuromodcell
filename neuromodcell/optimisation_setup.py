@@ -47,7 +47,7 @@ class OptimisationSetup:
         if not os.path.exists(directory):
             os.makedirs(directory)
 
-        logging.basicConfig(filename="logfiles/log-file-" + str(len(self.gid_list)) + ".log", level=logging.DEBUG)
+        logging.basicConfig(filename="logfiles/log-file-" + str(len(self.gid_list[0])) + ".log", level=logging.DEBUG)
 
     @staticmethod
     def section_translation(section_name):
