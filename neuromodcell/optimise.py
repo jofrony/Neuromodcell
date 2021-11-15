@@ -14,7 +14,10 @@ class OptimiseModulation:
 
     def __init__(self, setup=None):
 
-        self.setup = pathlib.Path(setup)
+        if setup is None:
+            pass
+        else:
+            self.setup = pathlib.Path(setup)
         self.modulation_setup = None
         self.unit_modulation = {"param_set": list(), "receptor": list()}
         self.sim = None
@@ -30,6 +33,29 @@ class OptimiseModulation:
         self.cell_model_voltage_pass = dict()
         self.cell_model_pass_receptor = dict()
         self.neuromodulation_dir = None
+
+    def clean_up(self):
+
+        self.setup = None
+        self.modulation_setup = None
+        self.unit_modulation = {"param_set": list(), "receptor": list()}
+        self.sim = None
+        self.t_save = None
+        self.v_save = None
+        self.control_v = None
+        self.comm = None
+        self.rank = None
+        self.size = None
+        self.pc = None
+        self.gid_list = None
+        self.cell_model_pass = dict()
+        self.cell_model_voltage_pass = dict()
+        self.cell_model_pass_receptor = dict()
+        self.neuromodulation_dir = None
+
+    def set_path(self, setup):
+
+        self.setup = pathlib.Path(setup)
 
     def setup_load(self):
 
@@ -173,7 +199,7 @@ class OptimiseModulation:
 
             np.savetxt(self.setup / "voltages.csv", voltage_saves)
 
-    def export_modulation(self,size):
+    def export_modulation(self):
 
         world_model_pass = self.comm.gather(self.cell_model_pass, root=0)
 
