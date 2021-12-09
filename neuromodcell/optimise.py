@@ -5,7 +5,7 @@ import copy
 import numpy as np
 from neuromodcell.optimisation_setup import OptimisationSetup
 from neuromodcell.NrnSimulatorParallel import NrnSimulatorParallel
-import neuromodcell.selection_criteria as sc
+#import neuromodcell.selection_criteria as sc
 from math import exp
 import pathlib
 
