@@ -1,5 +1,5 @@
-import elephant as elp
-import neo
+from elephant.spike_train_generation import peak_detection
+from neo import AnalogSignal
 import quantities as pq
 import numpy as np
 
