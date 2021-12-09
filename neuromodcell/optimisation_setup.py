@@ -101,27 +101,18 @@ class OptimisationSetup:
                                               parameter_id=self.parameter_id,
                                               modulation_key="temp")
 
-
     def control_neuron(self):
 
         param_file, morph_file, self.mod_file, mech_file = files(self.cell_dir)
 
-        #param = define_parameters(parameter_config=param_file, parameter_id=self.modulation_setup["parameterID"])
-        #mech = define_mechanisms(mech_file)
-        #morph = define_morphology(morph_file=morph_file)
 
         self.neurons[-1] = NeuronModel(param_file=param_file,
-                                               morph_path=morph_file,
-                                               mech_file=mech_file,
-                                               cell_name=self.modulation_setup["cell_name"],
-                                               morphology_id=0,
-                                               parameter_id=0,
-                                               modulation_id=0,
-                                               parameter_key="p09b0945d",
-                                               morphology_key="m9c778ecf")
-        
-        #self.neurons[-1] = NeuronModel(cell_name=self.modulation_setup["cell_name"], morph=morph, mech=mech,
-                                       #param=param, modulation=[])
+                                       morph_path=morph_file,
+                                       mech_file=mech_file,
+                                       cell_name=self.modulation_setup["cell_name"],
+                                       parameter_key=self.parameter_key,
+                                       morphology_key=self.morph_key, )
+
 
     def modulation_type(self):
 
