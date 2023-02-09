@@ -15,8 +15,7 @@ def test_model_setup():
     test_dir_path = pathlib.Path(abs_path,'test_model')
 
     print("Running nrnivmodl:")
-    mech_dir = os.path.join(os.path.dirname(__file__), os.path.pardir,
-                            "snudda", "data", "neurons", "mechanisms")
+    mech_dir = os.path.join(os.path.dirname(__file__), "mechanisms")
 
     if not os.path.exists("mechanisms"):
         print("----> Copying mechanisms")
