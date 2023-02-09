@@ -5,6 +5,7 @@ from neuromodcell.model_functions import define_modulation
 from neuromodcell.model_functions import files
 from neuromodcell.Neuron_model_extended import NeuronModel
 from neuromodcell.NrnSimulatorParallel import NrnSimulatorParallel
+from .compile_mechanisms import compile_mechanisms
 import pathlib
 import json
 import os
@@ -14,7 +15,7 @@ def test_model_setup():
     abs_path = os.path.dirname(os.path.abspath(__file__))
     print(abs_path)
     test_dir_path = pathlib.Path(abs_path, 'test_model')
-
+    compile_mechanisms()
     parameter_id = 0
     cell_name = 'test'
 
@@ -26,14 +27,6 @@ def test_model_setup():
     modulation = define_modulation(json.load(open(test_dir_path / 'modulation.json', 'r')))
 
     sim = NrnSimulatorParallel(cvode_active=False)
-
-    print("Running nrnivmodl:")
-
-    os.system("rm -r $PWD/x86_64/")
-
-    os.system("nrnivmodl tests/mechanisms/")
-
-    sim.neuron.h.nrn_load_dll(os.getcwd() + '/x86_64/.libs/libnrnmech.so')
 
     test_model = NeuronModel(cell_name=cell_name, morph=morph, mech=mech, param=param, modulation=modulation)
 

@@ -15,8 +15,6 @@ def test_model_setup():
     abs_path =  os.path.dirname(os.path.abspath(__file__))
     test_dir_path = pathlib.Path(abs_path,'test_model')
 
-    compile_mechanisms()
-
     parameterID = 0
     cell_name= 'test'
 
