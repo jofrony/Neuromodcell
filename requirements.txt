@@ -4,4 +4,5 @@ bluepyopt
 NEURON
 deepdiff
 matplotlib
+jupyterlab
 

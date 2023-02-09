@@ -56,10 +56,7 @@ class OptimisationResult:
         plt.legend()
 
         if save:
-            plt.savefig(pathlib.Path(self.dir_path) / filename, dpi=300, facecolor='w', edgecolor='w',
-                        orientation='portrait', papertype=None, format=None,
-                        transparent=False, bbox_inches=None, pad_inches=0.1,
-                        frameon=None, metadata=None)
+            plt.savefig(pathlib.Path(self.dir_path) / filename, dpi=300)
         else:
             plt.show()
 
@@ -88,10 +85,7 @@ class OptimisationResult:
         plt.xlabel("Time (ms)")
 
         if save:
-            plt.savefig(pathlib.Path(self.dir_path) / filename, dpi=300, facecolor='w', edgecolor='w',
-                        orientation='portrait', papertype=None, format=None,
-                        transparent=False, bbox_inches=None, pad_inches=0.1,
-                        frameon=None, metadata=None)
+            plt.savefig(pathlib.Path(self.dir_path) / filename, dpi=300)
         else:
             plt.show()
 

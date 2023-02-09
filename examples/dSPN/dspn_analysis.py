@@ -219,13 +219,8 @@ class dSPNanalysis(OptimisationResult):
             axs[1].plot(800*np.ones_like(np.arange(150,550)),np.arange(150,550),c='black')
             axs[1].text(825,325,'400 pA')
 
-
-
         if save:
-            plt.savefig(pathlib.Path(self.dir_path) / filename, dpi=300, facecolor='w', edgecolor='w',
-                        orientation='portrait', papertype=None, format=None,
-                        transparent=False, bbox_inches=None, pad_inches=0.1,
-                        frameon=None, metadata=None)
+            plt.savefig(pathlib.Path(self.dir_path) / filename, dpi=300)
         else:
             plt.show()
 

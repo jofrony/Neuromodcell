@@ -67,9 +67,6 @@ def plot_comparison(control, control_sim, modulated, modulated_sim, num_models, 
 
     if save:
         plt.savefig(pathlib.Path(dir_path) / filename,
-                    dpi=600,facecolor='w', edgecolor='w',
-                    orientation='portrait', papertype=None, format=None,
-                    transparent=False, bbox_inches=None, pad_inches=0.1,
-                    frameon=None, metadata=None)
+                    dpi=600)
     else:
         plt.show()
