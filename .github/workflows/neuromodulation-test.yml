@@ -50,12 +50,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        python -m pytest tests/test_global_params.py
-        python -m pytest tests/test_model_parameters.py
-        python -m pytest tests/test_modulation_parameters.py
-        python -m pytest tests/test_selection_criteria.py
-        python -m pytest tests/test_selection_functions.py
-       
+        python -m pytest tests/       
     - uses: actions/checkout@master
     - name: Setup Python
       uses: actions/setup-python@master
