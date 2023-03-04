@@ -15,7 +15,7 @@ class DefineModulation:
 
     def __init__(self, parameterID: int = None, cell_name: str = None, cell_dir: str = None,
                  output_dir: str = None, population: int = None, tstop: float = None,
-                 time_step: float = None) -> object:
+                 time_step: float = None) -> None:
 
         """
 
