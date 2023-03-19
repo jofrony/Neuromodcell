@@ -1,5 +1,4 @@
 import numpy as np
-
 from neuromodcell.modulation_set import DefineModulation
 from neuromodcell.modulation_set import NumpyEncoder
 import pytest
@@ -130,7 +129,6 @@ def test_define_modulation_parameter():
 
 
 def test_save_modulation():
-
     parameterID = 0
     cell_name = "test"
     cell_dir = "test_dir"
@@ -149,15 +147,15 @@ def test_save_modulation():
     a.save_modulation(name="mod.json")
     a.save_modulation_setup(name="mod.json")
 
-def test_numpy_decoder():
 
+def test_numpy_decoder():
     import pathlib
-    import numpy as np
     a = NumpyEncoder()
     a.default(np.array([0, 1], dtype=int))
     a.default(np.array([0, 1], dtype=float))
     a.default(np.array([0, 1]))
     a.default(pathlib.PosixPath('string'))
+
 
 if __name__ == "__main__":
     test_DefineModulation()
