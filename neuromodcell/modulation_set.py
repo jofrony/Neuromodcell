@@ -210,10 +210,10 @@ class DefineModulation:
         self.set_mod.append(level)
         self.set_mod.append(on)
 
-    def new_modulation_dir(self, directory=''):
+    def new_modulation_dir(self, directory=None):
 
         for key, value in self.neuromodulation_name.items():
-            parameterID_name = 'ID_' + str(self.parameterID)
+            parameterID_name = f"ID_{self.parameterID}"
 
             neuromodulationDir = Path(directory, key, parameterID_name)
 
@@ -222,12 +222,22 @@ class DefineModulation:
 
             self.neuromodulationDir = neuromodulationDir
 
-    def save_modulation(self, name='modulation.json'):
+    def save_modulation(self, name=None):
 
-        with open(self.neuromodulationDir / name, 'w') as f:
+        if name is None:
+            name = "modulation.json"
+        else:
+            pass
+
+        with open(self.neuromodulationDir / name, "w") as f:
             json.dump(self.set_mod, f)
 
-    def save_modulation_setup(self, name='modulation_setup.json'):
+    def save_modulation_setup(self, name=None):
+
+        if name is None:
+            name = "modulation_setup.json"
+        else:
+            pass
 
         define_modulation = dict()
 
@@ -249,7 +259,7 @@ class DefineModulation:
                 "cell_name": self.name
             })
 
-        with open(self.neuromodulationDir / name, 'w') as f:
+        with open(self.neuromodulationDir / name, "w") as f:
             json.dump(define_modulation, f, cls=NumpyEncoder)
 
         self.save_modulation()
