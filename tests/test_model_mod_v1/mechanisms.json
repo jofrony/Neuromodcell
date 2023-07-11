@@ -1,0 +1,19 @@
+{
+    "all": [
+        "pas"
+    ],
+    "somatic": [
+        "naf",
+        "kaf"
+    ],
+    "axonal": [
+        "naf",
+        "kas"
+    ],
+    "basal": [
+        "naf",
+        "kaf",
+        "kas",
+        "kdr"
+    ]
+}

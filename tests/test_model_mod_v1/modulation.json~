@@ -4,7 +4,8 @@
 		"mech_param": "maxModA",
 		"param_name": "maxModA_naf",
 		"sectionlist": "somatic",
-		"type": "range",
-		"name": "modulationA"
+		"type": "bounds",
+		"name": "modulationA",
+                "bounds": [0,1]
 	}
 ]

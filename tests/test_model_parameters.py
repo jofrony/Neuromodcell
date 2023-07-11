@@ -43,19 +43,31 @@ def test_model_param():
         param = define_parameters(parameter_config=param_file, parameter_id=parameterID)
 
     with pytest.raises(Exception) as r:
-        _ = define_parameters(parameter_config=None,parameter_id=0)
+        _ = define_parameters(parameter_config=None, parameter_id=0)
 
 def test_model_modulation():
     abs_path = os.path.dirname(os.path.abspath(__file__))
     test_dir_path = pathlib.Path(abs_path, 'test_model')
 
-    parameterID = 0
     param_file, morph_file, mod_file, mech_file = files(test_dir_path)
 
     m = json.load(open(mod_file))
     _ = define_modulation(param_set=m)
 
+    test_dir_path = pathlib.Path(abs_path, 'test_model_mod_v1')
 
+    param_file, morph_file, mod_file, mech_file = files(test_dir_path)
+
+    m = json.load(open(mod_file))
+    _ = define_modulation(param_set=m)
+
+    test_dir_path = pathlib.Path(abs_path, 'test_model_mod_v2')
+
+    param_file, morph_file, mod_file, mech_file = files(test_dir_path)
+
+    m = json.load(open(mod_file))
+    with pytest.raises(Exception) as e:
+        _ = define_modulation(param_set=m)
 
 def test_model_setup():
 

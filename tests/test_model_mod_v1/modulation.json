@@ -5,6 +5,7 @@
 		"param_name": "maxModA_naf",
 		"sectionlist": "somatic",
 		"type": "range",
-		"name": "modulationA"
+		"name": "modulationA",
+                "bounds": [0,1]
 	}
 ]
