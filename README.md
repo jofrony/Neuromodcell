@@ -24,6 +24,16 @@ pip install neuromodcell
 
 The multicompartmental models should have morphology file (SWC), mechanisms.json (JSON) and parameters.json (JSON) files. See examples/models/dspn for examples of dSPN multicompartmental models. 
 
+# Testing
+
+Uses pytest. To execute, run:
+
+```
+pytest tests/
+```
+
+REMOVE: complied mechanisms (eg. x86_64/-folder, depends on CPU architecture) before running tests again!
+
 # Support
 
 We provide support via gitter chat or github issues page

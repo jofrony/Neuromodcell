@@ -34,9 +34,11 @@ class OptimisationResult:
         self.modulation = json.load(open(self.dir_path / 'modulation.json','rb'))
         self.modulations = json.load(open(self.dir_path / 'modulations.json','rb'))
         self.modulation_setup = json.load(open(self.dir_path / 'modulation_setup.json','rb'))
-        self.voltage_modulation_pass = np.loadtxt(self.dir_path /  'voltage_modulation_pass.csv')
+        self.voltage_modulation_pass = np.loadtxt(self.dir_path / 'voltage_modulation_pass.csv')
 
-        if len(self.voltage_modulation_pass) == 0 or not(isinstance(self.voltage_modulation_pass[0],np.ndarray)):
+        if len(self.voltage_modulation_pass) == 0 or not(isinstance(self.voltage_modulation_pass[0], np.ndarray)):
+
+            # If it's an empty list or it is not a list of lists!
 
             self.voltage_modulation_pass = np.array([self.voltage_modulation_pass])
 
