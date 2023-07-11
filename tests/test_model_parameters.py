@@ -63,7 +63,7 @@ def test_model_setup():
     test_dir_path = pathlib.Path(abs_path, 'test_model')
 
     parameterID = 0
-    cell_name= 'test'
+    cell_name = 'test'
 
     param_file, morph_file, mod_file, mech_file = files(test_dir_path)
 
