@@ -7,7 +7,8 @@ import pathlib
 def plot_comparison(control, control_sim, modulated, modulated_sim, num_models, ylabel=None, title=None,
                     x_ticks=tuple(), width=None, height=None, dir_path=None, save=False, filename=None):
     """
-    An older plotting function which might be remove
+    Plotting function to compare the intervals (mean and std) of the control and modulated model and its response
+    
     @param control:
     @param control_sim:
     @param modulated:
