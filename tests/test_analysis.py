@@ -13,15 +13,12 @@ def test_analysis():
     test_dl.load()
 
     import numpy as np
-    
+
     test_dl.voltage_modulation_pass = np.array([])
 
     test_dl.plot_control(title='test', filename='test.pdf', save=True)
 
     test_dl.plot_all_traces(title='test', filename='test.pdf', save=True)
-
-    assert 1 == 1
-
 
 if __name__ == '__main__':
     test_analysis()

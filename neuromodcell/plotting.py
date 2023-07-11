@@ -5,9 +5,26 @@ import pathlib
 
 
 def plot_comparison(control, control_sim, modulated, modulated_sim, num_models, ylabel=None, title=None,
-                    x_ticks=tuple(),width=None,height=None,dir_path=None, save=False, filename=None):
+                    x_ticks=tuple(), width=None, height=None, dir_path=None, save=False, filename=None):
+    """
+    An older plotting function which might be remove
+    @param control:
+    @param control_sim:
+    @param modulated:
+    @param modulated_sim:
+    @param num_models:
+    @param ylabel:
+    @param title:
+    @param x_ticks:
+    @param width:
+    @param height:
+    @param dir_path:
+    @param save:
+    @param filename:
+    @return:
+    """
     fig, ax = plt.subplots(1, figsize=(6, 8))
-    fig.set_size_inches(width,height)
+    fig.set_size_inches(width, height)
     for i in range(num_models):
 
         x = i * np.ones(len(modulated_sim[i]))
@@ -34,8 +51,8 @@ def plot_comparison(control, control_sim, modulated, modulated_sim, num_models, 
                 x[sumnj + k] = i + dx * pos + ev
             sumnj = sumnj + nj
 
-        ax.plot(x, modulated_sim[i], 'ok', markersize=3,c='black')
-        ax.plot(i, control_sim[i], 'og', markersize=3,c='g')
+        ax.plot(x, modulated_sim[i], 'ok', markersize=3, c='black')
+        ax.plot(i, control_sim[i], 'og', markersize=3, c='g')
         ax.errorbar(i, modulated['mean'],
                     xerr=0, yerr=modulated['std'],
                     fmt='rs', capsize=5, markersize=8, elinewidth=4)
