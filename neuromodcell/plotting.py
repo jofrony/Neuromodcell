@@ -8,7 +8,7 @@ def plot_comparison(control, control_sim, modulated, modulated_sim, num_models, 
                     x_ticks=tuple(), width=None, height=None, dir_path=None, save=False, filename=None):
     """
     Plotting function to compare the intervals (mean and std) of the control and modulated model and its response
-    
+
     @param control:
     @param control_sim:
     @param modulated:
@@ -32,6 +32,7 @@ def plot_comparison(control, control_sim, modulated, modulated_sim, num_models, 
         modulated_sim[i] = np.sort(modulated_sim[i])
         z = np.zeros(len(modulated_sim[i]))
 
+        "Not sure what this does, it could probably be replaced by a randomizing function for the position of several dots"
         j = 0
         while j <= (len(modulated_sim[i]) - 2):
             k = 0
