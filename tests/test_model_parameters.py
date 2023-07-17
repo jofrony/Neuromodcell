@@ -9,16 +9,73 @@ from .compile_mechanisms import compile_mechanisms
 import pathlib
 import json
 import os
+import pytest
+
+def test_files():
+
+    abs_path = os.path.dirname(os.path.abspath(__file__))
+    test_dir_path = pathlib.Path(abs_path, 'test_model')
+
+    _, _, _, _ = files(test_dir_path)
+
+    abs_path = os.path.dirname(os.path.abspath(__file__))
+    test_dir_path = pathlib.Path(abs_path, 'test_model_broken')
+
+    with pytest.raises(ValueError) as e:
+        _, _, _, _ = files(test_dir_path)
+
+def test_model_param():
+
+    abs_path = os.path.dirname(os.path.abspath(__file__))
+    test_dir_path = pathlib.Path(abs_path, 'test_model_param_v1')
+
+    parameterID = 0
+    param_file, morph_file, mod_file, mech_file = files(test_dir_path)
+
+    param = define_parameters(parameter_config=param_file, parameter_id=parameterID)
+
+    test_dir_path = pathlib.Path(abs_path, 'test_model_param_v2')
+
+    parameterID = 0
+    param_file, morph_file, mod_file, mech_file = files(test_dir_path)
+
+    with pytest.raises(Exception) as e:
+        param = define_parameters(parameter_config=param_file, parameter_id=parameterID)
+
+    with pytest.raises(Exception) as r:
+        _ = define_parameters(parameter_config=None, parameter_id=0)
+
+def test_model_modulation():
+    abs_path = os.path.dirname(os.path.abspath(__file__))
+    test_dir_path = pathlib.Path(abs_path, 'test_model')
+
+    param_file, morph_file, mod_file, mech_file = files(test_dir_path)
+
+    m = json.load(open(mod_file))
+    _ = define_modulation(param_set=m)
+
+    test_dir_path = pathlib.Path(abs_path, 'test_model_mod_v1')
+
+    param_file, morph_file, mod_file, mech_file = files(test_dir_path)
+
+    m = json.load(open(mod_file))
+    _ = define_modulation(param_set=m)
+
+    test_dir_path = pathlib.Path(abs_path, 'test_model_mod_v2')
+
+    param_file, morph_file, mod_file, mech_file = files(test_dir_path)
+
+    m = json.load(open(mod_file))
+    with pytest.raises(Exception) as e:
+        _ = define_modulation(param_set=m)
 
 def test_model_setup():
 
     abs_path =  os.path.dirname(os.path.abspath(__file__))
-    test_dir_path = pathlib.Path(abs_path,'test_model')
-
-    compile_mechanisms()
+    test_dir_path = pathlib.Path(abs_path, 'test_model')
 
     parameterID = 0
-    cell_name= 'test'
+    cell_name = 'test'
 
     param_file, morph_file, mod_file, mech_file = files(test_dir_path)
 
@@ -163,7 +220,7 @@ def test_model_setup():
 if __name__ == "__main__":
 
      
-     test_model_setup()
+     test_model_modulation()
 
     
 

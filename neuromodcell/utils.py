@@ -3,6 +3,16 @@ import json
 
 
 def combine_neuromodulators(dir_path, neuromodulators=None):
+
+    """
+    Combination the modulation from several neuromodulators
+
+    give the name of the neuromodulators as a list
+
+    @param dir_path:
+    @param neuromodulators:
+    @return:
+    """
     files_path = pathlib.Path(dir_path)
 
     temp_dict = dict()

@@ -18,8 +18,6 @@ def files(modeldir):
     if len(glob.glob(os.path.join(modeldir, "*.swc"))) == 1:
         morph_file = glob.glob(os.path.join(modeldir, "*.swc"))[0]
     else:
-        import pdb
-        pdb.set_trace()
         raise ValueError("There should be only one swc file.")
 
     mech_file = os.path.join(modeldir, "mechanisms.json")
@@ -30,18 +28,14 @@ def files(modeldir):
 def define_mechanisms(mechanism_config=None, script_dir=None):
     """Define mechanisms"""
 
+    mod_path = None # Feature not included
+
     assert (mechanism_config is not None)
     # print("Using mechanism config: " + mechanism_config)
 
     mech_definitions = json.load(
         open(
             os.path.join(mechanism_config)))
-
-    if "modpath" in mech_definitions:
-        mod_path = os.path.join(script_dir, mech_definitions["modpath"])
-        print("mod_path set to " + mod_path + " (not yet implemented)")
-    else:
-        mod_path = None
 
     mechanisms = []
     for sectionlist in mech_definitions:

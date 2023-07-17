@@ -5,17 +5,20 @@ import pathlib
 
 def test_analysis():
 
-    '''
+    abs_path = os.path.dirname(os.path.abspath(__file__))
 
-    test_dir_path = pathlib.Path('Neuromodcell/tests/test_result')
+    test_dir_path = pathlib.Path(os.path.join(abs_path, "test_result"))
 
-    testdl = OptimisationResult(test_dir_path)
-    testdl.load()
+    test_dl = OptimisationResult(test_dir_path)
+    test_dl.load()
 
-    testdl.plot_control(title='test', filename='test.pdf', save=True)
+    import numpy as np
 
-    testdl.plot_all_traces(title='test', filename='test.pdf', save=True)
+    test_dl.voltage_modulation_pass = np.array([])
 
-    '''
+    test_dl.plot_control(title='test', filename='test.pdf', save=True)
 
-    assert 1 == 1
+    test_dl.plot_all_traces(title='test', filename='test.pdf', save=True)
+
+if __name__ == '__main__':
+    test_analysis()

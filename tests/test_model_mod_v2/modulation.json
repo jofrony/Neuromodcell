@@ -1,0 +1,10 @@
+[{
+		"dist_type": "uniform",
+		"mech": "naf",
+		"mech_param": "maxModA",
+		"param_name": "maxModA_naf",
+		"sectionlist": "somatic",
+		"type": "range",
+		"name": "modulationA"
+	}
+]

@@ -1,0 +1,26 @@
+
+## Neuromodcell
+
+2023-10-feb 
+All tests pass and the simulation give a good result
+
+### Issues
+Low code coverage for tests
+The selection is based on ID not parameterkey - should be both ?
+Syntactic issues - write and comment all parts better
+
+
+## Neuromodulation-software
+
+1. check functionality of synapse based modulation - maybe rewrite completely at a later date!
+2. Clean up the gitignore file!
+
+### Synatx comments
+Line 140 in neuromodulation.py !!! Get the synapse in a better way
+
+
+# General
+1. Check that everything works!
+2. Check again!
+3. Check standards!
+
